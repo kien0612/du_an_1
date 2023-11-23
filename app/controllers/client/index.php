@@ -12,9 +12,14 @@ if (isset($_GET['act'])) {
         case "trangchu":
             include "../../views/Client/main.php";
             break;
+        case "sanphamct":
+            include "../../views/Client/sanphamct.php";
+            break;
+        case "sanpham":
+            include "../../views/Client/sanpham.php";
+            break;
     }
 } else {
     include "../../views/Client/home.php";
 }
 include "../../views/Client/footer.php";
-
