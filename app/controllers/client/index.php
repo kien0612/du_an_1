@@ -17,3 +17,4 @@ if (isset($_GET['act'])) {
     include "../../views/Client/home.php";
 }
 include "../../views/Client/footer.php";
+<h1>khingg</h1>
