@@ -54,8 +54,8 @@
                     <td><?= $mo_ta_sp ?></td>
                     <td><?= $anh_sp ?></td>
                     <td><?= $so_luong ?></td>
-                    <th><?= $trang_thai?></th>
-                    <th><?= $id_dm ?></th>
+                    <td><?= $trang_thai?></th>
+                    <td><?= $id_dm ?></td>
                     <td><?= $ngay_nhap_sp ?></td>
                     </td>
                     <td>
