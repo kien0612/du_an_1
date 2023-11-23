@@ -22,12 +22,12 @@
                 <th>Id</th>
                 <th>Họ và tên</th>
                 <th>Email</th>
-                <th>password</th>
                 <th>Địa Chỉ</th>
                 <th>Role</th>
                 <th>Số Điện Thoại</th>
                 <th>Năm Sinh</th>
                 <th>Giới Tính</th>
+                <th>Ngày Tạo</th>
                 <th>Hành động</th>
             </tr>
         </thead>
@@ -44,12 +44,12 @@
                     <td><?= $id_tk?></td>
                     <td><?= $ten_tk?></td>
                     <td><?= $email?></td>
-                    <td><?= $password?></td>
                     <td><?= $dia_chi?></td>
-                    <td><?= $id_role?></td>
+                    <td><?= $name_role?></td>
                     <td><?= $sdt?></td>
                     <td><?= $nam_sinh?></td>
                     <td><?= $gioi_tinh?></td>
+                    <td><?= $ngay_tao?></td>
                     <td>
                         <a href="<?= $xoatk ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">xóa</button></a>
                         <a href="<?= $suatk ?>"><button type="button" class="btn btn-success">sửa</button></a>

@@ -13,10 +13,10 @@ function loadAll_bai_viet(){
     $list_bai_viet = pdo_query($sql);
     return $list_bai_viet;
 }
-function loadAll_trang_thai() {
+function loadAll_trang_thai_hd() {
     $sql = "SELECT * FROM `trang_thai` WHERE 1";
-    $list_trang_thai = pdo_query($sql);
-    return $list_trang_thai;
+    $list_trang_thai_hd = pdo_query($sql);
+    return $list_trang_thai_hd;
 }
 function loadOne_bai_viet($id_bai_viet){
     $sql = "SELECT * FROM `baiviet` WHERE id_bai_viet=" .$id_bai_viet;

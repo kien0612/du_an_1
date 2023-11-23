@@ -22,10 +22,6 @@
                     <label>Tên Đang Nhập</label> <br>
                     <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" placeholder="Nhập họ tên đầy đủ" required>
                 </div>
-                <div>
-                    <label>password</label> <br>
-                    <input type="password" name="password" style="width: 70%;margin-left: 10%;" placeholder="" required>
-                </div>
                 <div class="form-group">
                     <label>Ngày Sinh</label><br>
                     <input type="date" name="nam_sinh" style="width: 20%;margin-left: 10%;" required>

@@ -22,15 +22,17 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
         case "addtk":
             if (isset($_POST['add'])) {
+                $currentDateTime = new DateTime();
+                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
                 $ten_tk = $_POST['ten_tk'];
-                $password = $_POST['password'];
                 $nam_sinh = $_POST['nam_sinh'];
                 $gioi_tinh = $_POST['gioi_tinh'];
                 $sdt = $_POST['sdt'];
                 $email = $_POST['email'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                add_tai_khoan($ten_tk,  $password,  $sdt,  $email,  $nam_sinh, $gioi_tinh, $dia_chi, $id_role);
+                $ngay_tao = $currentDateTimeString;
+                add_tai_khoan($ten_tk,  $sdt,  $email,  $nam_sinh, $gioi_tinh, $dia_chi, $id_role , $ngay_tao);
                 $thongBao = "Thêm thành công";
             }
             $listrole= loadall_role();
@@ -50,14 +52,13 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id_tk = $_POST['id_tk'];
                 $ten_tk = $_POST['ten_tk'];
-                $password = $_POST['password'];
                 $nam_sinh = $_POST['nam_sinh'];
                 $gioi_tinh = $_POST['gioi_tinh'];
                 $sdt = $_POST['sdt'];
                 $email = $_POST['email'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                update_tai_khoan($id_tk,  $ten_tk,  $password, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
+                update_tai_khoan($id_tk,  $ten_tk, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
                 $thongBao = "Thêm thành công";
             }
             $listk = loadAll_tai_khoan();
@@ -156,8 +157,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_POST['capnhap'])) {
                 $id_dm = $_POST['id_dm'];
                 $ten_dm = $_POST['ten_dm'];
-                $ngay_update = $_POST['ngay_update'];
-                update_danhmuc($id_dm,$ten_dm,$ngay_update);
+                update_danhmuc($id_dm,$ten_dm);
                 $thongBao = "Thêm thành công";
             }
             $list_danhmuc = loadAll_danhmuc();
@@ -176,6 +176,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
         case "listsp":
             $listdm = loadAll_danh_muc();
             $listsp = loadAll_san_pham();
+            $list_tt = loadAll_trang_thai();
             include "../../views/Admin/sanpham/list.php";
             break;
         case "addsp":
@@ -183,21 +184,19 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $ten_sp = $_POST['ten_sp'];
                 $gia_sp = $_POST['gia_sp'];
                 $mo_ta_sp = $_POST['mo_ta_sp'];
-
                 $anh_sp = $_FILES['anh_sp']['name'];
                 $target_dir = "upload/";
                 $target_file = $target_dir . basename($_FILES['anh_sp']['name']);
                 move_uploaded_file($_FILES['anh_sp']['tmp_name'], $target_file);
-
                 $so_luong = $_POST['so_luong'];
                 $ngay_nhap_sp = $_POST['ngay_nhap_sp'];
                 $trang_thai = $_POST['trang_thai'];
                 $id_dm = $_POST['id_dm'];
-
                 add_san_pham($ten_sp,  $gia_sp,  $mo_ta_sp,  $anh_sp,  $so_luong,  $ngay_nhap_sp,  $trang_thai,  $id_dm);
                 $thongbao = "thêm thành công";
             }
             $listdm = loadAll_danh_muc();
+            $list_tt = loadAll_trang_thai();
             include "../../views/Admin/sanpham/add.php";
             break;
         case "editsp":
@@ -205,6 +204,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $sp = sua_san_pham($_GET['id_sp']);
             }
             $listdm = loadAll_danh_muc();
+            $list_tt = loadAll_trang_thai();
             include "../../views/Admin/sanpham/edit.php";
             break;
         case "suasp":
@@ -213,12 +213,10 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $ten_sp = $_POST['ten_sp'];
                 $gia_sp = $_POST['gia_sp'];
                 $mo_ta_sp = $_POST['mo_ta_sp'];
-
                 $anh_sp = $_FILES['anh_sp']['name'];
                 $target_dir = "upload/";
                 $target_file = $target_dir . basename($_FILES['anh_sp']['name']);
                 move_uploaded_file($_FILES['anh_sp']['tmp_name'], $target_file);
-
                 $so_luong = $_POST['so_luong'];
                 $ngay_nhap_sp = $_POST['ngay_nhap_sp'];
                 $trang_thai = $_POST['trang_thai'];
@@ -229,6 +227,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             }
             $listdm = loadAll_danh_muc();
             $listsp = loadAll_san_pham();
+            $list_tt = loadAll_trang_thai();
             include "../../views/Admin/sanpham/list.php";
             break;
         case "xoasp":

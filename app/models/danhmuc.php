@@ -17,7 +17,7 @@ function loadOne_danhmuc($id_dm){
     $danhmuc = pdo_query_one($sql);
     return $danhmuc;
 }
-function update_danhmuc($id_dm,$ten_dm,$ngay_update){
-    $sql = "UPDATE `danhmuc` SET `ten_dm`='$ten_dm',`ngay_update`='$ngay_update' WHERE `id_dm`=" .$id_dm;
+function update_danhmuc($id_dm,$ten_dm){
+    $sql = "UPDATE `danhmuc` SET `ten_dm`='$ten_dm' WHERE `id_dm`=" .$id_dm;
     pdo_execute($sql);
 }

@@ -28,10 +28,6 @@
                     <label>Tên Đang Nhập</label> <br>
                     <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" value="<?php echo $ten_tk?>">
                 </div>
-                <div>
-                    <label>password</label> <br>
-                    <input type="text" name="password" style="width: 70%;margin-left: 10%;" value="<?php echo $password?>">
-                </div>
                 <div class="form-group">
                     <label>Ngày Sinh</label><br>
                     <input type="date" name="nam_sinh" style="width: 20%;margin-left: 10%;" value="<?php echo $nam_sinh?>">

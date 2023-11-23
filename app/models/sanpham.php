@@ -10,6 +10,12 @@ function loadAll_danh_muc(){
     $listmd=pdo_query($sql);
     return $listmd;
 }
+function loadAll_trang_thai() {
+    $sql = "SELECT * FROM `trangthai` WHERE 1";
+    $list_tt = pdo_query($sql);
+    return $list_tt;
+    
+}
 function delete_san_pham($id_sp){
     $sql="DELETE FROM sanpham WHERE id_sp=".$id_sp;
     pdo_execute($sql);

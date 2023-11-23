@@ -6,9 +6,9 @@ function loadAll_tai_khoan(){
     return $listtk;
 }
 // thêm mớmới
-function add_tai_khoan(  $ten_tk ,  $password ,  $sdt ,  $email, $nam_sinh, $gioi_tinh, $dia_chi, $id_role){
-   $sql=" INSERT INTO  taikhoan (   ten_tk ,  password ,  sdt ,  email, nam_sinh, gioi_tinh, dia_chi, id_role)
-    VALUES ( '$ten_tk ',  '$password ',  '$sdt' ,  '$email', ' $nam_sinh',' $gioi_tinh', '$dia_chi', '$id_role')";
+function add_tai_khoan(  $ten_tk  ,  $sdt ,  $email, $nam_sinh, $gioi_tinh, $dia_chi, $id_role , $ngay_tao){
+   $sql=" INSERT INTO  taikhoan (   ten_tk  ,  sdt ,  email, nam_sinh, gioi_tinh, dia_chi, id_role , ngay_tao)
+    VALUES ( '$ten_tk',  '$sdt' ,  '$email', ' $nam_sinh',' $gioi_tinh', '$dia_chi', '$id_role' , '$ngay_tao')";
     pdo_execute($sql);
 }
 // xóa them id
@@ -24,8 +24,8 @@ function sua_tai_khoan($id_tk){
 }
 
 // updata mới
-function update_tai_khoan($id_tk,  $ten_tk,  $password, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi,$id_role){
-    $sql="update taikhoan set ten_tk='".$ten_tk."',password='".$password."',nam_sinh='".$nam_sinh."', gioi_tinh='".$gioi_tinh."', sdt='".$sdt."',email='".$email."',dia_chi='".$dia_chi."',id_role='".$id_role."'  WHERE id_tk=".$id_tk;
+function update_tai_khoan($id_tk,  $ten_tk, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi,$id_role){
+    $sql="update taikhoan set ten_tk='".$ten_tk."',nam_sinh='".$nam_sinh."', gioi_tinh='".$gioi_tinh."', sdt='".$sdt."',email='".$email."',dia_chi='".$dia_chi."',id_role='".$id_role."'  WHERE id_tk=".$id_tk;
     pdo_execute($sql);
 }
     

@@ -26,10 +26,12 @@
                 <th>mo_ta_sp</th>
                 <th>Ảnh</th>
                 <th>Số lượng</th>
-                <th>Ngày Nhập</th>
-                <th>id_trang_thai</th>
+                
+                <th>Trạng thái</th>
                 <th>Danh Mục</th>
+                <th>Ngày Nhập</th>
                 <th>Hành động</th>
+                
 
             </tr>
         </thead>
@@ -52,10 +54,9 @@
                     <td><?= $mo_ta_sp ?></td>
                     <td><?= $anh_sp ?></td>
                     <td><?= $so_luong ?></td>
-                    <td><?= $ngay_nhap_sp ?></td>
-                    <th><?= $trang_thai ?></th>
+                    <th><?= $trang_thai?></th>
                     <th><?= $id_dm ?></th>
-
+                    <td><?= $ngay_nhap_sp ?></td>
                     </td>
                     <td>
                         <a href="<?= $edit ?>"><button type="button" class="btn btn-success">Edit</button></a>
