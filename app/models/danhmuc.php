@@ -1,6 +1,6 @@
 <?php 
-function insert_danh_muc($ten_dm,$ngay_tao){
-   $sql = "INSERT INTO `danhmuc`( `ten_dm`, `ngay_update`) VALUES ('$ten_dm','$ngay_tao')";
+function insert_danh_muc($ten_dm,$ngay_update){
+   $sql = "INSERT INTO `danhmuc`( `ten_dm`, `ngay_update`) VALUES ('$ten_dm','$ngay_update')";
    pdo_execute($sql);
 }
 function delete_danh_muc($id_dm){
@@ -10,8 +10,6 @@ function delete_danh_muc($id_dm){
 function loadAll_danhmuc(){
     $sql = "SELECT * FROM `danhmuc` WHERE 1";
     $list_danhmuc = pdo_query($sql);
-    var_dump($list_danhmuc);
-    die();
     return $list_danhmuc;
 }
 function loadOne_danhmuc($id_dm){
@@ -19,7 +17,7 @@ function loadOne_danhmuc($id_dm){
     $danhmuc = pdo_query_one($sql);
     return $danhmuc;
 }
-function update_danhmuc($edit_id,$ten_dm,$ngay_tao){
-    $sql = "UPDATE `danhmuc` SET `ten_dm`='$ten_dm',`ngay_tao`='$ngay_tao' WHERE `id_dm`=" .$edit_id;
+function update_danhmuc($id_dm,$ten_dm,$ngay_update){
+    $sql = "UPDATE `danhmuc` SET `ten_dm`='$ten_dm',`ngay_update`='$ngay_update' WHERE `id_dm`=" .$id_dm;
     pdo_execute($sql);
 }

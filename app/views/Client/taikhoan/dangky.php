@@ -41,6 +41,7 @@
                                     </div>
                                     <div class="col-12">
                                         <button class="hiraola-register_btn">Register</button>
+                                        <p>Bạn đã có tài khoản ? <a href="?act=log_up">Đăng nhập</a></p>
                                     </div>
                                 </div>
                             </div>

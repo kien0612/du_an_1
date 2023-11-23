@@ -190,6 +190,29 @@
                             </li>
                         </ul>
                     </li>
+                    <!-- role -->
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link ">
+                            <p>
+                                Quản Lý role
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="?act=listrole" class="nav-link ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Danh Sách ROLE</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href=".?act=addrole" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Thêm ROLE</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

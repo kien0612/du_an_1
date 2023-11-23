@@ -1,7 +1,7 @@
 <?php
 // kiển thị tài khoản
 function loadAll_tai_khoan(){
-    $sql="SELECT * FROM taikhoan WHERE 1";
+    $sql="SELECT * FROM taikhoan as a join role as b on a.id_role=b.id_role WHERE 1";
     $listtk=pdo_query($sql);
     return $listtk;
 }

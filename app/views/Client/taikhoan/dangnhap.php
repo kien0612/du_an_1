@@ -40,6 +40,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                    <p>Bạn chưa có tài khoản ? <a href="?act=log_in">Đăng ký</a></p>
                                         <button class="hiraola-login_btn">Login</button>
                                     </div>
                                 </div>

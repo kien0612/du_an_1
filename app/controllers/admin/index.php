@@ -7,73 +7,119 @@ include "../../models/taikhoan.php";
 include "../../models/danhmuc.php";
 include "../../models/sanpham.php";
 include "../../models/khuyenmai.php";
+include "../../models/role.php";
 include "../../views/Admin/header.php";
 include "../../views/Admin/menu-left.php";
+
 
 if (isset($_GET['act']) && $_GET['act'] !== "") {
     $act = $_GET['act'];
     switch ($act) {
             // Tài Khoản
-            case "listtk":
-                $listk = loadAll_tai_khoan();
-                include "../../views/Admin/taikhoan/list.php";
-                break;
-            case "addtk":
-                if (isset($_POST['add'])) {
-                    $ten_tk = $_POST['ten_tk'];
-                    $password = $_POST['password'];
-                    $nam_sinh = $_POST['nam_sinh'];
-                    $gioi_tinh = $_POST['gioi_tinh'];
-                    $sdt = $_POST['sdt'];
-                    $email = $_POST['email'];
-                    $dia_chi = $_POST['dia_chi'];
-                    $id_role = $_POST['id_role'];
-                    add_tai_khoan($ten_tk,  $password,  $sdt,  $email,  $nam_sinh, $gioi_tinh, $dia_chi, $id_role);
-                    $thongBao = "Thêm thành công";
-                }
-                include "../../views/Admin/taikhoan/add.php";
-                break;
-            case "suatk":
-                if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
-                    $tk = sua_tai_khoan($_GET['id_tk']);
-                }
-                include "../../views/Admin/taikhoan/edit.php";
-    
-                break;
-            case "updatetk":
-                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
-                    $id_tk = $_POST['id_tk'];
-                    $ten_tk = $_POST['ten_tk'];
-                    $password = $_POST['password'];
-                    $nam_sinh = $_POST['nam_sinh'];
-                    $gioi_tinh = $_POST['gioi_tinh'];
-                    $sdt = $_POST['sdt'];
-                    $email = $_POST['email'];
-                    $dia_chi = $_POST['dia_chi'];
-                    $id_role = $_POST['id_role'];
-                    update_tai_khoan($id_tk,  $ten_tk,  $password, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
-                    $thongBao = "Thêm thành công";
-                }
-                $listk = loadAll_tai_khoan();
-                include "../../views/Admin/taikhoan/list.php";
-                break;
-            case "xoatk":
-                if (isset($_GET['id_tk'])) {
-                    delete_tai_khoan($_GET['id_tk']);
-                    $thongBao = "Xóa thành công";
-                }
-                $listk = loadAll_tai_khoan();
-                include "../../views/Admin/taikhoan/list.php";
-                break;
-    
+        case "listtk":
+            $listk = loadAll_tai_khoan();
+            include "../../views/Admin/taikhoan/list.php";
+            break;
+        case "addtk":
+            if (isset($_POST['add'])) {
+                $ten_tk = $_POST['ten_tk'];
+                $password = $_POST['password'];
+                $nam_sinh = $_POST['nam_sinh'];
+                $gioi_tinh = $_POST['gioi_tinh'];
+                $sdt = $_POST['sdt'];
+                $email = $_POST['email'];
+                $dia_chi = $_POST['dia_chi'];
+                $id_role = $_POST['id_role'];
+                add_tai_khoan($ten_tk,  $password,  $sdt,  $email,  $nam_sinh, $gioi_tinh, $dia_chi, $id_role);
+                $thongBao = "Thêm thành công";
+            }
+            $listrole= loadall_role();
+            $listk = loadAll_tai_khoan();
+            include "../../views/Admin/taikhoan/add.php";
+            break;
+        case "suatk":
+            if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
+                $tk = sua_tai_khoan($_GET['id_tk']);
+            }
+            $listrole= loadall_role();
+            $listk = loadAll_tai_khoan();
+            include "../../views/Admin/taikhoan/edit.php";
+
+            break;
+        case "updatetk":
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id_tk = $_POST['id_tk'];
+                $ten_tk = $_POST['ten_tk'];
+                $password = $_POST['password'];
+                $nam_sinh = $_POST['nam_sinh'];
+                $gioi_tinh = $_POST['gioi_tinh'];
+                $sdt = $_POST['sdt'];
+                $email = $_POST['email'];
+                $dia_chi = $_POST['dia_chi'];
+                $id_role = $_POST['id_role'];
+                update_tai_khoan($id_tk,  $ten_tk,  $password, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
+                $thongBao = "Thêm thành công";
+            }
+            $listk = loadAll_tai_khoan();
+            include "../../views/Admin/taikhoan/list.php";
+            break;
+        case "xoatk":
+            if (isset($_GET['id_tk'])) {
+                delete_tai_khoan($_GET['id_tk']);
+                $thongBao = "Xóa thành công";
+            }
+            $listk = loadAll_tai_khoan();
+            include "../../views/Admin/taikhoan/list.php";
+            break;
+            //role
+        case "listrole":
+            $listrole= loadall_role();
+            include "../../views/Admin/role/list.php";
+            break;
+        case "xoarole":
+            if (isset($_GET['id_role'])) {
+                delete_role($_GET['id_role']);
+                $thongBao = "Xóa thành công";
+            }
+            $listrole= loadall_role();
+            include "../../views/Admin/role/list.php";
+
+            break;
+        case "editrole":
+            if (isset($_GET['id_role']) && ($_GET['id_role'] > 0)) {
+                $role = sua_role($_GET['id_role']);
+            }
+            include "../../views/Admin/role/edit.php";
+            break;
+        case "addrole":
+            if (isset($_POST['add']) && ($_POST['add'])) {
+                $name_role=$_POST['name_role'];
+                add_role($name_role);
+            }
+            include "../../views/Admin/role/add.php";
+            break;
+        case "suarole":
+            if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                $id_role=$_POST['id_role'];
+                $name_role=$_POST['name_role'];
+                update_role($id_role,$name_role);
+                $thongBao = "Thêm thành công";
+
+            }
+            $listrole= loadall_role();
+            include "../../views/Admin/role/list.php";
+            break;
+
+
+
 
             // Đơn Hàng
         case "listdh":
-            //$list_hoa_don = loadAll_hoa_don();
+            $list_hoa_don = loadAll_hoa_don();
             include "../../views/Admin/hoadon/list.php";
             break;
         case "history_don_hang":
-            //$list_history = loadAll_lich_su_dh();
+            $list_history = loadAll_lich_su_dh();
             include "../../views/Admin/hoadon/history.php";
             break;
         case "xoadh":
@@ -91,13 +137,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             include "../../views/Admin/danhmuc/list.php";
             break;
         case "adddm":
-            
+
             if (isset($_POST['add'])) {
-                $currentDateTime = new DateTime();
-                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
                 $ten_dm = $_POST['ten_dm'];
-                $ngay_tao = $currentDateTimeString;
-                insert_danh_muc($ten_dm,$ngay_tao);
+                $ngay_update = $_POST['ngay_update'];
+                insert_danh_muc($ten_dm, $ngay_update);
                 $thongBao = "Thêm thành công";
             }
             include "../../views/Admin/danhmuc/add.php";
@@ -109,16 +153,14 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             include "../../views/Admin/danhmuc/edit.php";
             break;
         case "updatedm":
-            if (isset($_POST['add'])) {
-                $edit_id = $_POST['edit_id'];
-                $currentDateTime = new DateTime();
-                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
+            if (isset($_POST['capnhap'])) {
+                $id_dm = $_POST['id_dm'];
                 $ten_dm = $_POST['ten_dm'];
-                $ngay_tao = $currentDateTimeString;
-                insert_danh_muc($ten_dm,$ngay_tao);
+                $ngay_update = $_POST['ngay_update'];
+                update_danhmuc($id_dm,$ten_dm,$ngay_update);
                 $thongBao = "Thêm thành công";
             }
-            //$list_danhmuc = loadAll_danhmuc();
+            $list_danhmuc = loadAll_danhmuc();
             include "../../views/Admin/danhmuc/list.php";
             break;
         case "xoadm":
@@ -127,7 +169,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $thongBao = "Xóa thành công";
             }
             $list_danhmuc = loadAll_danhmuc();
-            include "../../views/Admin/danhmuc/delete.php";
+            include "../../views/Admin/danhmuc/list.php";
             break;
 
             // Sản Phẩm
@@ -224,7 +266,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $bai_viet = loadOne_bai_viet($_GET['id_bai_viet']);
             }
             include "../../views/Admin/baiviet/edit.php";
-        break;
+            break;
         case "updatebv":
             if (isset($_POST['update'])) {
                 $edit_id = $_POST['edit_id'];
@@ -233,19 +275,15 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $mota = $_POST['moTa'];
                 $target_dir = "upload/";
                 $target_file = $target_dir . basename($_FILES['avatar']['name']);
-                if(!empty($avatar)) {
-                    move_uploaded_file($_FILES['avatar']['tmp_name'], $target_flie);
-                }else{
-                    $target_flie = $avatar;
-                }
-                update_bai_viet($edit_id,$avatar,$tieu_de,$mota);
+                move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
+                update_bai_viet($edit_id, $avatar, $tieu_de, $mota);
                 $thongBao = "Cập nhật thành công";
             }
             $list_bai_viet = loadAll_bai_viet();
             include "../../views/Admin/baiviet/list.php";
             break;
-        case "xoabv":         
-           if (isset($_GET['id_bai_viet'])) {
+        case "xoabv":
+            if (isset($_GET['id_bai_viet'])) {
                 delete_bai_viet($_GET['id_bai_viet']);
                 $thongBao = "Xóa thành công";
             }
@@ -267,51 +305,51 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
 
             // Khuyến Mãi
-            case "listkm":
-                $listkm = loadAll_khuyen_mai();
-                include "../../views/Admin/khuyenmai/list.php";
-                break;
-            case "addkm":
-                if (isset($_POST['add']) && ($_POST['add'])) {
-                    $ma_KM = $_POST['ma_KM'];
-                    $phan_tram_km = $_POST['phan_tram_km'];
-                    $ngay_bat_dau = $_POST['ngay_bat_dau'];
-                    $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
-                    $trang_thai = $_POST['trang_thai'];
-                    add_khuyen_mai($ma_KM, $phan_tram_km, $ngay_bat_dau, $ngay_ket_thuc, $trang_thai);
-                    $thongBao = "Thêm thành công";
-                }
-                $listkm = loadAll_khuyen_mai();
-                include "../../views/Admin/khuyenmai/add.php";
-                break;
-            case "editkm":
-                if (isset($_GET['id_KM'])) {
-                    $km = sua_khuyen_mai($_GET['id_KM']);
-                }
-                include "../../views/Admin/khuyenmai/edit.php";
-                break;
-            case "xoakm":
-                if (isset($_GET['id_KM'])) {
-                    delete_khuyen_mai($_GET['id_KM']);
-                    $thongBao = "Xóa thành công";
-                }
-                $listkm = loadAll_khuyen_mai();
-                include "../../views/Admin/khuyenmai/list.php";
-                break;
-            case "updatekm":
-                if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
-                    $id_KM=$_POST['id_KM'];
-                    $ma_KM = $_POST['ma_KM'];
-                    $phan_tram_km = $_POST['phan_tram_km'];
-                    $ngay_bat_dau = $_POST['ngay_bat_dau'];
-                    $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
-                    $trang_thai = $_POST['trang_thai'];
-                    update_khuyen_mai($id_KM,$ma_KM, $phan_tram_km, $ngay_bat_dau, $ngay_ket_thuc, $trang_thai);
-                    $thongBao = "Thêm thành công";
-                }
-                $listkm = loadAll_khuyen_mai();
-                include "../../views/Admin/khuyenmai/list.php";
-                break;
+        case "listkm":
+            $listkm = loadAll_khuyen_mai();
+            include "../../views/Admin/khuyenmai/list.php";
+            break;
+        case "addkm":
+            if (isset($_POST['add']) && ($_POST['add'])) {
+                $ma_KM = $_POST['ma_KM'];
+                $phan_tram_km = $_POST['phan_tram_km'];
+                $ngay_bat_dau = $_POST['ngay_bat_dau'];
+                $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
+                $trang_thai = $_POST['trang_thai'];
+                add_khuyen_mai($ma_KM, $phan_tram_km, $ngay_bat_dau, $ngay_ket_thuc, $trang_thai);
+                $thongBao = "Thêm thành công";
+            }
+            $listkm = loadAll_khuyen_mai();
+            include "../../views/Admin/khuyenmai/add.php";
+            break;
+        case "editkm":
+            if (isset($_GET['id_KM'])) {
+                $km = sua_khuyen_mai($_GET['id_KM']);
+            }
+            include "../../views/Admin/khuyenmai/edit.php";
+            break;
+        case "xoakm":
+            if (isset($_GET['id_KM'])) {
+                delete_khuyen_mai($_GET['id_KM']);
+                $thongBao = "Xóa thành công";
+            }
+            $listkm = loadAll_khuyen_mai();
+            include "../../views/Admin/khuyenmai/list.php";
+            break;
+        case "updatekm":
+            if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                $id_KM = $_POST['id_KM'];
+                $ma_KM = $_POST['ma_KM'];
+                $phan_tram_km = $_POST['phan_tram_km'];
+                $ngay_bat_dau = $_POST['ngay_bat_dau'];
+                $ngay_ket_thuc = $_POST['ngay_ket_thuc'];
+                $trang_thai = $_POST['trang_thai'];
+                update_khuyen_mai($id_KM, $ma_KM, $phan_tram_km, $ngay_bat_dau, $ngay_ket_thuc, $trang_thai);
+                $thongBao = "Thêm thành công";
+            }
+            $listkm = loadAll_khuyen_mai();
+            include "../../views/Admin/khuyenmai/list.php";
+            break;
     }
 }
 include "../../views/Admin/footer.php";
