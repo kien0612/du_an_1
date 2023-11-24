@@ -5,7 +5,7 @@ include "../../models/pdo.php";
 include "../../models/taikhoan.php";
 include "../../views/Client/header_home.php";
 
-if (isset($_GET['act'])) {
+if (isset($_GET['act'])) {git
     $act = $_GET['act'];
     switch ($act) {
         case "log_up":
