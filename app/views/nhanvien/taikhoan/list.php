@@ -35,6 +35,7 @@
         <tbody>
             <?php
             foreach ($listk as $value)  { 
+                
                 extract($value);
                 $xoatk = "index.php?act=xoatk&id_tk=" . $id_tk;
                 $suatk = "index.php?act=suatk&id_tk=" . $id_tk;
@@ -46,7 +47,7 @@
                     <td><?= $email?></td>
                     <td><?= $password?></td>
                     <td><?= $dia_chi?></td>
-                    <td><?= $id_role?></td>
+                    <td><?= $name_role?></td>
                     <td><?= $sdt?></td>
                     <td><?= $nam_sinh?></td>
                     <td><?= $gioi_tinh?></td>

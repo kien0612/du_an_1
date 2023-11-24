@@ -20,11 +20,12 @@
         <thead>
             <tr>
                 <!-- <th style="width: 5%;">Check</th> -->
-                <th>Id</th>
+                <th>Id</th> 
+                <th>Ảnh</th>
                 <th>Tên</th>
                 <th>Giá</th>
                 <th>mo_ta_sp</th>
-                <th>Ảnh</th>
+               
                 <th>Số lượng</th>
                 
                 <th>Trạng thái</th>
@@ -49,13 +50,13 @@
                 <tr>
                     <!-- <th><input type="checkbox" name="" id=""></th> -->
                     <td><?= $id_sp ?></td>
+                    <td><?= $anh_sp ?></td>
                     <td><?= $ten_sp ?></td>
                     <td><?= $gia_sp ?></td>
-                    <td><?= $mo_ta_sp ?></td>
-                    <td><?= $anh_sp ?></td>
+                    <td style="width: 40%;"><?= $mo_ta_sp ?></td>
                     <td><?= $so_luong ?></td>
-                    <td><?= $trang_thai?></th>
-                    <td><?= $id_dm ?></td>
+                    <td><?= $ten_trang_thai?></th>
+                    <td><?= $ten_dm ?></td>
                     <td><?= $ngay_nhap_sp ?></td>
                     </td>
                     <td>
