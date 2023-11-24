@@ -1,4 +1,6 @@
 <?php
+include "../../models/pdo.php";
+include "../../models/sanpham.php";
 include "../../views/Client/header_home.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -16,6 +18,7 @@ if (isset($_GET['act'])) {
             include "../../views/Client/sanphamct.php";
             break;
         case "sanpham":
+            $listsp = loadAll_san_pham();
             include "../../views/Client/sanpham.php";
             break;
     }
