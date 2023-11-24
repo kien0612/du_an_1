@@ -9,17 +9,23 @@ if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case "log_up":
-            if(isset($_POST['dangnhap']) && ($_POST['dangnhap']!="")){
+            if (isset($_POST['dangnhap']) && ($_POST['dangnhap'] != "")) {
                 $ten_tk = $_POST['ten_tk'];
                 $password = $_POST['password'];
-                $checkuser=checkuser($ten_tk,$password);
-                if(is_array($checkuser)){
-                    $_SESSION['user']=$checkuser;
-                    header('location: ../../views/Client/taikhoan/dangnhap.php');
-                }else{
-                    $thongbao1="tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!";
+                $checkuser = checkuser($ten_tk, $password);
+                if (is_array($checkuser)) {
+                    $_SESSION['user'] = $checkuser;
+                    if ($_SESSION['user']['id_role'] == 3) {
+                        header('Location: ../admin/index.php');
+                    } else if ($_SESSION['user']['id_role'] == 2) {
+                        header('Location: ../nhanvien/index.php');
+                    } else {
+                        header('Location: index.php');
+                    }
+                } else {
+                    $thongbao1 = "tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!";
                 }
-        }
+            }
             include "../../views/Client/taikhoan/dangnhap.php";
             break;
         case "log_in":
@@ -53,6 +59,12 @@ if (isset($_GET['act'])) {
         case "sanpham":
             include "../../views/Client/sanpham.php";
             break;
+        case "tintuc":
+            include "../../views/Client/baiviet.php";
+            break;
+            case "lienhe":
+                include "../../views/Client/lienhe.php";
+                break;
     }
 } else {
     include "../../views/Client/home.php";

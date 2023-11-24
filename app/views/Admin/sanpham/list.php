@@ -55,8 +55,8 @@
                     <td><?= $gia_sp ?></td>
                     <td style="width: 40%;"><?= $mo_ta_sp ?></td>
                     <td><?= $so_luong ?></td>
-                    <td><?= $trang_thai?></th>
-                    <td><?= $id_dm ?></td>
+                    <td><?= $ten_trang_thai?></th>
+                    <td><?= $ten_dm ?></td>
                     <td><?= $ngay_nhap_sp ?></td>
                     </td>
                     <td>

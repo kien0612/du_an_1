@@ -50,7 +50,7 @@
                     <td><?= $name_role?></td>
                     <td><?= $sdt?></td>
                     <td><?= $nam_sinh?></td>
-                    <td><?= $gioi_tinh?></td>
+                    <td><?= $gioi_tinh == 1 ? 'Nữ' : 'Nam'?></td>
                     <td><?= $ngay_tao?></td>
                     <td><?= $password?></td>
                     <td>

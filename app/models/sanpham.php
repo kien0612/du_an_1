@@ -1,14 +1,16 @@
 <?php
 function loadAll_san_pham(){
-    $sql="SELECT * FROM sanpham WHERE 1";
+    $sql="SELECT sanpham.*, danhmuc.ten_dm , trangthai.ten_trang_thai FROM sanpham 
+    INNER JOIN danhmuc ON sanpham.id_dm = danhmuc.id_dm 
+    INNER JOIN trangthai ON trangthai.id_trang_thai= sanpham.trang_thai";
     $listsp=pdo_query($sql);
     return $listsp;
     
 }
 function loadAll_danh_muc(){
     $sql="SELECT * FROM `danhmuc` WHERE 1";
-    $listmd=pdo_query($sql);
-    return $listmd;
+    $listdm=pdo_query($sql);
+    return $listdm;
 }
 function loadAll_trang_thai() {
     $sql = "SELECT * FROM `trangthai` WHERE 1";

@@ -47,9 +47,9 @@
                 </div>
                 <div class="form-group">
                     <label>Role</label><br>
-                    <select name="name_role" id="" style="width: 70%;height: 30px;margin-left: 10%;">
+                    <select name="id_role" id="" style="width: 70%;height: 30px;margin-left: 10%;">
                         <?php foreach ($listrole as $value) { ?>
-                           <option value="<?= $value['name_role']?>"><?= $value['name_role']?></option>
+                           <option value="<?= $value['id_role']?>"><?= $value['name_role']?></option>
                        <?php } ?>
                     </select>
                 </div>
