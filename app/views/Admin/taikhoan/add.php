@@ -20,11 +20,11 @@
             <div style="width: 70%; margin: 0 auto;">
                 <div>
                     <label>Tên Đang Nhập</label> <br>
-                    <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" placeholder="Nhập họ tên đầy đủ" required>
+                    <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" placeholder="Nhập họ tên đầy đủ" >
                 </div>
                 <div class="form-group">
                     <label>Ngày Sinh</label><br>
-                    <input type="date" name="nam_sinh" style="width: 20%;margin-left: 10%;" required>
+                    <input type="date" name="nam_sinh" style="width: 20%;margin-left: 10%;" >
                 </div>
                 <div class="form-group">
                     <label>Giới Tính</label><br>
@@ -47,9 +47,9 @@
                 </div>
                 <div class="form-group">
                     <label>Role</label><br>
-                    <select name="id_role" id="" style="width: 70%;height: 30px;margin-left: 10%;">
+                    <select name="name_role" id="" style="width: 70%;height: 30px;margin-left: 10%;">
                         <?php foreach ($listrole as $value) { ?>
-                           <option value="<?= $value['id_role']?>"><?= $value['name_role']?></option>
+                           <option value="<?= $value['name_role']?>"><?= $value['name_role']?></option>
                        <?php } ?>
                     </select>
                 </div>

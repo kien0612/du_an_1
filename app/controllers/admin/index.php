@@ -17,6 +17,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
     switch ($act) {
             // Tài Khoản
         case "listtk":
+          
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/list.php";
             break;

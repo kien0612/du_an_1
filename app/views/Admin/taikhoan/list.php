@@ -28,6 +28,7 @@
                 <th>Năm Sinh</th>
                 <th>Giới Tính</th>
                 <th>Ngày Tạo</th>
+                <td>password</td>
                 <th>Hành động</th>
             </tr>
         </thead>
@@ -36,6 +37,7 @@
             <?php
             foreach ($listk as $value)  { 
                 extract($value);
+                
                 $xoatk = "index.php?act=xoatk&id_tk=" . $id_tk;
                 $suatk = "index.php?act=suatk&id_tk=" . $id_tk;
                  ?>
@@ -50,6 +52,7 @@
                     <td><?= $nam_sinh?></td>
                     <td><?= $gioi_tinh?></td>
                     <td><?= $ngay_tao?></td>
+                    <td><?= $password?></td>
                     <td>
                         <a href="<?= $xoatk ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">xóa</button></a>
                         <a href="<?= $suatk ?>"><button type="button" class="btn btn-success">sửa</button></a>
