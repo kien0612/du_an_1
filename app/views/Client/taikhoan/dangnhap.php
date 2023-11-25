@@ -42,7 +42,7 @@
                                     </li>
                                 <?php } ?>
                                 <li>
-                                    <a href="index.php?act=dangxuat">Đăng xuất</a>
+                                    <a href="?act=dangxuat">Đăng xuất</a>
                                 </li>
                             </div>
                         <?php

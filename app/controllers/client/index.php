@@ -42,6 +42,10 @@ if (isset($_GET['act'])) {
             $listk = loadAll_tai_khoan();
             include "../../views/Client/taikhoan/dangky.php";
             break;
+            case "dangxuat":
+                dangxuat();
+                include "../../controllers/client/index.php";
+                break;
         case "quenmk":
             if (isset($_POST['guiemail'])) {
                 $email = $_POST['email'];
