@@ -60,11 +60,14 @@ if (isset($_GET['act'])) {
             include "../../views/Client/sanpham.php";
             break;
         case "tintuc":
-            include "../../views/Client/baiviet.php";
+            include "../../views/Client/tintuc.php";
             break;
-            case "lienhe":
-                include "../../views/Client/lienhe.php";
-                break;
+        case "gioithieu":
+            include "../../views/Client/gioithieu.php";
+            break;
+        case "lienhe":
+            include "../../views/Client/lienhe.php";
+            break;
     }
 } else {
     include "../../views/Client/home.php";
