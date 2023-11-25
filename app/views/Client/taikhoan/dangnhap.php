@@ -70,7 +70,7 @@
                                             echo $thongbao1;
                                         } ?>
                                         <div class="col-md-12">
-                                            <p>Bạn chưa có tài khoản ? <a href="?act=log_in">Đăng ký</a></p>
+                                            <p>Bạn chưa có tài khoản ? <a href="?act=log_in">Đăng ký</a></p><a href="?act=quenmk">Quên Mật Khẩu</a>
 
                                         </div>
                                     </div>

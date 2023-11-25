@@ -1,6 +1,7 @@
 <?php
 session_start();
 ob_start();
+
 include "../../models/pdo.php";
 include "../../models/taikhoan.php";
 include "../../views/Client/header_home.php";

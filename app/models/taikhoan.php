@@ -60,8 +60,8 @@ function sendMail($email) {
     }
 }
 function dangxuat() {
-    if (isset($_SESSION['tk'])) {
-        unset($_SESSION['tk']);
+    if (isset($_SESSION['user'])) {
+        unset($_SESSION['user']);
     }
    
 }
