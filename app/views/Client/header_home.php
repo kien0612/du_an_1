@@ -91,12 +91,12 @@
                                                         </li>
                                                         <?php if ($id_role == 3) { ?>
                                                             <li>
-                                                                <a href="../admin/index.php')">Đăng nhập Admin</a>dit
+                                                                <a href="../admin/index.php">Đăng nhập Admin</a>
                                                             </li>
                                                         <?php } ?>
                                                         <?php if ($id_role == 2) { ?>
                                                             <li>
-                                                                <a href="../nhanvien/index.php')">Đăng nhập Nhân Viên</a>
+                                                                <a href="../nhanvien/index.php">Đăng nhập Nhân Viên</a>
                                                             </li>
                                                         <?php } ?>
                                                         <li>

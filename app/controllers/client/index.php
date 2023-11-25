@@ -44,8 +44,8 @@ if (isset($_GET['act'])) {
             include "../../views/Client/taikhoan/dangky.php";
             break;
             case "dangxuat":
-                dangxuat();
-                include "../../controllers/client/index.php";
+                session_destroy();
+                header('location: index.php');git
                 break;
         case "quenmk":
             if (isset($_POST['guiemail'])) {
