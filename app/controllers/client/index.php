@@ -45,7 +45,7 @@ if (isset($_GET['act'])) {
             break;
             case "dangxuat":
                 session_destroy();
-                header('location: index.php');git
+                header('location: index.php');
                 break;
         case "quenmk":
             if (isset($_POST['guiemail'])) {
