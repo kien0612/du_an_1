@@ -3,6 +3,8 @@ session_start();
 ob_start();
 include "../../models/pdo.php";
 include "../../models/taikhoan.php";
+include "../../models/danhmuc.php";
+include "../../models/sanpham.php";
 include "../../views/Client/header_home.php";
 
 if (isset($_GET['act'])) {
@@ -53,14 +55,19 @@ if (isset($_GET['act'])) {
         case "trangchu":
             include "../../views/Client/main.php";
             break;
+        case "giohang":
+            include "../../views/Client/giohang.php";
+            break;
         case "sanphamct":
             include "../../views/Client/sanphamct.php";
             break;
         case "sanpham":
+            $listsp = loadAll_san_pham();
+            
             include "../../views/Client/sanpham.php";
             break;
         case "tintuc":
-            include "../../views/Client/baiviet.php";
+            include "../../views/Client/tintuc.php";
             break;
             case "lienhe":
                 include "../../views/Client/lienhe.php";
