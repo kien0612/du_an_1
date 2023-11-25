@@ -1,4 +1,6 @@
-
+<?php
+// var_dump(($_SESSION['user']));die();
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -70,17 +72,49 @@
                                     <ul>
                                         <li><a href="#">My Account<i class="fa fa-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-my_account">
-                                                <li><a href="?act=log_in">Đăng Ký</a></li>
-                                                
+
+
                                                 <?php
+                                                if (isset($_SESSION['user'])) {
+                                                    extract($_SESSION['user'])
+
+                                                ?>
+                                                    <div class="row mb10">
+                                                        <strong>Xin chào <?php echo $ten_tk ?></strong>
+                                                    </div>
+                                                    <div class="row mb10">
+                                                        <li>
+                                                        <a href="?act=quenmk">Quên Mật Khẩu</a><br>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index.php?act=edit_taikhoan">Cập Nhật Tài Khoản</a>
+                                                        </li>
+                                                        <?php if ($id_role == 3) { ?>
+                                                            <li>
+                                                                <a href="../admin/index.php')">Đăng nhập Admin</a>dit
+                                                            </li>
+                                                        <?php } ?>
+                                                        <?php if ($id_role == 2) { ?>
+                                                            <li>
+                                                                <a href="../nhanvien/index.php')">Đăng nhập Nhân Viên</a>
+                                                            </li>
+                                                        <?php } ?>
+                                                        <li>
+                                                            <a href="index.php?act=dangxuat">Đăng xuất</a>
+                                                        </li>
+                                                    </div>
+                                                <?php } else {  ?>
+                                                    <li><a href="?act=log_in">Đăng Ký</a></li>
+                                                    <?php
 
                                                     if (isset($_SESSION['user'])) {
                                                         $abc = '<li><a href="?act=dangxuat">Đăng xuất</a></li>';
                                                     } else {
                                                         $abc = '<li><a href="?act=log_up">Đăng nhập</a></li>';
                                                     }
-                                                    echo($abc);
-                                                ?>
+                                                    echo ($abc);
+                                                    ?>
+                                                <?php } ?>
 
                                             </ul>
                                         </li>

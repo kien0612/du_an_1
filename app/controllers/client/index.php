@@ -16,13 +16,13 @@ if (isset($_GET['act'])) {
                 $checkuser = checkuser($ten_tk, $password);
                 if (is_array($checkuser)) {
                     $_SESSION['user'] = $checkuser;
-                    if ($_SESSION['user']['id_role'] == 3) {
-                        header('Location: ../admin/index.php');
-                    } else if ($_SESSION['user']['id_role'] == 2) {
-                        header('Location: ../nhanvien/index.php');
-                    } else {
+                    // if ($_SESSION['user']['id_role'] == 3) {
+                    //     // header('Location: ../admin/index.php');
+                    // } else if ($_SESSION['user']['id_role'] == 2) {
+                    //     header('Location: ../nhanvien/index.php');
+                    // } else {
                         header('Location: index.php');
-                    }
+                    
                 } else {
                     $thongbao1 = "tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!";
                 }
