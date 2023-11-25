@@ -1,8 +1,12 @@
+<?php
+// var_dump(($_SESSION['user']));die();
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
 
 <!-- Mirrored from htmldemo.net/hiraola/hiraola/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 19 Nov 2023 13:58:55 GMT -->
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -43,7 +47,7 @@
 
 <body class="template-color-2">
 
-<div class="main-wrapper">
+    <div class="main-wrapper">
 
         <!-- Begin Hiraola's Header Main Area -->
         <header class="header-main_area">
@@ -68,8 +72,50 @@
                                     <ul>
                                         <li><a href="#">My Account<i class="fa fa-chevron-down"></i></a>
                                             <ul class="ht-dropdown ht-my_account">
-                                                <li><a href="?act=log_in">Register</a></li>
-                                                <li><a href="?act=log_up">Login</a></li>
+
+
+                                                <?php
+                                                if (isset($_SESSION['user'])) {
+                                                    extract($_SESSION['user'])
+
+                                                ?>
+                                                    <div class="row mb10">
+                                                        <strong>Xin chào <?php echo $ten_tk ?></strong>
+                                                    </div>
+                                                    <div class="row mb10">
+                                                        <li>
+                                                        <a href="?act=quenmk">Quên Mật Khẩu</a><br>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index.php?act=edit_taikhoan">Cập Nhật Tài Khoản</a>
+                                                        </li>
+                                                        <?php if ($id_role == 3) { ?>
+                                                            <li>
+                                                                <a href="../admin/index.php">Đăng nhập Admin</a>
+                                                            </li>
+                                                        <?php } ?>
+                                                        <?php if ($id_role == 2) { ?>
+                                                            <li>
+                                                                <a href="../nhanvien/index.php">Đăng nhập Nhân Viên</a>
+                                                            </li>
+                                                        <?php } ?>
+                                                        <li>
+                                                            <a href="index.php?act=dangxuat">Đăng xuất</a>
+                                                        </li>
+                                                    </div>
+                                                <?php } else {  ?>
+                                                    <li><a href="?act=log_in">Đăng Ký</a></li>
+                                                    <?php
+
+                                                    if (isset($_SESSION['user'])) {
+                                                        $abc = '<li><a href="?act=dangxuat">Đăng xuất</a></li>';
+                                                    } else {
+                                                        $abc = '<li><a href="?act=log_up">Đăng nhập</a></li>';
+                                                    }
+                                                    echo ($abc);
+                                                    ?>
+                                                <?php } ?>
+
                                             </ul>
                                         </li>
                                     </ul>
@@ -530,8 +576,8 @@
                                 <li class="menu-item-has-children active">
                                     <a href="#">
                                         <span class="mm-text">User
-                                        Setting
-                                    </span>
+                                            Setting
+                                        </span>
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
@@ -591,4 +637,3 @@
             </div>
         </header>
         <!-- Hiraola's Header Main Area End Here -->
-

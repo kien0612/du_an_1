@@ -1,6 +1,7 @@
 <?php
 session_start();
 ob_start();
+
 include "../../models/pdo.php";
 include "../../models/taikhoan.php";
 include "../../models/danhmuc.php";
@@ -17,13 +18,13 @@ if (isset($_GET['act'])) {
                 $checkuser = checkuser($ten_tk, $password);
                 if (is_array($checkuser)) {
                     $_SESSION['user'] = $checkuser;
-                    if ($_SESSION['user']['id_role'] == 3) {
-                        header('Location: ../admin/index.php');
-                    } else if ($_SESSION['user']['id_role'] == 2) {
-                        header('Location: ../nhanvien/index.php');
-                    } else {
+                    // if ($_SESSION['user']['id_role'] == 3) {
+                    //     // header('Location: ../admin/index.php');
+                    // } else if ($_SESSION['user']['id_role'] == 2) {
+                    //     header('Location: ../nhanvien/index.php');
+                    // } else {
                         header('Location: index.php');
-                    }
+                    
                 } else {
                     $thongbao1 = "tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!";
                 }
@@ -44,6 +45,10 @@ if (isset($_GET['act'])) {
             $listk = loadAll_tai_khoan();
             include "../../views/Client/taikhoan/dangky.php";
             break;
+            case "dangxuat":
+                session_destroy();
+                header('location: index.php');
+                break;
         case "quenmk":
             if (isset($_POST['guiemail'])) {
                 $email = $_POST['email'];
