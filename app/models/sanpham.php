@@ -1,4 +1,16 @@
 <?php
+function loadll_san_pham($kyw="",$id_dm=0){
+    $sql="SELECT * FROM sanpham where 1"; 
+    if($kyw!=""){
+        $sql.=" and ten_sp like '%".$kyw."%' ";
+    }
+    if($id_dm>0){
+        $sql.=" and id_dm ='".$id_dm."' ";
+    }
+    $sql.=" order by id_sp desc";
+    $listsp=pdo_query($sql);
+    return $listsp;
+}
 function loadAll_san_pham(){
     $sql="SELECT sanpham.*, danhmuc.ten_dm , trangthai.ten_trang_thai FROM sanpham 
     INNER JOIN danhmuc ON sanpham.id_dm = danhmuc.id_dm 
@@ -7,6 +19,16 @@ function loadAll_san_pham(){
     return $listsp;
     
 }
+function load_ten_dm($id_dm){
+        if($id_dm>0){
+        $sql="select * from danhmuc where id_dm=".$id_dm;
+        $dm=pdo_query_one($sql);
+        extract($dm);
+        return $ten_dm;
+        }else{
+            return "";
+        }
+    } 
 function loadAll_danh_muc(){
     $sql="SELECT * FROM `danhmuc` WHERE 1";
     $listdm=pdo_query($sql);
@@ -43,4 +65,9 @@ function update_san_pham( $id_sp,$ten_sp ,  $gia_sp ,  $mo_ta_sp ,  $anh_sp ,  $
     }
     pdo_execute($sql);
 }
+// function loadone_sanpham($id_sp){
+//     $sql="select * from sanpham where id_sp=".$id_sp;
+//     $sp=pdo_query_one($sql);
+//     return $sp;
+// }  
 ?>

@@ -18,6 +18,7 @@
         <div class="row">
             <div class="col-lg-3 order-2 order-lg-1">
                 <div class="hiraola-sidebar-catagories_area">
+                    <!-- tim kiem theo gia -->
                     <div class="hiraola-sidebar_categories">
                         <div class="hiraola-categories_title">
                             <h5>Price</h5>
@@ -29,11 +30,12 @@
                                     <label>price : </label>
                                     <input type="text" id="amount" name="price" placeholder="Add Your Price" />
                                 </div>
-                                <button type="button">Filter</button>
+                                <button type="button" class="">Tìm kiếm</button>
                             </div>
                         </div>
                     </div>
-                    <div class="hiraola-sidebar_categories">
+                    <!-- tim kiem theo gia -->
+                    <!-- <div class="hiraola-sidebar_categories">
                         <div class="hiraola-categories_title">
                             <h5>Brand</h5>
                         </div>
@@ -89,36 +91,28 @@
                                 <a href="javascript:void(0)">Weight 4(17)</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                     <div class="category-module hiraola-sidebar_categories">
                         <div class="category-module_heading">
-                            <h5>Categories</h5>
+                            <h5>Danh mục</h5>
                         </div>
-                        <div class="module-body">
+                        <?php 
+                            foreach ($list_danhmuc as $danhmuc) {
+                            extract($danhmuc);  
+                            $linkdm="index.php?act=sanpham&iddm=".$id_dm;   
+                            echo '
+                            <div class="module-body">
                             <ul class="module-list_item">
                                 <li>
-                                    <a href="javascript:void(0)">Hand Harness (18)</a>
-                                    <ul class="module-sub-list_item">
-                                        <li>
-                                            <a href="javascript:void(0)">Maang Tika (18)</a>
-                                            <a href="javascript:void(0)">Toe Rings (18)</a>
-                                            <a href="javascript:void(0)">Traditional Earrings (18)</a>
-                                            <a href="javascript:void(0)">Kada Cum Bracelet (18)</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Exquisite Rings (18)</a>
-                                    <a href="javascript:void(0)">Necklaces (18)</a>
-                                    <a href="javascript:void(0)">Foot Harness (18)</a>
-                                    <a href="javascript:void(0)">Braid Jewels (18)</a>
-                                    <a href="javascript:void(0)">Anklet (18)</a>
-                                    <a href="javascript:void(0)">Graceful Armlet (18)</a>
-                                    <a href="javascript:void(0)">Magna Pellentesq (18)</a>
-                                    <a href="javascript:void(0)">Molestie Tortor (18)</a>
+                                <a href="'.$linkdm.'">'.$ten_dm.'</a>
                                 </li>
                             </ul>
-                        </div>
+                            </div> ';                   
+                        }                                      
+                        ?>
+                                        
+                        
+                        
                     </div>
                 </div>
                 <!-- <div class="sidebar-banner_area">
@@ -158,6 +152,7 @@
                     foreach ($listsp as $sp) {
                         extract($sp);
                         //include "../../controllers/admin/upload/";
+                       
                         $url = "../../controllers/admin/upload/sanpham/";
                         $image = $url . $anh_sp;
                     ?>
