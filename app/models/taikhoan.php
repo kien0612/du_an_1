@@ -3,7 +3,7 @@
 function loadAll_tai_khoan(){
     $sql="SELECT * FROM `taikhoan` INNER JOIN role on taikhoan.id_role=role.id_role";
     $listtk=pdo_query($sql);
-    return $listtk;
+    return $listtk; 
 }
 function list_role(){
     $sql="SELECT name_role as ten_role FROM `taikhoan` as a join role as b on a.name_role=b.id_role";
