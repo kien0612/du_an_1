@@ -4,7 +4,7 @@
         <div class="breadcrumb-content">
             <h2>Shop</h2>
             <ul>
-                <li><a href="index-2.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li class="active">Shop Left Sidebar</li>
             </ul>
         </div>
