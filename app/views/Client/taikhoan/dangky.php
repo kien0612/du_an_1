@@ -26,6 +26,10 @@
                                         <input type="text" placeholder="Nhâp tên" name="ten_tk" required>
                                     </div>
                                     <div class="col-md-12">
+                                        <label>Họ tên đầy đủ</label>
+                                        <input type="text" placeholder="Nhâp tên" name="full_name" required>
+                                    </div>
+                                    <div class="col-md-12">
                                         <label>Email </label>
                                         <input type="email" placeholder="Email Address" name="email" required> 
                                     </div>

@@ -46,7 +46,6 @@ if (isset($_GET['act'])) {
                 $full_name = $_POST['full_name'];
                 $password = $_POST['password'];
                 $ngay_tao = $currentDateTimeString;
-
                 add_tk($ten_tk,$full_name ,  $email, $password, $ngay_tao);
             }
             $listk = loadAll_tai_khoan();
