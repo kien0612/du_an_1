@@ -115,9 +115,17 @@
                                                     <label for="account-details-lastname">Họ tên đầy đủ*</label>
                                                     <input type="text" id="account-details-lastname" value="<?= $full_name ?>">
                                                 </div>
+                                                <div class="single-input single-input-half">
+                                                    <label for="account-details-firstname">Email*</label>
+                                                    <input type="text" id="account-details-firstname" value="<?= $email ?>">
+                                                </div>
+                                                <div class="single-input single-input-half">
+                                                    <label for="account-details-lastname">Số điện thoại*</label>
+                                                    <input type="text" id="account-details-lastname" value="<?= $sdt ?>">
+                                                </div>
                                                 <div class="single-input">
-                                                    <label for="account-details-email">Email*</label>
-                                                    <input type="email" id="account-details-email" value="<?= $email ?>">
+                                                    <label for="account-details-email">Địa chỉ*</label>
+                                                    <input type="email" id="account-details-email" value="<?= $dia_chi ?>">
                                                 </div>
                                                 <div class="single-input">
                                                     <label for="account-details-oldpass">Current Password(leave blank to leave
