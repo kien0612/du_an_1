@@ -153,106 +153,6 @@
                     </div>
                 </div>
                 <div class="shop-product-wrap grid gridview-3 row">
-<<<<<<< HEAD
-                    <?php 
-                              
-                              foreach ($listsp as $sp) {
-                                  extract($sp);                           
-                                  $url = "./upload/";
-                                  $image = $url . $anh_sp;
-                                  $anh_sp = "<img src='" . $image . "' style='width: 200px;' alt=''>"
-                                  ?>
-                                  
-                                  <div class="col-lg-4">
-                                  <div class="slide-item">
-                                      <div class="single_product">
-                                          <div class="product-img">
-                                              <a href="single-product.html">
-                                                  <img class="primary-img" src="<?=$anh_sp?>" alt="Hiraola Product Image">
-                                                  
-                                              </a>
-                                              <div class="add-actions">
-                                                  <ul>
-                                                      <li><a class="hiraola-add_cart" href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                      </li>
-                                                      <li><a class="hiraola-add_compare" href="compare.html" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a>
-                                                      </li>
-                                                      <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                          <div class="hiraola-product_content">
-                                              <div class="product-desc_info">
-                                                  <h6><a class="product-name" href="single-product.html"><?= $ten_sp ?></a></h6>
-                                                  <div class="price-box">
-                                                      <span class="new-price"><?=$gia_sp?></span>
-                                                  </div>
-                                                  <div class="additional-add_action">
-                                                      <ul>
-                                                          <li><a class="hiraola-add_compare" href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                          </li>
-                                                      </ul>
-                                                  </div>
-                                                  <div class="rating-box">
-                                                      <ul>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                      </ul>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="list-slide_item">
-                                      <div class="single_product">
-                                          <div class="product-img">
-                                              <a href="single-product.html">
-                                                  <img class="primary-img" src="<?=$anh_sp?>" alt="Hiraolas Product Image">
-                                                  
-                                              </a>
-                                          </div>
-                                          <div class="hiraola-product_content">
-                                              <div class="product-desc_info">
-                                                  <h6><a class="product-name" href="single-product.html"><?= $ten_sp ?></a></h6>
-                                                  <div class="rating-box">
-                                                      <ul>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li><i class="fa fa-star-of-david"></i></li>
-                                                          <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                      </ul>
-                                                  </div>
-                                                  <div class="price-box">
-                                                      <span class="new-price"><?= $gia_sp ?></span>
-                                                  </div>
-                                                  <div class="product-short_desc">
-                                                      <p><?= $mo_ta_sp ?></p>
-                                                  </div>
-                                              </div>
-                                              <div class="add-actions">
-                                                  <ul>
-                                                      <li><a class="hiraola-add_cart" href="cart.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart">Add To Cart</a></li>
-                                                      <li><a class="hiraola-add_compare" href="compare.html" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
-                                                      <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>
-                                                      <li><a class="hiraola-add_compare" href="wishlist.html" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                                  
-                                
-                         <?php     }
-                        ?>
-
-
-=======
                     <?php
 
                     foreach ($listsp as $sp) {
@@ -1327,7 +1227,6 @@
                             </div>
                         </div>
                     </div> -->
->>>>>>> dc3bf03e6a82a83884465811c496258fa12562ec
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
