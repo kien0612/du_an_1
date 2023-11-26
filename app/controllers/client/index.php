@@ -43,11 +43,10 @@ if (isset($_GET['act'])) {
                 $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
                 $ten_tk = $_POST['ten_tk'];
                 $email = $_POST['email'];
-                $full_name = $_POST['full_name'];
                 $password = $_POST['password'];
                 $ngay_tao = $currentDateTimeString;
 
-                add_tk($ten_tk,$full_name ,  $email, $password, $ngay_tao);
+                add_tk($ten_tk ,  $email, $password, $ngay_tao);
             }
             $listk = loadAll_tai_khoan();
             include "../../views/Client/taikhoan/dangky.php";

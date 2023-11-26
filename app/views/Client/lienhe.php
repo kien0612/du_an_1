@@ -43,18 +43,26 @@
                         <div class="contact-form-content">
                             <h3 class="contact-page-title">Tell Us Your Message</h3>
                             <div class="contact-form">
+                            <?php
+                                        if (isset($_SESSION['user'])) {
+                                            extract($_SESSION['user'])
+                                        ?>
                                 <form id="contact-form" action="https://whizthemes.com/mail-php/mamunur/hiraola/hiraola.php">
                                     <div class="form-group">
                                         <label>Your Name <span class="required">*</span></label>
-                                        <input type="text" name="con_name" required>
+                                        <input type="text" name="con_name" value="<?= $full_name ?>" required>
                                     </div>
                                     <div class="form-group">
                                         <label>Your Email <span class="required">*</span></label>
-                                        <input type="email" name="con_email" required>
+                                        <input type="email" name="con_email" value="<?= $email ?>" required>
                                     </div>
                                     <div class="form-group">
-                                        <label>Subject</label>
-                                        <input type="text" name="con_subject">
+                                        <label>Số Điện Thoại <span class="required">*</span></label>
+                                        <input type="number" name="con_email" value="<?= $sdt ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Địa chỉ</label>
+                                        <input type="text" name="con_subject" value="<?= $dia_chi ?>">
                                     </div>
                                     <div class="form-group form-group-2">
                                         <label>Your Message</label>
@@ -64,6 +72,7 @@
                                         <button type="submit" value="submit" id="submit" class="hiraola-contact-form_btn" name="submit">send</button>
                                     </div>
                                 </form>
+                                <?php }?>
                                 <p class="form-message mt-3 mb-0"></p>
                             </div>
                         </div>
