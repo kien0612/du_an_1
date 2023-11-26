@@ -30,10 +30,12 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $gioi_tinh = $_POST['gioi_tinh'];
                 $sdt = $_POST['sdt'];
                 $email = $_POST['email'];
+                $password = $_POST['password'];
+                $full_name = $_POST['full_name'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
                 $ngay_tao = $currentDateTimeString;
-                add_tai_khoan($ten_tk,  $sdt,  $email,  $nam_sinh, $gioi_tinh, $dia_chi, $id_role , $ngay_tao);
+                add_tai_khoan(  $ten_tk  ,$password,  $sdt ,  $email,$full_name, $nam_sinh, $gioi_tinh, $dia_chi, $id_role , $ngay_tao) ;
                 $thongBao = "Thêm thành công";
             }
             $listrole= loadall_role();
@@ -57,9 +59,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $gioi_tinh = $_POST['gioi_tinh'];
                 $sdt = $_POST['sdt'];
                 $email = $_POST['email'];
+                $password = $_POST['password'];
+                $full_name = $_POST['full_name'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                update_tai_khoan($id_tk,  $ten_tk, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
+                update_tai_khoan($id_tk,  $ten_tk,$password ,$nam_sinh, $full_name,$gioi_tinh, $sdt, $email, $dia_chi,$id_role);
                 $thongBao = "Thêm thành công";
             }
             $listk = loadAll_tai_khoan();

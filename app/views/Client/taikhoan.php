@@ -16,6 +16,10 @@
             <!-- Begin Hiraola's Account Page Area -->
             <div class="account-page-area">
                 <div class="container">
+                <?php
+                                        if (isset($_SESSION['user'])) {
+                                            extract($_SESSION['user'])
+                                        ?>
                     <div class="row">
                         <div class="col-lg-3">
                             <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
@@ -25,14 +29,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders" role="tab" aria-controls="account-orders" aria-selected="false">Orders</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" id="account-address-tab" data-bs-toggle="tab" href="#account-address" role="tab" aria-controls="account-address" aria-selected="false">Addresses</a>
-                                </li>
+                                </li> -->
                                 <li class="nav-item">
                                     <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Account Details</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-logout-tab" href="index.php?act=login" role="tab" aria-selected="false">Logout</a>
+                                    <a class="nav-link" id="account-logout-tab" href="index.php?act=dangxuat" role="tab" aria-selected="false">Logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -40,8 +44,7 @@
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                                     <div class="myaccount-dashboard">
-                                        <p>Hello <b>Edwin Adams</b> (not Edwin Adams? <a href="index.php?act=login">Sign
-                                                out</a>)</p>
+                                        <p>Xin chào<b><?= $ten_tk ?></b> (không phải là  <?= $ten_tk ?> ? <a href="index.php?act=dangxuat">Đăng xuất</a>)</p>
                                         <p>From your account dashboard you can view your recent orders, manage your shipping and
                                             billing addresses and <a href="javascript:void(0)">edit your password and account
                                                 details</a>.</p>
@@ -81,7 +84,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="account-address" role="tabpanel" aria-labelledby="account-address-tab">
+                                <!-- <div class="tab-pane fade" id="account-address" role="tabpanel" aria-labelledby="account-address-tab">
                                     <div class="myaccount-address">
                                         <p>The following addresses will be used on the checkout page by default.</p>
                                         <div class="row">
@@ -99,22 +102,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab">
                                     <div class="myaccount-details">
                                         <form action="#" class="hiraola-form">
                                             <div class="hiraola-form-inner">
                                                 <div class="single-input single-input-half">
-                                                    <label for="account-details-firstname">First Name*</label>
-                                                    <input type="text" id="account-details-firstname">
+                                                    <label for="account-details-firstname">Tên tài khoản*</label>
+                                                    <input type="text" id="account-details-firstname" value="<?= $ten_tk ?>">
                                                 </div>
                                                 <div class="single-input single-input-half">
-                                                    <label for="account-details-lastname">Last Name*</label>
-                                                    <input type="text" id="account-details-lastname">
+                                                    <label for="account-details-lastname">Họ tên đầy đủ*</label>
+                                                    <input type="text" id="account-details-lastname" value="<?= $full_name ?>">
                                                 </div>
                                                 <div class="single-input">
                                                     <label for="account-details-email">Email*</label>
-                                                    <input type="email" id="account-details-email">
+                                                    <input type="email" id="account-details-email" value="<?= $email ?>">
                                                 </div>
                                                 <div class="single-input">
                                                     <label for="account-details-oldpass">Current Password(leave blank to leave
@@ -141,6 +144,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                 </div>
             </div>
             <!-- Hiraola's Account Page Area End Here -->

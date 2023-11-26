@@ -20,15 +20,16 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Tên tài khoản</th>
                 <th>Họ và tên</th>
                 <th>Email</th>
+                <th>Pass</th>
                 <th>Địa Chỉ</th>
                 <th>Role</th>
                 <th>Số Điện Thoại</th>
                 <th>Năm Sinh</th>
                 <th>Giới Tính</th>
                 <th>Ngày Tạo</th>
-                <td>password</td>
                 <th>Hành động</th>
             </tr>
         </thead>
@@ -45,6 +46,7 @@
                  <tr>
                     <td><?= $id_tk?></td>
                     <td><?= $ten_tk?></td>
+                    <td><?= $full_name?></td>
                     <td><?= $email?></td>
                     <td><?= $dia_chi?></td>
                     <td><?= $name_role?></td>
