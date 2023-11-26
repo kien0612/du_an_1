@@ -18,38 +18,44 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row blog-item_wrap">
-                            <div class="col-lg-4">
-                                <div class="blog-item">
-                                    <div class="blog-img img-hover_effect">
-                                        <a href="blog-details-left-sidebar.html">
-                                            <img src="assets/images/blog/medium-size/4.jpg" alt="Hiraola's Blog Image">
-                                        </a>
-                                        <div class="blog-meta-2">
-                                            <div class="blog-time_schedule">
-                                                <span class="day">25</span>
-                                                <span class="month">April</span>
+                            <?php foreach ($list_bai_viet as $bai_viet) {
+                                extract($bai_viet);
+                                $url = "../../controllers/admin/upload/baiviet/";
+                                $image = $url . $avatar;
+                            ?>
+                                <div class="col-lg-4">
+                                    <div class="blog-item">
+                                        <div class="blog-img img-hover_effect">
+                                            <a href="blog-details-left-sidebar.html">
+                                                <img src="<?= $image ?>" alt="Hiraola's Blog Image">
+                                            </a>
+                                            <div class="blog-meta-2">
+                                                <div class="blog-time_schedule">
+                                                    <span class="day"><?= $ngay_dang = date('d')  ?></span>
+                                                    <span class="month"><?= $ngay_dang = date('F')  ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="blog-content">
+                                            <div class="blog-heading">
+                                                <h5>
+                                                    <a href="blog-details-left-sidebar.html"><?= $tieu_de ?></a>
+                                                </h5>
+                                            </div>
+                                            <div class="blog-short_desc">
+                                                <p><?= $mota ?></p>
+                                            </div>
+                                            <div class="hiraola-read-more_area">
+                                                <a href="blog-details-left-sidebar.html" class="hiraola-read_more">Read More</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="blog-content">
-                                        <div class="blog-heading">
-                                            <h5>
-                                                <a href="blog-details-left-sidebar.html">Blog Image Post</a>
-                                            </h5>
-                                        </div>
-                                        <div class="blog-short_desc">
-                                            <p>Aenean vestibulum pretium enim, non commodo urna volutpat vitae. Pellentesque vel
-                                                lacus
-                                                eget est d...
-                                            </p>
-                                        </div>
-                                        <div class="hiraola-read-more_area">
-                                            <a href="blog-details-left-sidebar.html" class="hiraola-read_more">Read More</a>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
+
+                            <?php
+                            }
+                            ?>
+                            <!-- <div class="col-lg-4">
                                 <div class="hiraola-single-blog_slider">
                                     <div class="blog-item">
                                         <div class="blog-img img-hover_effect">
@@ -370,7 +376,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
@@ -381,8 +387,7 @@
                                                 <li class="active"><a href="javascript:void(0)">1</a></li>
                                                 <li><a href="javascript:void(0)">2</a></li>
                                                 <li><a href="javascript:void(0)">3</a></li>
-                                                <li><a class="Next" href="javascript:void(0)"><i
-                                                    class="ion-ios-arrow-right"></i></a>
+                                                <li><a class="Next" href="javascript:void(0)"><i class="ion-ios-arrow-right"></i></a>
                                                 </li>
                                                 <li><a class="Next" href="javascript:void(0)">>|</a></li>
                                             </ul>

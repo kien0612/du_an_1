@@ -16,6 +16,7 @@
                 <div class="info">
                     <a href="#" class="d-block">Alexander Pierce</a>
                 </div> -->
+                <a href="../../controllers/client/index.php">Đăng xuất</a>
             </div>
 
             <!-- SidebarSearch Form -->
