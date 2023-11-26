@@ -201,18 +201,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="list-slide_item">
+                            <div class="list-slide_item">
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="single-product.html">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
+                                            <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
                                         </a>
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
-                                            <h6><a class="product-name" href="single-product.html">Flash Furniture
-                                                    Alonza Se...</a></h6>
+                                            <h6><a class="product-name" href="single-product.html"><?= $ten_sp ?></a></h6>
                                             <div class="rating-box">
                                                 <ul>
                                                     <li><i class="fa fa-star-of-david"></i></li>
@@ -223,14 +221,10 @@
                                                 </ul>
                                             </div>
                                             <div class="price-box">
-                                                <span class="new-price">£90.36</span>
+                                                <span class="new-price"><?= number_format($gia_sp, 0, ',', '.') ?> VND</span>
                                             </div>
                                             <div class="product-short_desc">
-                                                <p>The effects of gold are subtle, but definitely apparent. ... It was
-                                                    considered that gold possessed an energy that brought warm, soothing
-                                                    vibrations to the body to aid healing, for when the body relaxes and the
-                                                    blood vessels in the cells aren't as constricted, blood can move through
-                                                    the tissue spaces more easily.</p>
+                                                <p><?= $mo_ta_sp ?></p>
                                             </div>
                                         </div>
                                         <div class="add-actions">
@@ -244,7 +238,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     <?php
                     }
