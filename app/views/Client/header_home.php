@@ -119,16 +119,17 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="header-logo">
-                                <a href="?act=trangchu">
+                                <a href="index.php">
                                     <img src="assets/images/menu/logo/1.png" alt="Hiraola's Header Logo">
                                 </a>
                             </div>
                         </div>
+                        <!-- tim kiem san pham -->
                         <div class="col-lg-9">
                             <div class="hm-form_area">
-                                <form action="#" class="hm-searchbox">
-                                    <input type="text" placeholder="Enter your search key ...">
-                                    <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
+                                <form action="index.php?act=sanpham" class="hm-searchbox" method="post"> 
+                                    <input type="text" name="kyw" placeholder="Enter your search key ...">
+                                    <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
                             </div>
                         </div>

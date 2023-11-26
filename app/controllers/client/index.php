@@ -68,10 +68,32 @@ if (isset($_GET['act'])) {
             include "../../views/Client/main.php";
             break;
         case "sanphamct":
-            include "../../views/Client/sanphamct.php";
+            // if(isset($_GET['id_sp'])&&($_GET['id_sp']>0)){
+            //     $id=$_GET['id_sp'];
+            //     $onesp=loadone_sanpham($id_sp);
+            //     extract($onesp);
+                
+            //     include "../../views/Client/sanphamct.php";
+            // }else{
+            //     include "../../views/Client/home.php";
+            // }   
+            include "../../views/Client/sanphamct.php";        
             break;
         case "sanpham":
-            $listsp = loadAll_san_pham();
+            if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
+                $kyw=$_POST['kyw'];
+            }else{
+                $kyw="";
+            }
+            if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
+                $id_dm=$_GET['iddm'];
+                
+            }else{
+                $id_dm= 0;
+            }
+            $list_danhmuc=loadAll_danhmuc();
+            $tendm=load_ten_dm($id_dm);
+            $listsp = loadll_san_pham("$kyw",$id_dm);
             include "../../views/Client/sanpham.php";
             break;
         case "tintuc":
