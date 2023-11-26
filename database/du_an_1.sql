@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2023 lúc 10:43 AM
+-- Thời gian đã tạo: Th10 26, 2023 lúc 08:34 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -41,8 +41,7 @@ CREATE TABLE `baiviet` (
 --
 
 INSERT INTO `baiviet` (`id_bai_viet`, `avatar`, `tieu_de`, `mota`, `ngay_dang`, `id_trang_thai`) VALUES
-(1, 'Ảnh chụp màn hình 2023-11-15 205426.png', 'jkhjghfgbfsvdcsjgmh', 'fngdbf,hjgmfngdbfvd', '2023-11-20', ''),
-(2, 'Ảnh chụp màn hình 2023-11-20 231453.png', 'vàng cao cấp', 'vàng là một cái gì dód', '2023-11-22', '');
+(1, '1.jpg', 'Gt wisi enim ad minim veniam.', 'Aenean vestibulum pretium enim, non commodo urna volutpat vitae. Pellentesque vel lacus eget est d...', '2023-11-25', '');
 
 -- --------------------------------------------------------
 
@@ -76,10 +75,10 @@ CREATE TABLE `danhmuc` (
 --
 
 INSERT INTO `danhmuc` (`id_dm`, `ten_dm`, `ngay_update`) VALUES
-(5, 'nhẫn vàng', '2023-11-23'),
-(11, 'sao phai lam sap', '1212-12-12'),
-(14, 'sao trang', '1212-12-12'),
-(15, 'nhẫn kim cương', '2023-11-22');
+(1, 'Nhẫn', '2023-11-23'),
+(2, 'Dây chuyền', '2023-11-23'),
+(3, 'Lắc tay', '2023-11-23'),
+(4, 'Vòng chân', '2023-11-23');
 
 -- --------------------------------------------------------
 
@@ -147,7 +146,8 @@ CREATE TABLE `khuyenmai` (
 INSERT INTO `khuyenmai` (`id_KM`, `ma_KM`, `phan_tram_km`, `ngay_bat_dau`, `ngay_ket_thuc`, `trang_thai`) VALUES
 (2, 'concainit', 12, '2023-11-21', '1212-11-28', '0'),
 (3, 'advsv', 10, '2023-11-07', '2023-11-30', '1'),
-(4, 'concainit', 12, '0121-12-12', '0000-00-00', '0');
+(4, 'concainit', 12, '0121-12-12', '0000-00-00', '0'),
+(5, 'KM12', 12, '2023-11-23', '2023-11-24', '1');
 
 -- --------------------------------------------------------
 
@@ -192,12 +192,11 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id_sp`, `ten_sp`, `gia_sp`, `mo_ta_sp`, `anh_sp`, `so_luong`, `ngay_nhap_sp`, `trang_thai`, `id_dm`) VALUES
-(10, 'nhấn vàng cao cấp ', 12, '', 'Ảnh chụp màn hình 2023-11-15 205426.png', 12, '2023-11-27', 0, 5),
-(15, 'vddv', 121212, '121212', 'Ảnh chụp màn hình 2023-11-18 211852.png', 12, '2023-11-20', 1, 3),
-(16, 'nhấn vàng cao cấp', 1221210000, 'ko sao', 'Ảnh chụp màn hình 2023-11-19 225745.png', 122122, '2023-12-09', 0, 1),
-(17, 'nhấn nhựa', 12, 'fsdfdfd', 'Ảnh chụp màn hình 2023-09-15 212901.psd', 12, '2023-11-30', 0, 3),
-(18, 'nhấn vàng cao cấp', 123123, 'fgfgefdd', 'Ảnh chụp màn hình 2023-11-15 205426.png', 21421, '0000-00-00', 1, 1),
-(19, 'nhẫn vàng 18k', 12, '213eqw', '125469965_1280358008998598_5343564546150409848_n.jpg', 2, '2023-11-24', 2, 11);
+(1, 'sp1', 123457000, 'đẹp', '1-1.jpg', 12, '2023-11-25', 1, 1),
+(2, 'sp2', 12345800, '9gfcx', '1-3.jpg', 2, '2023-11-25', 1, 1),
+(3, 'sp3', 23456800000, 'dscx v bgfdxz', '1-8.jpg', 2, '2023-11-08', 1, 2),
+(4, 'sp4', 1234570000, 'dsxcfgtdfcz', '1-9.jpg', 3, '2023-11-09', 1, 3),
+(5, 'sp5', 123457000000, 'ưqsadcvghjutyrhtegfsdxcz', '1-5.jpg', 2, '2023-11-25', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -227,7 +226,18 @@ INSERT INTO `taikhoan` (`id_tk`, `ten_tk`, `password`, `sdt`, `email`, `full_nam
 (1, 'quyetmom', 1234, 6345234, 'quyetmom@gmail.com', 'doquangquyet', '2023-11-30', 1, 'trinh van bo', 0, '2023-11-20'),
 (10, 'quyetmomdz ', 1234, 2147483647, 'quyetdo01698705281@gmal.com', '', '0312-03-12', 0, 'vien an', 0, '0000-00-00'),
 (12, 'quyetmomdz ', 123234, 2147483647, 'quyetdqph31368@fe.edu.vn', '', '0001-12-12', 1, 'tring van lo', 3, '0000-00-00'),
-(13, 'kiên ', 0, 2147483647, 'kien0612@gmail', '', '2003-12-06', 1, 'Nam Định', 3, '2023-11-23');
+(13, 'kiên ', 0, 2147483647, 'kien0612@gmail', '', '2003-12-06', 1, 'Nam Định', 1, '2023-11-23'),
+(14, 'kiên', 123, 0, 'kien0612@gmail', '', '0000-00-00', 0, '', 3, '2023-11-24'),
+(15, 'kiên', 0, 2147483647, 'vutrungkien612203@gmail.com', '', '2023-11-12', 1, 'Nam Định', 0, '2023-11-24'),
+(16, 'kiên', 0, 2147483647, 'vutrungkien612203@gmail.com', '', '2023-11-12', 1, 'Nam Định', 0, '2023-11-24'),
+(17, 'kiên', 0, 2147483647, 'vutrungkien612203@gmail.com', '', '2023-11-12', 1, 'Nam Định', 0, '2023-11-24'),
+(18, 'kiên', 0, 2147483647, 'vutrungkien612203@gmail.com', '', '2023-11-12', 1, 'Nam Định', 0, '2023-11-24'),
+(19, 'kiên', 0, 2147483647, 'vutrungkien612203@gmail.com', '', '2023-11-12', 1, 'Nam Định', 0, '2023-11-24'),
+(20, 'duc', 0, 2147483647, 'Quynhhieu196193@gmail.com', '', '2023-11-18', 0, 'Nam Định18', 2, '2023-11-24'),
+(21, 'kiên 123', 0, 2147483647, 'cv1dgvgzjp@email.edu.pl', '', '2023-11-03', 1, 'Nam Định', 1, '2023-11-24'),
+(22, 'kiên 123', 0, 2147483647, 'My1502m@gmail.com123', '', '2023-11-03', 0, 'Nam Định18', 1, '2023-11-24'),
+(23, 'kien0612', 123, 0, 'cv1dgvgzjp@email.edu.pl', '', '0000-00-00', 0, '', 0, '2023-11-25'),
+(24, 'kiên 123', 123, 0, 'kien0612@gmail', '', '0000-00-00', 0, '', 0, '2023-11-25');
 
 -- --------------------------------------------------------
 
@@ -370,7 +380,7 @@ ALTER TABLE `trang_thai_hd`
 -- AUTO_INCREMENT cho bảng `baiviet`
 --
 ALTER TABLE `baiviet`
-  MODIFY `id_bai_viet` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_bai_viet` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `binhluan`
@@ -382,7 +392,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT cho bảng `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id_dm` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_dm` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
@@ -400,25 +410,25 @@ ALTER TABLE `hoadonchitiet`
 -- AUTO_INCREMENT cho bảng `khuyenmai`
 --
 ALTER TABLE `khuyenmai`
-  MODIFY `id_KM` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_KM` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
 --
 ALTER TABLE `role`
-  MODIFY `id_role` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_role` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sp` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_sp` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id_tk` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_tk` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `thanhtoan`
