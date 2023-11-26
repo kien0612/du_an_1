@@ -165,7 +165,7 @@
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="single-product.html">
+                                        <a href="?act=sanphamct">
                                             <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
                                         </a>
                                         <div class="add-actions">
@@ -204,7 +204,7 @@
                             <div class="list-slide_item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="single-product.html">
+                                        <a href="?act=sanphamct">
                                             <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
                                         </a>
                                     </div>
