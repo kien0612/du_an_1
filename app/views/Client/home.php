@@ -502,12 +502,18 @@
                     <div id="necklaces" class="tab-pane active show" role="tabpanel">
                         <div class="hiraola-product-tab_slider-2">
                             <!-- Begin Hiraola's Slide Item Area -->
+                      <?php       foreach ($listsp as $sp) {
+                        extract($sp);
+                        //include "../../controllers/admin/upload/";
+                        $url = "../../controllers/admin/upload/sanpham/";
+                        $image = $url . $anh_sp;
+                    ?>
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
+                                            <img class="primary-img"  src="<?= $image ?>" alt="Hiraola's Product Image">
+                                            <!-- <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image"> -->
                                         </a>
                                         <div class="add-actions">
                                             <ul>
@@ -519,10 +525,10 @@
                                     </div>
                                     <div class="hiraola-product_content">
                                         <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Flash Furniture
-                                                    Alonza Se...</a></h6>
+                                            <h6><a class="product-name" href="index.php?act=sanphamct"><?= $ten_sp ?></a></a></h6>
                                             <div class="price-box">
-                                                <span class="new-price">£90.36</span>
+                                               
+                                                <span class="new-price"><?= number_format($gia_sp, 0, ',', '.') ?> VND</span>
                                             </div>
                                             <div class="additional-add_action">
                                                 <ul>
@@ -543,9 +549,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
-                            <div class="slide-item">
+                            <?php
+                    }
+                    ?>
+                            <!-- <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="index.php?act=sanphamct">
@@ -586,8 +593,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                           
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -628,8 +634,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                           
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -672,8 +677,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                            
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -715,8 +719,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                            
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -757,8 +760,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                            
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -800,8 +802,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                            
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -841,8 +842,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
+                            </div> -->
+                          
                         </div>
                     </div>
                     <div id="earrings" class="tab-pane" role="tabpanel">

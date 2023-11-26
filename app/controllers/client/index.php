@@ -15,6 +15,7 @@ include "../../models/role.php";
 
 include "../../views/Client/header_home.php";
 
+
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -89,6 +90,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
+    $listsp = loadAll_san_pham();
     include "../../views/Client/home.php";
 }
 include "../../views/Client/footer.php";
