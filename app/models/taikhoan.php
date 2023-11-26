@@ -59,10 +59,17 @@ function sendMail($email) {
         return "Email bạn nhập ko có trong hệ thống";
     }
 }
-function sendMailPass($email, $username, $pass) {
-    require 'PHPMailer/src/Exception.php';
-    require 'PHPMailer/src/PHPMailer.php';
-    require 'PHPMailer/src/SMTP.php';
+function dangxuat() {
+    if (isset($_SESSION['user'])) {
+        unset($_SESSION['user']);
+    }
+   
+}
+function sendMailPass($email, $username, $password) {
+    require '../../client/assets/src/Exception.php';
+    require '../../client/assets/src/PHPMailer.php';
+    require '../../client/assets/src/SMTP.php';
+
 
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
 
@@ -84,7 +91,7 @@ function sendMailPass($email, $username, $pass) {
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Nguoi dung quen mat khau';
-        $mail->Body    = 'Mau khau cua ban la' .$pass;
+        $mail->Body    = 'Mau khau cua ban la' .$password;
 
         $mail->send();
     } catch (Exception $e) {

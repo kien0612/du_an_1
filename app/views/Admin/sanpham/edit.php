@@ -1,7 +1,7 @@
 <?php
 if (is_array($sp)) {
     extract($sp);
-    $url = "./upload/";
+    $url = "./upload/sanpham/";
     $image = $url . $anh_sp;
     $anh_sp = "<img src='" . $image . "' style='width: 200px;' alt=''>";
 }

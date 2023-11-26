@@ -1,11 +1,21 @@
 <?php
 session_start();
 ob_start();
+
+
 include "../../models/pdo.php";
+include "../../models/baiviet.php";
+include "../../models/binhluan.php";
+include "../../models/hoadon.php";
 include "../../models/taikhoan.php";
+include "../../models/danhmuc.php";
+include "../../models/sanpham.php";
+include "../../models/khuyenmai.php";
+include "../../models/role.php";
+
 include "../../views/Client/header_home.php";
 
-if (isset($_GET['act'])) {git
+if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
         case "log_up":
@@ -15,13 +25,12 @@ if (isset($_GET['act'])) {git
                 $checkuser = checkuser($ten_tk, $password);
                 if (is_array($checkuser)) {
                     $_SESSION['user'] = $checkuser;
-                    if ($_SESSION['user']['id_role'] == 3) {
-                        header('Location: ../admin/index.php');
-                    } else if ($_SESSION['user']['id_role'] == 2) {
-                        header('Location: ../nhanvien/index.php');
-                    } else {
-                        header('Location: index.php');
-                    }
+                    // if ($_SESSION['user']['id_role'] == 3) {
+                    //     // header('Location: ../admin/index.php');
+                    // } else if ($_SESSION['user']['id_role'] == 2) {
+                    //     header('Location: ../nhanvien/index.php');
+                    // } else {
+                    header('Location: index.php');
                 } else {
                     $thongbao1 = "tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!";
                 }
@@ -42,6 +51,10 @@ if (isset($_GET['act'])) {git
             $listk = loadAll_tai_khoan();
             include "../../views/Client/taikhoan/dangky.php";
             break;
+        case "dangxuat":
+            session_destroy();
+            header('location: index.php');
+            break;
         case "quenmk":
             if (isset($_POST['guiemail'])) {
                 $email = $_POST['email'];
@@ -52,6 +65,23 @@ if (isset($_GET['act'])) {git
 
         case "trangchu":
             include "../../views/Client/main.php";
+            break;
+        case "sanphamct":
+            include "../../views/Client/sanphamct.php";
+            break;
+        case "sanpham":
+            $listsp = loadAll_san_pham();
+            include "../../views/Client/sanpham.php";
+            break;
+        case "tintuc":
+            $list_bai_viet = loadAll_bai_viet();
+            include "../../views/Client/tintuc.php";
+            break;
+        case "gioithieu":
+            include "../../views/Client/gioithieu.php";
+            break;
+        case "lienhe":
+            include "../../views/Client/lienhe.php";
             break;
     }
 } else {

@@ -43,7 +43,7 @@
                 extract($sp);
                 $edit = "index.php?act=editsp&id_sp=" . $id_sp;
                 $delete = "index.php?act=xoasp&id_sp=" . $id_sp;
-                $url = "./upload/";
+                $url = "./upload/sanpham/";
                 $image = $url . $anh_sp;
                 $anh_sp = "<img src='" . $image . "' style='width: 200px;' alt=''>"
             ?>

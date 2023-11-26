@@ -42,7 +42,7 @@
                                     </li>
                                 <?php } ?>
                                 <li>
-                                    <a href="index.php?act=dangxuat">Đăng xuất</a>
+                                    <a href="?act=dangxuat">Đăng xuất</a>
                                 </li>
                             </div>
                         <?php
@@ -70,7 +70,7 @@
                                             echo $thongbao1;
                                         } ?>
                                         <div class="col-md-12">
-                                            <p>Bạn chưa có tài khoản ? <a href="?act=log_in">Đăng ký</a></p>
+                                            <p>Bạn chưa có tài khoản ? <a href="?act=log_in">Đăng ký</a></p><a href="?act=quenmk">Quên Mật Khẩu</a>
 
                                         </div>
                                     </div>
