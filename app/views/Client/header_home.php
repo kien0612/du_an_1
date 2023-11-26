@@ -80,7 +80,7 @@
                                                         <a href="?act=quenmk">Quên Mật Khẩu</a>
                                                     </li>
                                                     <li>
-                                                        <a href="index.php?act=edit_taikhoan">Thông tin của bạn</a>
+                                                        <a href="index.php?act=taikhoan">Thông tin của bạn</a>
                                                     </li>
                                                     <?php if ($id_role == 3) { ?>
                                                         <li>
