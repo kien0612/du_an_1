@@ -40,6 +40,12 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="payment" style="padding-top: 20px;">
+                                                <a href="#">
+                                                    <img src="assets/images/footer/payment/1.png" alt="Hiraola's Payment Method">
+                                                </a>
+                                            </div>
+
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -95,11 +101,6 @@
                                                     <div class="mailchimp-success"></div>
                                                     <div class="mailchimp-error"></div>
                                                 </div>
-                                            </div>
-                                            <div class="payment">
-                                                <a href="#">
-                                                    <img src="assets/images/footer/payment/1.png" alt="Hiraola's Payment Method">
-                                                </a>
                                             </div>
                                         </div>
                                     </div>

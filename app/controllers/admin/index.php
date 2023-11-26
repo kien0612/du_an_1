@@ -17,6 +17,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
     switch ($act) {
             // Tài Khoản
         case "listtk":
+          
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/list.php";
             break;
@@ -185,7 +186,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $gia_sp = $_POST['gia_sp'];
                 $mo_ta_sp = $_POST['mo_ta_sp'];
                 $anh_sp = $_FILES['anh_sp']['name'];
-                $target_dir = "upload/";
+                $target_dir = "upload/sanpham/";
                 $target_file = $target_dir . basename($_FILES['anh_sp']['name']);
                 move_uploaded_file($_FILES['anh_sp']['tmp_name'], $target_file);
                 $so_luong = $_POST['so_luong'];
@@ -214,7 +215,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $gia_sp = $_POST['gia_sp'];
                 $mo_ta_sp = $_POST['mo_ta_sp'];
                 $anh_sp = $_FILES['anh_sp']['name'];
-                $target_dir = "upload/";
+                $target_dir = "upload/sanpham/";
                 $target_file = $target_dir . basename($_FILES['anh_sp']['name']);
                 move_uploaded_file($_FILES['anh_sp']['tmp_name'], $target_file);
                 $so_luong = $_POST['so_luong'];
@@ -252,7 +253,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $tieu_de = $_POST['tieuDe'];
                 $mota = $_POST['moTa'];
                 $ngay_dang = $currentDateTimeString;
-                $target_dir = "upload/";
+                $target_dir = "upload/baiviet/";
                 $target_file = $target_dir . basename($_FILES['avatar']['name']);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
                 insert_bai_viet($avatar, $tieu_de, $mota, $ngay_dang);
@@ -272,7 +273,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $avatar = $_FILES['avatar']['name'];
                 $tieu_de = $_POST['tieuDe'];
                 $mota = $_POST['moTa'];
-                $target_dir = "upload/";
+                $target_dir = "upload/baiviet/";
                 $target_file = $target_dir . basename($_FILES['avatar']['name']);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
                 update_bai_viet($edit_id, $avatar, $tieu_de, $mota);
