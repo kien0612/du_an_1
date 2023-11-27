@@ -13,129 +13,134 @@
         <!-- Hiraola's Breadcrumb Area End Here -->
 
         <!-- sản phẩm chi tiết -->
+        <?php
+        extract($onesp);
+        $url = "../../controllers/admin/upload/sanpham/";
+        $image = $url . $anh_sp;
+        ?>
         <div class="sp-area">
-            <div class="container">
-                <div class="sp-nav">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-5">
-                            <div class="sp-img_area">
-                                <!-- zoom sản phẩm -->
-                                <div class="zoompro-border">
-                                    <!-- <img class="zoompro" src="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg" alt="Hiraola's Product Image" /> -->
-                                </div>
-                                <div id="gallery" class="sp-img_slider">
-                                    <a class="active" data-image="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg">
-                                        <img src="assets/images/single-product/small-size/1.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <a data-image="assets/images/single-product/large-size/2.jpg" data-zoom-image="assets/images/single-product/large-size/2.jpg">
-                                        <img src="assets/images/single-product/small-size/2.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <a data-image="assets/images/single-product/large-size/3.jpg" data-zoom-image="assets/images/single-product/large-size/3.jpg">
-                                        <img src="assets/images/single-product/small-size/3.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <a data-image="assets/images/single-product/large-size/4.jpg" data-zoom-image="assets/images/single-product/large-size/4.jpg">
-                                        <img src="assets/images/single-product/small-size/4.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <a data-image="assets/images/single-product/large-size/5.jpg" data-zoom-image="assets/images/single-product/large-size/5.jpg">
-                                        <img src="assets/images/single-product/small-size/5.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                    <a data-image="assets/images/single-product/large-size/6.jpg" data-zoom-image="assets/images/single-product/large-size/6.jpg">
-                                        <img src="assets/images/single-product/small-size/6.jpg" alt="Hiraola's Product Image">
-                                    </a>
-                                </div>
+        <div class="container">
+            <div class="sp-nav">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5">
+                        <div class="sp-img_area">
+                            <!-- zoom sản phẩm -->
+                            <div class="zoompro-border">
+                                <img class="zoompro" src="<?= $image ?>"   data-zoom-image="<?= $image ?>" alt="Hiraolas Product Image" />
+                            </div>
+                            <div id="gallery" class="sp-img_slider">
+                                <a class="active" data-image="assets/images/single-product/large-size/1.jpg" hidden data-zoom-image="assets/images/single-product/large-size/1.jpg">
+                                    <img src="assets/images/single-product/small-size/1.jpg" hidden alt="Hiraolas Product Image">
+                                </a>
+                                <a data-image="assets/images/single-product/large-size/2.jpg" data-zoom-image="assets/images/single-product/large-size/2.jpg">
+                                    <img src="assets/images/single-product/small-size/2.jpg" hidden alt="Hiraolas Product Image">
+                                </a>
+                                <a data-image="assets/images/single-product/large-size/3.jpg" data-zoom-image="assets/images/single-product/large-size/3.jpg">
+                                    <img src="assets/images/single-product/small-size/3.jpg" hidden alt="Hiraolas Product Image">
+                                </a>
+                                <a data-image="assets/images/single-product/large-size/4.jpg" data-zoom-image="assets/images/single-product/large-size/4.jpg">
+                                    <img src="assets/images/single-product/small-size/4.jpg" hidden  alt="Hiraolas Product Image">
+                                </a>
+                                <a data-image="assets/images/single-product/large-size/5.jpg" data-zoom-image="assets/images/single-product/large-size/5.jpg">
+                                    <img src="assets/images/single-product/small-size/5.jpg" hidden  alt="Hiraolas Product Image">
+                                </a>
+                                <a data-image="assets/images/single-product/large-size/6.jpg" data-zoom-image="assets/images/single-product/large-size/6.jpg">
+                                    <img src="assets/images/single-product/small-size/6.jpg" hidden  alt="Hiraolas Product Image">
+                                </a>
                             </div>
                         </div>
-                        <div class="col-lg-7 col-md-7">
-                            <div class="sp-content">
-                                <div class="sp-heading">
-                                    <h5><a href="#">JWDA Penant Lamp Brshed Steel</a></h5>
+                    </div>
+                    <div class="col-lg-7 col-md-7">
+                        <div class="sp-content">
+                            <div class="sp-heading">
+                                <h5><a href="#"><?= $ten_sp ?></a></h5>
+                            </div>
+                            <span class="reference">Reference: demo_1</span>
+                            <div class="rating-box">
+                                <ul>
+                                    <li><i class="fa fa-star-of-david"></i></li>
+                                    <li><i class="fa fa-star-of-david"></i></li>
+                                    <li><i class="fa fa-star-of-david"></i></li>
+                                    <li><i class="fa fa-star-of-david"></i></li>
+                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
+                                </ul>
+                            </div>
+                            <div class="sp-essential_stuff">
+                                <ul>
+                                    <li>Giá: <a href="javascript:void(0)"><span><?= $gia_sp ?></span></a></li>                                    
+                                    <li>Mã sản phẩm: <a href="javascript:void(0)"><?= $id_sp ?></a></li>
+                                    <li>Trạng thái: <a href="javascript:void(0)"><?= $trang_thai ?></a></li>
+                                </ul>
+                            </div>
+                            <!-- kích cỡ sản phẩm -->
+                            <div class="product-size_box">
+                                <span>Size</span>
+                                <select class="myniceselect nice-select">
+                                    <option value="1">S</option>
+                                    <option value="2">M</option>
+                                    <option value="3">L</option>
+                                    <option value="4">XL</option>
+                                </select>
+                            </div>
+                            <!-- số lượng -->
+                            <div class="quantity">
+                                <label>Quantity</label>
+                                <div class="cart-plus-minus">
+                                    <input class="cart-plus-minus-box" value="1" type="text">
+                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                 </div>
-                                <span class="reference">Reference: demo_1</span>
-                                <div class="rating-box">
-                                    <ul>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                    </ul>
-                                </div>
-                                <div class="sp-essential_stuff">
-                                    <ul>
-                                        <li>Giá: <a href="javascript:void(0)"><span>£453.35</span></a></li>                                    
-                                        <li>Mã sản phẩm: <a href="javascript:void(0)">Product 16</a></li>
-                                        <li>Trạng thái: <a href="javascript:void(0)">In Stock</a></li>
-                                    </ul>
-                                </div>
-                                <!-- kích cỡ sản phẩm -->
-                                <div class="product-size_box">
-                                    <span>Size</span>
-                                    <select class="myniceselect nice-select">
-                                        <option value="1">S</option>
-                                        <option value="2">M</option>
-                                        <option value="3">L</option>
-                                        <option value="4">XL</option>
-                                    </select>
-                                </div>
-                                <!-- số lượng -->
-                                <div class="quantity">
-                                    <label>Quantity</label>
-                                    <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" value="1" type="text">
-                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                    </div>
-                                </div>
-                                <!-- mua hàng  -->
-                                <div class="qty-btn_area">
-                                    <ul>
-                                        <li><a class="qty-cart_btn" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
-                                        <li><a class="qty-wishlist_btn" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
-                                        <li><a class="qty-compare_btn" href="index.php?act=gioithieu" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- danh mục -->
-                                <div class="hiraola-tag-line">
-                                    <h6>Tags:</h6>
-                                    <a href="javascript:void(0)">Ring</a>,
-                                    <a href="javascript:void(0)">Necklaces</a>,
-                                    <a href="javascript:void(0)">Braid</a>
-                                </div>
-                                <!-- Link các nền tảng xã hội -->
-                                <div class="hiraola-social_link">
-                                    <ul>
-                                        <li class="facebook">
-                                            <a href="https://www.facebook.com/" data-bs-toggle="tooltip" target="_blank" title="Facebook">
-                                                <i class="fab fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="https://twitter.com/" data-bs-toggle="tooltip" target="_blank" title="Twitter">
-                                                <i class="fab fa-twitter-square"></i>
-                                            </a>
-                                        </li>
-                                        <li class="youtube">
-                                            <a href="https://www.youtube.com/" data-bs-toggle="tooltip" target="_blank" title="Youtube">
-                                                <i class="fab fa-youtube"></i>
-                                            </a>
-                                        </li>
-                                        <li class="google-plus">
-                                            <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
-                                                <i class="fab fa-google-plus"></i>
-                                            </a>
-                                        </li>
-                                        <li class="instagram">
-                                            <a href="https://rss.com/" data-bs-toggle="tooltip" target="_blank" title="Instagram">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            </div>
+                            <!-- mua hàng  -->
+                            <div class="qty-btn_area">
+                                <ul>
+                                    <li><a class="qty-cart_btn" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
+                                    <li><a class="qty-wishlist_btn" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
+                                    <li><a class="qty-compare_btn" href="index.php?act=gioithieu" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- danh mục -->
+                            <div class="hiraola-tag-line">
+                                <h6>Tags:</h6>
+                                <a href="javascript:void(0)">Ring</a>,
+                                <a href="javascript:void(0)">Necklaces</a>,
+                                <a href="javascript:void(0)">Braid</a>
+                            </div>
+                            <!-- Link các nền tảng xã hội -->
+                            <div class="hiraola-social_link">
+                                <ul>
+                                    <li class="facebook">
+                                        <a href="https://www.facebook.com/" data-bs-toggle="tooltip" target="_blank" title="Facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="twitter">
+                                        <a href="https://twitter.com/" data-bs-toggle="tooltip" target="_blank" title="Twitter">
+                                            <i class="fab fa-twitter-square"></i>
+                                        </a>
+                                    </li>
+                                    <li class="youtube">
+                                        <a href="https://www.youtube.com/" data-bs-toggle="tooltip" target="_blank" title="Youtube">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                    <li class="google-plus">
+                                        <a href="https://www.plus.google.com/discover" data-bs-toggle="tooltip" target="_blank" title="Google Plus">
+                                            <i class="fab fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li class="instagram">
+                                        <a href="https://rss.com/" data-bs-toggle="tooltip" target="_blank" title="Instagram">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- kết thúc sản phẩm chi tiết -->
 

@@ -152,7 +152,7 @@
                     foreach ($listsp as $sp) {
                         extract($sp);
                         //include "../../controllers/admin/upload/";
-                       
+                        $linksp="index.php?act=sanphamct&id_sp=".$id_sp;   
                         $url = "../../controllers/admin/upload/sanpham/";
                         $image = $url . $anh_sp;
                     ?>
@@ -160,7 +160,7 @@
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="?act=sanphamct">
+                                        <?php echo'<a href="'.$linksp .'">'?>
                                             <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
                                         </a>
                                         <div class="add-actions">

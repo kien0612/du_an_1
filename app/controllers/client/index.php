@@ -68,16 +68,16 @@ if (isset($_GET['act'])) {
             include "../../views/Client/main.php";
             break;
         case "sanphamct":
-            // if(isset($_GET['id_sp'])&&($_GET['id_sp']>0)){
-            //     $id=$_GET['id_sp'];
-            //     $onesp=loadone_sanpham($id_sp);
-            //     extract($onesp);
+            if(isset($_GET['id_sp'])&&($_GET['id_sp']>0)){
+                $id_sp=$_GET['id_sp'];
+                $onesp=loadone_sanpham($id_sp);
+                extract($onesp);
                 
-            //     include "../../views/Client/sanphamct.php";
-            // }else{
-            //     include "../../views/Client/home.php";
-            // }   
-            include "../../views/Client/sanphamct.php";        
+                include "../../views/Client/sanphamct.php";
+            }else{
+                include "../../views/Client/home.php";
+            }   
+                   
             break;
         case "sanpham":
             if(isset($_POST['kyw'])&&($_POST['kyw']!="")){

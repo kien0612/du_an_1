@@ -65,9 +65,9 @@ function update_san_pham( $id_sp,$ten_sp ,  $gia_sp ,  $mo_ta_sp ,  $anh_sp ,  $
     }
     pdo_execute($sql);
 }
-// function loadone_sanpham($id_sp){
-//     $sql="select * from sanpham where id_sp=".$id_sp;
-//     $sp=pdo_query_one($sql);
-//     return $sp;
-// }  
+function loadone_sanpham($id_sp){
+    $sql="select * from sanpham where id_sp =".$id_sp;
+    $sp=pdo_query_one($sql);
+    return $sp;
+}  
 ?>
