@@ -48,8 +48,11 @@
                     <div class="form-group">
                         <label>Trang Thái</label><br>
                         <select name="trang_thai" id="" style="width: 70%;height: 30px;margin-left: 10%;">
-                            <option value="0">Còn Hàng</option>
-                            <option value="1">Kết Hàng</option>
+                        <?php foreach ($list_tt as $trang_thai) {
+                                extract($trang_thai);
+                            ?>
+                                <option value="<?= $trang_thai['id_trang_thai'] ?>"><?= $trang_thai['ten_trang_thai'] ?></option>
+                            <?php  }  ?>                        
                         </select>
                     </div>
 

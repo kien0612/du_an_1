@@ -26,11 +26,15 @@
             <input type="hidden" name="id_tk" value="<?php echo $id_tk?>">
                 <div>
                     <label>Tên Đang Nhập</label> <br>
-                    <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" value="<?php echo $ten_tk?>">
+                    <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" value="<?php echo $ten_tk?>"readonly>
                 </div>
                 <div>
-                    <label>password</label> <br>
-                    <input type="text" name="password" style="width: 70%;margin-left: 10%;" value="<?php echo $password?>">
+                    <label>Full name</label> <br>
+                    <input type="text" name="full_name" style="width: 70%;margin-left: 10%;" value="<?php echo $full_name?>"readonly >
+                </div>
+                <div>
+                    <label>Password</label> <br>
+                    <input type="text" name="password" style="width: 70%;margin-left: 10%;" value="<?php echo $password?>"readonly >
                 </div>
                 <div class="form-group">
                     <label>Ngày Sinh</label><br>
@@ -38,9 +42,9 @@
                 </div>
                 <div class="form-group">
                     <label>Giới Tính</label><br>
-                    <div style="width: 70%;margin-left: 10%;" value=" <?php echo $gioi_tinh?>" >
-                        <input type="radio" name="gioi_tinh" value="1" checked> Nữ
-                        <input type="radio" style="margin-left:  5%;" name="gioi_tinh" value="0"> Nam
+                    <div style="width: 70%;margin-left: 10%;" >
+                        <input type="radio" name="gioi_tinh" value="1" <?= $gioi_tinh == 'Nữ' ? 'checked' : "" ?>> Nữ 
+                        <input type="radio" style="margin-left:  5%;" name="gioi_tinh" value="0" <?= $gioi_tinh == '0' ? 'checked' : "" ?> > Nam
                     </div>
                 </div>
                 <div class="form-group">

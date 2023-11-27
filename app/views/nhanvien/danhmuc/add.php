@@ -24,7 +24,7 @@
                         <input type="text" name="ten_dm" style="width: 70%;margin-left: 10%;" required>
                     </div>
                     <div>
-                        <label>Tên </label> <br>
+                        <label>Ngày Tạo </label> <br>
                         <input type="date" name="ngay_update" style="width: 70%;margin-left: 10%;" required>
                     </div>
                     <div style="text-align: center;">

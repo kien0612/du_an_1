@@ -35,7 +35,7 @@
                 extract($bai_viet);
                 $edit = "index.php?act=editbv&id_bai_viet=".$id_bai_viet;
                 $delete = "index.php?act=xoabv&id_bai_viet=".$id_bai_viet;
-                $url = "./upload/";
+                $url = "./upload/baiviet";
                 $image = $url .$avatar;
                 $avatar = "<img src='".$image."' style='width: 200px;' alt=''>"
             ?>
@@ -50,7 +50,7 @@
                     </td>
                     <td>
                         <a href="<?= $edit ?>"><button type="button" class="btn btn-success">Edit</button></a>
-                      
+                        <a href="<?= $delete ?>"><button type="button" class="btn btn-success">Xóa</button></a>
                         
                     </td>
                 </tr>

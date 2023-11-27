@@ -20,16 +20,19 @@
         <thead>
             <tr>
                 <!-- <th style="width: 5%;">Check</th> -->
-                <th>Id</th>
+                <th>Id</th> 
+                <th>Ảnh</th>
                 <th>Tên</th>
                 <th>Giá</th>
                 <th>mo_ta_sp</th>
-                <th>Ảnh</th>
+               
                 <th>Số lượng</th>
-                <th>Ngày Nhập</th>
-                <th>id_trang_thai</th>
+                
+                <th>Trạng thái</th>
                 <th>Danh Mục</th>
+                <th>Ngày Nhập</th>
                 <th>Hành động</th>
+                
 
             </tr>
         </thead>
@@ -40,22 +43,21 @@
                 extract($sp);
                 $edit = "index.php?act=editsp&id_sp=" . $id_sp;
                 $delete = "index.php?act=xoasp&id_sp=" . $id_sp;
-                $url = "./upload/";
+                $url = "../../controllers/admin/upload/sanpham/";
                 $image = $url . $anh_sp;
                 $anh_sp = "<img src='" . $image . "' style='width: 200px;' alt=''>"
             ?>
                 <tr>
                     <!-- <th><input type="checkbox" name="" id=""></th> -->
                     <td><?= $id_sp ?></td>
+                    <td><?= $anh_sp ?></td>
                     <td><?= $ten_sp ?></td>
                     <td><?= $gia_sp ?></td>
-                    <td><?= $mo_ta_sp ?></td>
-                    <td><?= $anh_sp ?></td>
+                    <td style="width: 40%;"><?= $mo_ta_sp ?></td>
                     <td><?= $so_luong ?></td>
+                    <td><?= $ten_trang_thai?></th>
+                    <td><?= $ten_dm ?></td>
                     <td><?= $ngay_nhap_sp ?></td>
-                    <th><?= $trang_thai ?></th>
-                    <th><?= $id_dm ?></th>
-
                     </td>
                     <td>
                         <a href="<?= $edit ?>"><button type="button" class="btn btn-success">Edit</button></a>
