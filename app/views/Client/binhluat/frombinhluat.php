@@ -4,7 +4,7 @@ session_start();
 include "../../models/pdo.php";
 include "../../model/binhluan.php";
 $idpro = $_REQUEST['idpro'];
-$dsbl = loadAll_binh_luan($id_binh_luan);
+$dsbl = loadAll_binh_lua($id_binh_luan);
 ?>
 <!DOCTYPE html>
 <html lang="en">
