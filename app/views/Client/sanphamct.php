@@ -213,7 +213,7 @@
                                                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
                                                 <script>
                                                     $(document).ready(function() {
-                                                        $("#binhluat").load("../../views/Client/binhluat/frombinhluat.php", {
+                                                        $("#reviews").load("../../views/Client/binhluat/frombinhluat.php", {
                                                             id_sp: <?php echo $id_sp ?>
                                                         });
                                                     });

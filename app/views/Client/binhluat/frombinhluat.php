@@ -1,28 +1,19 @@
 <?php
 session_start();
 
-include "../../models/pdo.php";
-include "../../model/binhluan.php";
-$idpro = $_REQUEST['idpro'];
-$dsbl = loadAll_binh_lua($id_binh_luan);
+include "../../../models/pdo.php";
+include "../../../models/binhluan.php";
+$id_sp = $_REQUEST['id_sp'];
+//$dsbl = loadAll_binh_lua($id_sp);4
+$list_binh_lua = loadAll_binh_lua($id_binh_lua);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/css.css">
-</head>
-
-<body>
     <div class="mb">
         <div class="box_title">Bình luận</div>
         <div class="box_content2 product_portfolio">
             <table>
                 <?php
-                foreach ($dsbl as $bl) {
+                foreach ($list_binh_lua as $bl) {
                     extract($bl);
                     echo '<tr><td>' . $noidung . '</td>';
                     echo '<td>' . $iduser . '</td>';
@@ -49,6 +40,3 @@ $dsbl = loadAll_binh_lua($id_binh_luan);
         // }
         ?>
     </div>
-</body>
-
-</html>
