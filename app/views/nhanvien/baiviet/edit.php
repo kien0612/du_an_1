@@ -1,7 +1,7 @@
 <?php 
 if(is_array($bai_viet)){
     extract($bai_viet);
-    $url = "./upload/";
+    $url = "./upload/baiviet/";
   $image = $url .$avatar;
                 $avatar = "<img src='".$image."' style='width: 200px;' alt=''>" ;
 }

@@ -32,10 +32,6 @@ if(is_array($danhmuc)){
                         <label>Tên </label> <br>
                         <input type="text" name="ten_dm" style="width: 70%;margin-left: 10%;" value="<?= $ten_dm ?>" >
                     </div>
-                    <div>
-                        <label>Tên </label> <br>
-                        <input type="date" name="ngay_update" style="width: 70%;margin-left: 10%;" value="<?= $ngay_update ?>">
-                    </div>
                     <div style="text-align: center;">
                         <input type="submit" name="capnhap" value="Cập Nhập" class="btn btn-primary">
                         <input type="reset" value="Nhập lại" class="btn btn-primary">

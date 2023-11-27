@@ -20,15 +20,19 @@
             <div style="width: 70%; margin: 0 auto;">
                 <div>
                     <label>Tên Đang Nhập</label> <br>
-                    <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" placeholder="Nhập họ tên đầy đủ" required>
+                    <input type="text" name="ten_tk" style="width: 70%;margin-left: 10%;" placeholder="Nhập tên đăng nhập" >
                 </div>
                 <div>
-                    <label>password</label> <br>
-                    <input type="password" name="password" style="width: 70%;margin-left: 10%;" placeholder="" required>
+                    <label>Full name</label> <br>
+                    <input type="text" name="full_name" style="width: 70%;margin-left: 10%;" placeholder="Nhập họ tên đầy đủ" >
+                </div>
+                <div>
+                    <label>Password</label> <br>
+                    <input type="text" name="password" style="width: 70%;margin-left: 10%;" placeholder="Nhập họ tên đầy đủ" >
                 </div>
                 <div class="form-group">
                     <label>Ngày Sinh</label><br>
-                    <input type="date" name="nam_sinh" style="width: 20%;margin-left: 10%;" required>
+                    <input type="date" name="nam_sinh" style="width: 20%;margin-left: 10%;" >
                 </div>
                 <div class="form-group">
                     <label>Giới Tính</label><br>

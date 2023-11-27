@@ -19,8 +19,9 @@
                     <div class="row">
                         <div class="col-lg-5 col-md-5">
                             <div class="sp-img_area">
+                                <!-- zoom sản phẩm -->
                                 <div class="zoompro-border">
-                                    <img class="zoompro" src="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg" alt="Hiraola's Product Image" />
+                                    <!-- <img class="zoompro" src="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg" alt="Hiraola's Product Image" /> -->
                                 </div>
                                 <div id="gallery" class="sp-img_slider">
                                     <a class="active" data-image="assets/images/single-product/large-size/1.jpg" data-zoom-image="assets/images/single-product/large-size/1.jpg">
@@ -61,13 +62,12 @@
                                 </div>
                                 <div class="sp-essential_stuff">
                                     <ul>
-                                        <li>EX Tax: <a href="javascript:void(0)"><span>£453.35</span></a></li>
-                                        <li>Brands <a href="javascript:void(0)">Buxton</a></li>
-                                        <li>Product Code: <a href="javascript:void(0)">Product 16</a></li>
-                                        <li>Reward Points: <a href="javascript:void(0)">600</a></li>
-                                        <li>Availability: <a href="javascript:void(0)">In Stock</a></li>
+                                        <li>Giá: <a href="javascript:void(0)"><span>£453.35</span></a></li>                                    
+                                        <li>Mã sản phẩm: <a href="javascript:void(0)">Product 16</a></li>
+                                        <li>Trạng thái: <a href="javascript:void(0)">In Stock</a></li>
                                     </ul>
                                 </div>
+                                <!-- kích cỡ sản phẩm -->
                                 <div class="product-size_box">
                                     <span>Size</span>
                                     <select class="myniceselect nice-select">
@@ -77,6 +77,7 @@
                                         <option value="4">XL</option>
                                     </select>
                                 </div>
+                                <!-- số lượng -->
                                 <div class="quantity">
                                     <label>Quantity</label>
                                     <div class="cart-plus-minus">
@@ -85,19 +86,22 @@
                                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                     </div>
                                 </div>
+                                <!-- mua hàng  -->
                                 <div class="qty-btn_area">
                                     <ul>
-                                        <li><a class="qty-cart_btn" href="index.php?act=giohang">Add To Cart</a></li>
+                                        <li><a class="qty-cart_btn" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
                                         <li><a class="qty-wishlist_btn" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
                                         <li><a class="qty-compare_btn" href="index.php?act=gioithieu" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
                                     </ul>
                                 </div>
+                                <!-- danh mục -->
                                 <div class="hiraola-tag-line">
                                     <h6>Tags:</h6>
                                     <a href="javascript:void(0)">Ring</a>,
                                     <a href="javascript:void(0)">Necklaces</a>,
                                     <a href="javascript:void(0)">Braid</a>
                                 </div>
+                                <!-- Link các nền tảng xã hội -->
                                 <div class="hiraola-social_link">
                                     <ul>
                                         <li class="facebook">
@@ -143,12 +147,12 @@
                         <div class="sp-product-tab_nav ">
                             <div class="product-tab">
                                 <ul class="nav product-menu">
-                                    <li><a class="active" data-bs-toggle="tab" href="#description"><span>Description</span></a>
-                                    </li>
-                                    <li><a data-bs-toggle="tab" href="#specification"><span>Specification</span></a></li>
-                                    <li><a data-bs-toggle="tab" href="#reviews"><span>Reviews (1)</span></a></li>
+                                    <li><a class="active" data-bs-toggle="tab" href="#description"><span>THÔNG TIN</span></a>
+                                    </li> 
+                                    <li><a data-bs-toggle="tab" href="#reviews"><span>BÌNH LUẬN</span></a></li>
                                 </ul>
                             </div>
+                            <!-- Mô tả sản phẩm chi tiết -->
                             <div class="tab-content hiraola-tab_content">
                                 <div id="description" class="tab-pane active show" role="tabpanel">
                                     <div class="product-description">
@@ -189,32 +193,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div id="specification" class="tab-pane" role="tabpanel">
-                                    <table class="table table-bordered specification-inner_stuff">
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="2"><strong>Memory</strong></td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td>test 1</td>
-                                                <td>8gb</td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="2"><strong>Processor</strong></td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <td>No. of Cores</td>
-                                                <td>1</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <!-- bình luận sản phẩm -->
                                 <div id="reviews" class="tab-pane" role="tabpanel">
                                     <div class="tab-pane active" id="tab-review">
                                         <form class="form-horizontal" id="form-review">
@@ -241,7 +220,7 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                            </div>
+                                            </div>                                           
                                             <h2>Write a review</h2>
                                             <div class="form-group required">
                                                 <div class="col-sm-12 p-0">
@@ -257,6 +236,7 @@
                                                         translated!</div>
                                                 </div>
                                             </div>
+                                            <!-- Đánh giá sao -->
                                             <div class="form-group last-child required">
                                                 <div class="col-sm-12 p-0">
                                                     <div class="your-opinion">
@@ -294,7 +274,7 @@
                     <div class="col-lg-12">
 
                         <div class="hiraola-section_title">
-                            <h4>Special Offer</h4>
+                            <h4>ƯU ĐÃI ĐẶC BIỆT</h4>
                         </div>
 
                     </div>
@@ -605,7 +585,7 @@
                     <div class="col-lg-12">
 
                         <div class="hiraola-section_title">
-                            <h4>Related Products</h4>
+                            <h4>SẢN PHẨM TƯƠNG TỰ</h4>
                         </div>
 
                     </div>

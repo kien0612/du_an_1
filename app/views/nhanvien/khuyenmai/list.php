@@ -25,7 +25,7 @@
                 <th>ngay_bat_dau</th>
                 <th>ngay_ket_thuc</th>
                 <th>Trang Thai</th>
-               
+                <th>Hàng Động</th>
             </tr>
         </thead>
 
@@ -43,7 +43,10 @@
                     <td><?= $value['ngay_bat_dau']?></td>
                     <td><?= $value['ngay_ket_thuc']?></td>
                     <td><?= $value['trang_thai']?></td>
-                   
+                    <td>
+                        <a href="<?= $edit ?>"><button type="button" class="btn btn-success">Edit</button></a>
+                        <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
+                    </td>
                 </tr>
             <?php } ?>
         </tbody>

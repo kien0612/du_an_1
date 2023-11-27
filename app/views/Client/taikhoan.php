@@ -24,30 +24,31 @@
                         <div class="col-lg-3">
                             <ul class="nav myaccount-tab-trigger" id="account-page-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab" href="#account-dashboard" role="tab" aria-controls="account-dashboard" aria-selected="true">Dashboard</a>
+                                    <a class="nav-link active" id="account-dashboard-tab" data-bs-toggle="tab" href="#account-dashboard" role="tab" aria-controls="account-dashboard" aria-selected="true">Thông Tin Người Đùng</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders" role="tab" aria-controls="account-orders" aria-selected="false">Orders</a>
+                                    <a class="nav-link" id="account-orders-tab" data-bs-toggle="tab" href="#account-orders" role="tab" aria-controls="account-orders" aria-selected="false">Đơn Đặt Hàng</a>
                                 </li>
                                 <!-- <li class="nav-item">
                                     <a class="nav-link" id="account-address-tab" data-bs-toggle="tab" href="#account-address" role="tab" aria-controls="account-address" aria-selected="false">Addresses</a>
                                 </li> -->
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Account Details</a>
+                                    <a class="nav-link" id="account-details-tab" data-bs-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="false">Cập Nhập Tài Khoản</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="account-logout-tab" href="index.php?act=dangxuat" role="tab" aria-selected="false">Logout</a>
+                                    <a class="nav-link" id="account-logout-tab" href="index.php?act=dangxuat" role="tab" aria-selected="false">Đăng Xuất</a>
                                 </li>
                             </ul>
                         </div>
+                        
                         <div class="col-lg-9">
                             <div class="tab-content myaccount-tab-content" id="account-page-tab-content">
                                 <div class="tab-pane fade show active" id="account-dashboard" role="tabpanel" aria-labelledby="account-dashboard-tab">
                                     <div class="myaccount-dashboard">
-                                        <p>Xin chào<b><?= $ten_tk ?></b> (không phải là  <?= $ten_tk ?> ? <a href="index.php?act=dangxuat">Đăng xuất</a>)</p>
-                                        <p>From your account dashboard you can view your recent orders, manage your shipping and
-                                            billing addresses and <a href="javascript:void(0)">edit your password and account
-                                                details</a>.</p>
+                                        <p>Xin chào<b><?= $full_name ?></b> (không phải là  <?= $ten_tk ?> ? <a href="index.php?act=dangxuat">Đăng xuất</a>)</p>
+                                        <img src="" alt="">
+                                        <img src="../../controllers/admin/upload/nguoidung/anh.jpg" alt="">
+                                        <p>Cảm Ơn Quý Khách <a href="javascript:void(0)"</a>.</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="account-orders" role="tabpanel" aria-labelledby="account-orders-tab">
@@ -115,9 +116,17 @@
                                                     <label for="account-details-lastname">Họ tên đầy đủ*</label>
                                                     <input type="text" id="account-details-lastname" value="<?= $full_name ?>">
                                                 </div>
+                                                <div class="single-input single-input-half">
+                                                    <label for="account-details-firstname">Email*</label>
+                                                    <input type="text" id="account-details-firstname" value="<?= $email ?>">
+                                                </div>
+                                                <div class="single-input single-input-half">
+                                                    <label for="account-details-lastname">Số điện thoại*</label>
+                                                    <input type="text" id="account-details-lastname" value="<?= $sdt ?>">
+                                                </div>
                                                 <div class="single-input">
-                                                    <label for="account-details-email">Email*</label>
-                                                    <input type="email" id="account-details-email" value="<?= $email ?>">
+                                                    <label for="account-details-email">Địa chỉ*</label>
+                                                    <input type="email" id="account-details-email" value="<?= $dia_chi ?>">
                                                 </div>
                                                 <div class="single-input">
                                                     <label for="account-details-oldpass">Current Password(leave blank to leave
