@@ -12,7 +12,7 @@ include "../../models/danhmuc.php";
 include "../../models/sanpham.php";
 include "../../models/khuyenmai.php";
 include "../../models/role.php";
-include "../../models/thongke.php";
+
 
 
 include "../../views/Client/header_home.php";
@@ -110,11 +110,10 @@ if (isset($_GET['act'])) {
         case "lienhe":
             include "../../views/Client/lienhe.php";
             break;
-        case "thongke":
-           
-            include "../../views/Client/taikhoan/thongke.php";
-
-            break;
+            case "binhluat":
+                include "../../views/Client/binhluat/frombinhluat.php";
+                break;
+       
     }
 } else {
     $listsp = loadAll_san_pham();

@@ -214,6 +214,24 @@
                             </li>
                         </ul>
                     </li>
+                     <!-- thôngke -->
+                     <li class="nav-item ">
+                        <a href="#" class="nav-link ">
+                            <p>
+                               Thông kê
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="?act=thongke" class="nav-link ">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Thông Kê Đanh Mục</p>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

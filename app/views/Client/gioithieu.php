@@ -112,8 +112,8 @@
                                 </a>
                             </div>
                             <div class="team-content text-center">
-                                <h3>Timothy Beck</h3>
-                                <p>IT Expert</p>
+                                <h3>Đức Cu lI</h3>
+                                <p>sao Phải Soán</p>
                                 <a href="#">info@example.com</a>
                                 <div class="hiraola-social_link">
                                     <ul>
