@@ -12,8 +12,11 @@ include "../../models/danhmuc.php";
 include "../../models/sanpham.php";
 include "../../models/khuyenmai.php";
 include "../../models/role.php";
+include "../../models/thongke.php";
+
 
 include "../../views/Client/header_home.php";
+
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -46,8 +49,7 @@ if (isset($_GET['act'])) {
                 $full_name = $_POST['full_name'];
                 $password = $_POST['password'];
                 $ngay_tao = $currentDateTimeString;
-
-                add_tk($ten_tk,$full_name ,  $email, $password, $ngay_tao);
+                add_tk($ten_tk, $full_name,  $email, $password, $ngay_tao);
             }
             $listk = loadAll_tai_khoan();
             include "../../views/Client/taikhoan/dangky.php";
@@ -80,20 +82,19 @@ if (isset($_GET['act'])) {
                    
             break;
         case "sanpham":
-            if(isset($_POST['kyw'])&&($_POST['kyw']!="")){
-                $kyw=$_POST['kyw'];
-            }else{
-                $kyw="";
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
             }
-            if(isset($_GET['iddm'])&&($_GET['iddm']>0)){
-                $id_dm=$_GET['iddm'];
-                
-            }else{
-                $id_dm= 0;
+            if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
+                $id_dm = $_GET['iddm'];
+            } else {
+                $id_dm = 0;
             }
-            $list_danhmuc=loadAll_danhmuc();
-            $tendm=load_ten_dm($id_dm);
-            $listsp = loadll_san_pham("$kyw",$id_dm);
+            $list_danhmuc = loadAll_danhmuc();
+            $tendm = load_ten_dm($id_dm);
+            $listsp = loadll_san_pham("$kyw", $id_dm);
             include "../../views/Client/sanpham.php";
             break;
         case "tintuc":
@@ -109,8 +110,14 @@ if (isset($_GET['act'])) {
         case "lienhe":
             include "../../views/Client/lienhe.php";
             break;
+        case "thongke":
+           
+            include "../../views/Client/taikhoan/thongke.php";
+
+            break;
     }
 } else {
+    $listsp = loadAll_san_pham();
     include "../../views/Client/home.php";
 }
 include "../../views/Client/footer.php";

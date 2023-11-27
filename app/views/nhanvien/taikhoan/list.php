@@ -20,23 +20,25 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Tên tài khoản</th>
                 <th>Họ và tên</th>
                 <th>Email</th>
-                <th>password</th>
+                <th>Pass</th>
                 <th>Địa Chỉ</th>
                 <th>Role</th>
                 <th>Số Điện Thoại</th>
                 <th>Năm Sinh</th>
                 <th>Giới Tính</th>
-                <!-- <th>Hành động</th> -->
+                <th>Ngày Tạo</th>
+                <th>Hành động</th>
             </tr>
         </thead>
 
         <tbody>
             <?php
             foreach ($listk as $value)  { 
-                
                 extract($value);
+                
                 $xoatk = "index.php?act=xoatk&id_tk=" . $id_tk;
                 $suatk = "index.php?act=suatk&id_tk=" . $id_tk;
                  ?>
@@ -44,19 +46,21 @@
                  <tr>
                     <td><?= $id_tk?></td>
                     <td><?= $ten_tk?></td>
+                    <td><?= $full_name?></td>
                     <td><?= $email?></td>
                     <td><?= $password?></td>
                     <td><?= $dia_chi?></td>
                     <td><?= $name_role?></td>
                     <td><?= $sdt?></td>
                     <td><?= $nam_sinh?></td>
-                    <td><?= $gioi_tinh?></td>
-                    <!-- <td> -->
-                        <!-- <a href="<?= $xoatk ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">xóa</button></a> -->
-                        <!-- <a href="<?= $suatk ?>"><button type="button" class="btn btn-success">sửa</button></a> -->
+                    <td><?= $gioi_tinh == 1 ? 'Nữ' : 'Nam'?></td>
+                    <td><?= $ngay_tao?></td>
+                    
+                    <td>
+                        <a href="<?= $xoatk ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">xóa</button></a>
+                        <a href="<?= $suatk ?>"><button type="button" class="btn btn-success">sửa</button></a>
                 
-                    <!-- </td>     -->
-
+                    </td>    
                  </tr>
 
           <?php } ?>
