@@ -504,6 +504,7 @@
                             <!-- Begin Hiraola's Slide Item Area -->
                       <?php       foreach ($listsp as $sp) {
                         extract($sp);
+                        $linksp="index.php?act=sanphamct&id_sp=".$id_sp;  
                         //include "../../controllers/admin/upload/";
                         $url = "../../controllers/admin/upload/sanpham/";
                         $image = $url . $anh_sp;
@@ -511,10 +512,10 @@
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
+                                    <?php echo'<a href="'.$linksp .'">'?>
                                             <img class="primary-img"  src="<?= $image ?>" alt="Hiraola's Product Image">
                                             <!-- <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image"> -->
-                                        </a>
+                                          </a>
                                         <div class="add-actions">
                                             <ul>
                                                 <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>

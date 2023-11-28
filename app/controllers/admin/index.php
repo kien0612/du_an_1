@@ -10,6 +10,7 @@ include "../../models/khuyenmai.php";
 include "../../models/role.php";
 include "../../views/Admin/header.php";
 include "../../views/Admin/menu-left.php";
+include "../../models/thongke.php";
 
 
 if (isset($_GET['act']) && $_GET['act'] !== "") {
@@ -354,6 +355,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             $listkm = loadAll_khuyen_mai();
             include "../../views/Admin/khuyenmai/list.php";
             break;
+            case "thongke":
+           
+                include "../../views/Admin/bieudo/thongke.php";
+    
+                break;
     }
 }
 include "../../views/Admin/footer.php";
