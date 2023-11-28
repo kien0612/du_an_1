@@ -70,16 +70,16 @@ if (isset($_GET['act'])) {
             include "../../views/Client/main.php";
             break;
         case "sanphamct":
-            if(isset($_GET['id_sp'])&&($_GET['id_sp']>0)){
-                $id_sp=$_GET['id_sp'];
-                $onesp=loadone_sanpham($id_sp);
+            if (isset($_GET['id_sp']) && ($_GET['id_sp'] > 0)) {
+                $id_sp = $_GET['id_sp'];
+                $onesp = loadone_sanpham($id_sp);
                 extract($onesp);
-                
+
                 include "../../views/Client/sanphamct.php";
-            }else{
+            } else {
                 include "../../views/Client/home.php";
-            }   
-                   
+            }
+
             break;
         case "sanpham":
             if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
@@ -110,10 +110,11 @@ if (isset($_GET['act'])) {
         case "lienhe":
             include "../../views/Client/lienhe.php";
             break;
-            case "binhluat":
-                include "../../views/Client/binhluat/frombinhluat.php";
-                break;
-       
+        case "thieuthi_bl":
+            $listbl = loadAll_binh_lua($id_bl);
+            include "../../views/Client/sanphamct.php";
+            break;
+        
     }
 } else {
     $listsp = loadAll_san_pham();
