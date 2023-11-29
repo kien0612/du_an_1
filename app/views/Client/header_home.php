@@ -209,7 +209,17 @@
                                         </a>
                                     </li>
                                     <li>
+<<<<<<< HEAD
                                         <a href="?act=giohang" class="notification">
+=======
+                                        <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white d-lg-none d-block">
+                                            <i class="ion-navicon"></i>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="#miniCart" class="minicart-btn toolbar-btn">
+>>>>>>> 564a287 (quyet)
                                             <i class="ion-bag"></i>
                                             <span class="badge" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         </a>

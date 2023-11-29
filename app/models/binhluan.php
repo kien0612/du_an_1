@@ -1,11 +1,11 @@
 <?php
 // hiện thị tất cả 
-function loadAll_binh_lua($id_bl){
-    $sql = "SELECT * FROM $binhluan` WHERE 1";
-    if ($id_bl > 0) {
-        $sql .= " AND `id_bl`='" . $id_bl . "' ORDER BY id DESC";
+function loadAll_binh_lua($id_sp){
+    $sql = "SELECT * FROM  binhluan  WHERE 1";
+    if ($id_sp > 0) {
+        $sql .= " AND `id_sp`='" . $id_sp . "' ";
     }
-   // $sql .= " ORDER BY id DESC";
+   $sql .= " ORDER BY id_bl DESC";
     $list_binh_lua = pdo_query($sql);
     return $list_binh_lua;
 }

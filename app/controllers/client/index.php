@@ -172,12 +172,16 @@ if (isset($_GET['act'])) {
         case "lienhe":
             include "../../views/Client/lienhe.php";
             break;
+            case "giohang":
+                include "../../views/Client/giohang.php";
+                break;
         case "thieuthi_bl":
             $listbl = loadAll_binh_lua($id_bl);
             include "../../views/Client/sanphamct.php";
             break;
     }
 } else {
+    
     $listsp = loadAll_san_pham();
     include "../../views/Client/home.php";
 }

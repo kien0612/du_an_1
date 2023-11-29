@@ -46,7 +46,7 @@
                                                 <p><?= $mota ?></p>
                                             </div>
                                             <div class="hiraola-read-more_area">
-                                                <a href="blog-details-left-sidebar.html" class="hiraola-read_more">Read More</a>
+                                                <!-- <a href="blog-details-left-sidebar.html" class="hiraola-read_more">Read More</a> -->
                                             </div>
                                         </div>
                                     </div>
