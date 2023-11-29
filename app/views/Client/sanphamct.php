@@ -94,7 +94,7 @@
                                 <!-- mua hàng  -->
                                 <div class="qty-btn_area">
                                     <ul>
-                                        <li><a class="qty-cart_btn" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
+                                        <li><a class="qty-cart_btn" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
                                         <li><a class="qty-wishlist_btn" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
                                         <li><a class="qty-compare_btn" href="index.php?act=gioithieu" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
                                     </ul>
@@ -202,8 +202,8 @@
                                 <div id="reviews" class="tab-pane" role="tabpanel">
                                     <div class="tab-pane active" id="tab-review">
                                         <form class="form-horizontal" id="form-review">
-                                           
-                                    
+
+
 
 
                                             <!-- bình luât -->
@@ -220,12 +220,12 @@
                                                 </script>
                                                 <div class="mb" id="binhluan">
                                                 </div>
-                                             
+
                                             <?php } else { ?>
                                                 <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để bình luận sản phẩm này</div>
                                             <?php } ?>
-                                         
-                                           
+
+
                                     </div>
                                     </form>
                                 </div>
@@ -823,3 +823,28 @@
             </div>
         </div>
         <!-- kết thúc -->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script>
+            let totalProduct = document.getElementById('totalProduct');
+
+            function addToCart(productId, productName, productPrice) {
+                // console.log(productId ,productName ,productPrice);
+                $.ajax({
+                    type: 'POST',
+                    url: '../../views/Client/addToCart.php',
+                    data: {
+                        id: productId,
+                        name: productName,
+                        price: productPrice
+                    },
+                    success: function(response) {
+                        totalProduct.innerText = response;
+                        alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            }
+        </script>

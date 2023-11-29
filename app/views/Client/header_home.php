@@ -44,6 +44,31 @@
     <!-- <link rel="stylesheet" href="assets/css/style.min.css"> -->
 
 </head>
+<style>
+    .notification {
+        color: white;
+        text-decoration: none;
+        /* padding: 15px 26px; */
+        position: relative;
+        display: inline-block;
+        border-radius: 2px;
+    }
+
+    /* .notification:hover {
+  background: red;
+} */
+
+    .notification .badge {
+        position: absolute;
+        top: 30px;
+        right: 2px;
+        padding: 3px 7px;
+        border-radius: 50%;
+        background: red;
+        color: white;
+        font-size: 12px;
+    }
+</style>
 
 <body class="template-color-2">
 
@@ -127,7 +152,7 @@
                         <!-- tim kiem san pham -->
                         <div class="col-lg-9">
                             <div class="hm-form_area">
-                                <form action="index.php?act=sanpham" class="hm-searchbox" method="post"> 
+                                <form action="index.php?act=sanpham" class="hm-searchbox" method="post">
                                     <input type="text" name="kyw" placeholder="Enter your search key ...">
                                     <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
@@ -150,7 +175,7 @@
                             <div class="main-menu_area">
                                 <nav>
                                     <ul>
-                                        <li class="dropdown-holder"><a href="../../controllers/client/index.php">Trang Chủ</a>
+                                        <li class="dropdown-holder"><a href="index.php">Trang Chủ</a>
                                         </li>
                                         <li class="megamenu-holder"><a href="?act=sanpham">Sản Phẩm</a>
                                         </li>
@@ -184,13 +209,9 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white d-lg-none d-block">
-                                            <i class="ion-navicon"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                        <a href="?act=giohang" class="notification">
                                             <i class="ion-bag"></i>
+                                            <span class="badge" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         </a>
                                     </li>
                                 </ul>
@@ -199,7 +220,7 @@
                     </div>
                 </div>
             </div>
-            <div class="offcanvas-minicart_wrapper" id="miniCart">
+            <!-- <div class="offcanvas-minicart_wrapper" id="miniCart">
                 <div class="offcanvas-menu-inner">
                     <a href="#" class="btn-close"><i class="ion-android-close"></i></a>
                     <div class="minicart-content">
@@ -250,6 +271,6 @@
                         <a href="checkout.html" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Checkout</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </header>
         <!-- Hiraola's Header Main Area End Here kiên -->

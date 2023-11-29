@@ -97,6 +97,21 @@ if (isset($_GET['act'])) {
             $listsp = loadll_san_pham("$kyw", $id_dm);
             include "../../views/Client/sanpham.php";
             break;
+        case "giohang":
+            if (!empty($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+
+                // Tạo mảng chứa ID các sản phẩm trong giỏ hàng
+                $productId = array_column($cart, 'id');
+
+                $idList = implode(',', $productId);
+                
+                // Lấy sản phẩm trong bảng sản phẩm theo id
+                $dataDb = loadone_sanphamCart($idList);
+                //var_dump($dataDb);
+            }
+            include "../../views/Client/giohang.php";
+            break;
         case "tintuc":
             $list_bai_viet = loadAll_bai_viet();
             include "../../views/Client/tintuc.php";
