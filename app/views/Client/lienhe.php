@@ -13,7 +13,11 @@
         <!-- Begin Contact Main Page Area -->
         <div class="contact-main-page">
             <div class="container">
-                <div id="google-map"></div>
+                <div id="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3588.826640042142!2d105.70661607499498!3d20.805032095425727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31344bf527f2c943%3A0x59cad48bde39a536!2zUGjhu5EgQmEgVGjDoQ!5e1!3m2!1svi!2s!4v1701271583783!5m2!1svi!2s" width="100%" height="450" style="border:0;"
+                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                </div>
             </div>
             <div class="container">
                 <div class="row">
