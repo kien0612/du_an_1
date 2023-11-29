@@ -12,7 +12,7 @@ include "../../models/danhmuc.php";
 include "../../models/sanpham.php";
 include "../../models/khuyenmai.php";
 include "../../models/role.php";
-include "../../models/thongke.php";
+
 
 
 include "../../views/Client/header_home.php";
@@ -69,17 +69,20 @@ if (isset($_GET['act'])) {
         case "trangchu":
             include "../../views/Client/main.php";
             break;
+            case "sanphamyeuthich" :
+                include "../../views/Client/sanphamyeuthich.php";
+                break;
         case "sanphamct":
-            if(isset($_GET['id_sp'])&&($_GET['id_sp']>0)){
-                $id_sp=$_GET['id_sp'];
-                $onesp=loadone_sanpham($id_sp);
+            if (isset($_GET['id_sp']) && ($_GET['id_sp'] > 0)) {
+                $id_sp = $_GET['id_sp'];
+                $onesp = loadone_sanpham($id_sp);
                 extract($onesp);
-                
+
                 include "../../views/Client/sanphamct.php";
-            }else{
+            } else {
                 include "../../views/Client/home.php";
-            }   
-                   
+            }
+
             break;
         case "sanpham":
             if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
@@ -97,6 +100,65 @@ if (isset($_GET['act'])) {
             $listsp = loadll_san_pham("$kyw", $id_dm);
             include "../../views/Client/sanpham.php";
             break;
+        case "giohang":
+            //echo ('kien');
+            //var_dump($_SESSION['cart']);
+            if (!empty($_SESSION['cart'])) {
+                //echo (1);
+
+                $cart = $_SESSION['cart'];
+                
+                // Tạo mảng chứa ID các sản phẩm trong giỏ hàng
+                $productId = array_column($cart, 'id');
+
+                $idList = implode(',', $productId);
+
+                // Lấy sản phẩm trong bảng sản phẩm theo id
+                $dataDb = loadone_sanphamCart($idList);
+                //var_dump($dataDb);
+
+            }
+            include "../../views/Client/giohang.php";
+            break;
+        case "order":
+            // if (isset($_SESSION['cart'])) {
+            //     $cart = $_SESSION['cart'];
+            //     // print_r($cart);
+            //     if (isset($_POST['order_confirm'])) {
+            //         $txthoten = $_POST['txthoten'];
+            //         $txttel = $_POST['txttel'];
+            //         $txtemail = $_POST['txtemail'];
+            //         $txtaddress = $_POST['txtaddress'];
+            //         $pttt = $_POST['pttt'];
+            //         // date_default_timezone_set('Asia/Ho_Chi_Minh');
+            //         // $currentDateTime = date('Y-m-d H:i:s');
+            //         if (isset($_SESSION['user'])) {
+            //             $id_user = $_SESSION['user']['id'];
+            //         } else {
+            //             $id_user = 0;
+            //         }
+            //         $idBill = addOrder($id_user, $txthoten, $txttel, $txtemail, $txtaddress, $_SESSION['resultTotal'], $pttt);
+            //         foreach ($cart as $item) {
+            //             addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
+            //         }
+            //         unset($_SESSION['cart']);
+            //         $_SESSION['success'] = $idBill;
+            //         header("Location: index.php?act=success");
+            //     }
+                
+            // } else {
+            //     header("Location: index.php?act=listCart");
+            // }
+            include "../../views/Client/thanhtoan.php";
+            header("Location : ../../views/Client/thanhtoan.php");
+            break;
+        case "success":
+            if (isset($_SESSION['success'])) {
+                include 'view/success.php';
+            } else {
+                header("Location: index.php");
+            }
+            break;
         case "tintuc":
             $list_bai_viet = loadAll_bai_viet();
             include "../../views/Client/tintuc.php";
@@ -110,10 +172,9 @@ if (isset($_GET['act'])) {
         case "lienhe":
             include "../../views/Client/lienhe.php";
             break;
-        case "thongke":
-           
-            include "../../views/Client/taikhoan/thongke.php";
-
+        case "thieuthi_bl":
+            $listbl = loadAll_binh_lua($id_bl);
+            include "../../views/Client/sanphamct.php";
             break;
     }
 } else {
