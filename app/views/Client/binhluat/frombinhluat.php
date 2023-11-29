@@ -34,6 +34,7 @@ include "../../../models/binhluan.php";
                       ?>
             </table>
         </div>
+        
         <div class="box_search">
             <!-- thêm binh luât -->
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">

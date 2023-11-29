@@ -69,6 +69,9 @@ if (isset($_GET['act'])) {
         case "trangchu":
             include "../../views/Client/main.php";
             break;
+            case "sanphamyeuthich" :
+                include "../../views/Client/sanphamyeuthich.php";
+                break;
         case "sanphamct":
             if (isset($_GET['id_sp']) && ($_GET['id_sp'] > 0)) {
                 $id_sp = $_GET['id_sp'];
@@ -98,9 +101,13 @@ if (isset($_GET['act'])) {
             include "../../views/Client/sanpham.php";
             break;
         case "giohang":
+            //echo ('kien');
+            //var_dump($_SESSION['cart']);
             if (!empty($_SESSION['cart'])) {
-                $cart = $_SESSION['cart'];
+                //echo (1);
 
+                $cart = $_SESSION['cart'];
+                
                 // Tạo mảng chứa ID các sản phẩm trong giỏ hàng
                 $productId = array_column($cart, 'id');
 
@@ -109,6 +116,7 @@ if (isset($_GET['act'])) {
                 // Lấy sản phẩm trong bảng sản phẩm theo id
                 $dataDb = loadone_sanphamCart($idList);
                 //var_dump($dataDb);
+
             }
             include "../../views/Client/giohang.php";
             break;
@@ -142,6 +150,7 @@ if (isset($_GET['act'])) {
             //     header("Location: index.php?act=listCart");
             // }
             include "../../views/Client/thanhtoan.php";
+            header("Location : ../../views/Client/thanhtoan.php");
             break;
         case "success":
             if (isset($_SESSION['success'])) {

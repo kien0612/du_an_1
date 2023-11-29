@@ -65,32 +65,42 @@
                              <tbody id="order">
                                  <?php
                                     $sum_total = 0;
-                                    foreach ($dataDb as $key => $product) {
-                                        $url = "../../controllers/admin/upload/sanpham/";
-                                        $quantityInCart = 0;
-                                        foreach ($_SESSION['cart'] as $sp) {
-                                            if ($sp['id'] == $product['id_sp']) {
-                                                $quantityInCart = $sp['quantity'];
-                                                break;
+                                    //var_dump($dataDb);
+                                    if (empty($dataDb)) {
+                                        echo ("không có sản phẩm nào ");
+                                    } else {
+                                        foreach ($dataDb as $key => $product) {
+                                            $url = "../../controllers/admin/upload/sanpham/";
+                                            $quantityInCart = 0;
+                                            foreach ($_SESSION['cart'] as $sp) {
+                                                if ($sp['id'] == $product['id_sp']) {
+                                                    $quantityInCart = $sp['quantity'];
+                                                    break;
+                                                }
                                             }
-                                        }
                                     ?>
-                                     <tr>
-                                         <td><?= $key + 1 ?></td>
-                                         <td class="hiraola-product-thumbnail"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" alt="Hiraola's Cart Thumbnail"></td>
-                                         <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
-                                         <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
-                                         <td class="quantity">
-                                             <?= $quantityInCart ?>
-                                         </td>
-                                         <td class="product-subtotal"><span class="amount"><?= number_format((int)$product['gia_sp'] * (int)$quantityInCart, 0, ",", ".") ?> VND</span></td>
-                                         <td class="hiraola-product-remove"><i onclick="removeFormCart(<?= $product['id_sp'] ?>)" class="fa fa-trash" title="Remove"></i></td>
-                                     </tr>
+                                         <tr>
+                                             <td><?= $key + 1 ?></td>
+                                             <td class="hiraola-product-thumbnail"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" alt="Hiraola's Cart Thumbnail"></td>
+                                             <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
+                                             <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
+                                             <td class="quantity">
+                                                 <?= $quantityInCart ?>
+                                                 <div class="cart-plus-minus">
+                                                     <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
+                                                     <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                     <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                 </div>
+                                             </td>
+                                             <td class="product-subtotal"><span class="amount"><?= number_format((int)$product['gia_sp'] * (int)$quantityInCart, 0, ",", ".") ?> VND</span></td>
+                                             <td class="hiraola-product-remove"><i onclick="removeFormCart(<?= $product['id_sp'] ?>)" class="fa fa-trash" title="Remove"></i></td>
+                                         </tr>
                                  <?php
-                                        $sum_total += ((int)$product['gia_sp'] * (int)$quantityInCart);
+                                            $sum_total += ((int)$product['gia_sp'] * (int)$quantityInCart);
 
-                                        // Lưu tổng giá trị vào sesion
-                                        $_SESSION['resultTotal'] = $sum_total;
+                                            // Lưu tổng giá trị vào sesion
+                                            $_SESSION['resultTotal'] = $sum_total;
+                                        }
                                     }
                                     ?>
 
@@ -105,9 +115,7 @@
                                  </div>
                                  <div class="coupon2">
                                      <form action="index.php?act=order" method="post">
-
-                                        <a href="index.php?act=order"> <input class="button" name="order" value="Đặt Hàng" type="submit"></a>
-
+                                         <input type="submit" style="padding:10px;" name="order" value="Đặt Hàng">
                                      </form>
                                  </div>
                              </div>
@@ -121,6 +129,33 @@
  <!-- kết thúc của sản phẩm trong giỏ hàng  -->
  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
  <script>
+     function updateQuantity(id, index) {
+         // lấy giá trị của ô input
+         let newQuantity = $('#quantity_' + id).val();
+         if (newQuantity <= 0) {
+             newQuantity = 1
+         }
+
+         // Gửi yêu cầu bằng ajax để cập nhật giỏ hàng
+         $.ajax({
+             type: 'POST',
+             url: '../../views/Client/updateQuantity.php',
+             data: {
+                 id: id,
+                 quantity: newQuantity
+             },
+             success: function(response) {
+                 // Sau khi cập nhật thành công
+                 $.post('../../views/Client/giohang_2.php', function(data) {
+                     $('#order').html(data);
+                 })
+             },
+             error: function(error) {
+                 console.log(error);
+             },
+         })
+     }
+
      function removeFormCart(id) {
          if (confirm("Bạn có đồng ý xóa sản phẩm hay không?")) {
              // Gửi yêu cầu bằng ajax để cập nhật giỏ hàng
