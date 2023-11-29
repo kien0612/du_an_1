@@ -37,6 +37,7 @@ $list_binh_lua =loadAll_binh_lua($id_sp);
                       ?>
             </table>
         </div>
+        
         <div class="box_search">
             <!-- thêm binh luât -->
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">

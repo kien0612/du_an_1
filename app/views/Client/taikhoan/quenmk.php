@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12" style="margin: 0 auto;">
-                <form action="?act=log_in" method="post">
+                <form action="?act=quenmk" method="post">
                     <div class="login-form">
                         <h4 class="login-title">Quên Mật Khẩu</h4>
                         <div class="row">
@@ -25,17 +25,17 @@
                                 <label>Email</label>
                                 <input type="email" placeholder="Nhâp email" name="email" required>
                             </div>
-
+                            <?php if (isset($sendMailMess) && $sendMailMess != '') {
+                                echo '<p style="color: red; font-size: 12px;">'.$sendMailMess.'</p>';
+                            } ?>
 
                             <div class="col-12">
 
-                                <input type="submit" name="gui" value="Gửi Email" class="hiraola-register_btn">
+                                <input type="submit" name="guiemail" value="Gửi Email" class="hiraola-register_btn">
                                 <input type="reset" value="reset" class="hiraola-register_btn">
                                 <p>Bạn đã có tài khoản ? <a href="?act=log_up">Đăng nhập</a></p>
                             </div>
-                            <?php if (isset($sendMailMess) && $sendMailMess != '') {
-                                echo $sendMailMess;
-                            } ?>
+
                         </div>
                     </div>
                 </form>

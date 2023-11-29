@@ -1,4 +1,3 @@
-
 <!-- slide show phần header-->
 <div class="hiraola-slider_area-2">
     <div class="main-slider">
@@ -529,330 +528,38 @@
                                                 <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
                                                 </li>
 
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct"><?= $ten_sp ?></a></a></h6>
-                                            <div class="price-box">
-                                               
-                                                <span class="new-price"><?= number_format($gia_sp, 0, ',', '.') ?> VND</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
+                                        <div class="hiraola-product_content">
+                                            <div class="product-desc_info">
+                                                <h6><a class="product-name" href="index.php?act=sanphamct"><?= $ten_sp ?></a></a></h6>
+                                                <div class="price-box">
+
+                                                    <span class="new-price"><?= number_format($gia_sp, 0, ',', '.') ?> VND</span>
+                                                </div>
+                                                <div class="additional-add_action">
+                                                    <ul>
+                                                        <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             <?php
-                    }
-                    ?>
-                            <!-- <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <span class="sticker-2">Sale</span>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Global Knives:
-                                                    Profession...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£60.25</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Flash Furniture
-                                                    Alonza Se...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£76.44</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <span class="sticker-2">Sale</span>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Work Lamp Silver
-                                                    Proin
-                                                    he...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£35.20</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-9.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Global Knives:
-                                                    Profession...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£60.25</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Flash Furniture
-                                                    Alonza Se...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£77.44</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-5.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Pwoly and Bark Eames
-                                                    Styl...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£23.43</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-4.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-7.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Utensils and Knives
-                                                    Block...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£50.43</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                          
+                            }
+                            ?>
                         </div>
                     </div>
                     <div id="earrings" class="tab-pane" role="tabpanel">
@@ -3316,3 +3023,27 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    let totalProduct = document.getElementById('totalProduct');
+
+    function addToCart(productId, productName, productPrice) {
+        // console.log(productId ,productName ,productPrice);
+        $.ajax({
+            type: 'POST',
+            url: '../../views/Client/addToCart.php',
+            data: {
+                id: productId,
+                name: productName,
+                price: productPrice
+            },
+            success: function(response) {
+                totalProduct.innerText = response;
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>

@@ -58,12 +58,15 @@
                                 <span class="reference"><?= $mo_ta_sp ?></span>
                                 <div class="rating-box">
                                     <ul>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li><i class="fa fa-star-of-david"></i></li>
-                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
                                     </ul>
+                                </div>
+                                <div class="sp-heading">
+                                    <h5><a href="#"><?= $ten_sp ?></a></h5>
                                 </div>
                                 <div class="sp-essential_stuff">
                                     <ul>
@@ -95,7 +98,7 @@
                                 <!-- mua hàng  -->
                                 <div class="qty-btn_area">
                                     <ul>
-                                        <li><a class="qty-cart_btn" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
+                                        <li><a class="qty-cart_btn" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" href="index.php?act=giohang">Thêm vào giỏ hàng</a></li>
                                         <li><a class="qty-wishlist_btn" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a></li>
                                         <li><a class="qty-compare_btn" href="index.php?act=gioithieu" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
                                     </ul>
