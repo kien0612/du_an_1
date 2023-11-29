@@ -55,7 +55,7 @@
                                 <div class="sp-heading">
                                     <h5><a href="#"><?= $ten_sp ?></a></h5>
                                 </div>
-                                <span class="reference">Reference: demo_1</span>
+                                <span class="reference"><?= $mo_ta_sp ?></span>
                                 <div class="rating-box">
                                     <ul>
                                         <li><i class="fa fa-star-of-david"></i></li>
@@ -67,13 +67,14 @@
                                 </div>
                                 <div class="sp-essential_stuff">
                                     <ul>
-                                        <li>Giá: <a href="javascript:void(0)"><span><?= $gia_sp ?></span></a></li>
-                                        <li>Mã sản phẩm: <a href="javascript:void(0)"><?= $id_sp ?></a></li>
+                                        <li>Giá: <a href="javascript:void(0)"><span><?= number_format($gia_sp, 0, ',', '.') ?> VND</span></a></li>
+                                        <li>Mã sản phẩm: <a href="javascript:void(0)">#<?= $id_sp ?></a></li>
                                         <li>Trạng thái: <a href="javascript:void(0)"><?= $trang_thai ?></a></li>
+                                        <li>SỐ Lượng Còn: <a href="javascript:void(0)"><?= $so_luong ?></a></li>
                                     </ul>
                                 </div>
                                 <!-- kích cỡ sản phẩm -->
-                                <div class="product-size_box">
+                                <!-- <div class="product-size_box">
                                     <span>Size</span>
                                     <select class="myniceselect nice-select">
                                         <option value="1">S</option>
@@ -81,7 +82,7 @@
                                         <option value="3">L</option>
                                         <option value="4">XL</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <!-- số lượng -->
                                 <div class="quantity">
                                     <label>Quantity</label>

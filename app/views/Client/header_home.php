@@ -188,6 +188,7 @@
                                             <i class="ion-navicon"></i>
                                         </a>
                                     </li>
+                                    
                                     <li>
                                         <a href="#miniCart" class="minicart-btn toolbar-btn">
                                             <i class="ion-bag"></i>

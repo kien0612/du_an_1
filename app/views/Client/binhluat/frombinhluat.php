@@ -1,13 +1,13 @@
 <?php 
 session_start();
-$id_sp=$_REQUEST['id_sp'];
-
-?>
-
-<?php  
 include "../../../models/pdo.php";
 include "../../../models/binhluan.php";
+$id_sp=$_REQUEST['id_sp'];
+$list_binh_lua =loadAll_binh_lua($id_sp);  
+
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +22,9 @@ include "../../../models/binhluan.php";
         <div class="box_title">Bình luận</div>
         <div class="box_content2 product_portfolio">
             <table>
-                <?php  $list_binh_luan = loadAll_binh_luan();  ?>
+               
                 <?php
-                      foreach($list_binh_luan as $bl){
+                      foreach($list_binh_lua as $bl){
                           extract($bl);
                           echo '<tr><td>'.$noi_dung_bl.'</td>';
                           echo '<td>'.$id_tk.'</td>';
@@ -38,12 +38,12 @@ include "../../../models/binhluan.php";
             <!-- thêm binh luât -->
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                 <input type="hidden" name="id_sp" value="<?php echo $id_sp?>">
-                <input type="text" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
-                
-
+                <input type="text" name="noi_dung_bl" id="noi_dung_bl" placeholder="bình luận" name="noidung">
                 <input type="submit" value="Gửi bình luận" name="guibinhluan">
             </form>
         </div>
+
+
         <?php
         if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
                 $id_sp=$_POST['id_sp'];
