@@ -101,23 +101,15 @@
                          <div class="col-12">
                              <div class="coupon-all">
                                  <div class="coupon">
-                                     <input id="coupon_code" class="input-text" name="coupon_code" value="" placeholder="Coupon code" type="text">
-                                     <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
+                                     <h4>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h4>
                                  </div>
                                  <div class="coupon2">
-                                     <input class="button" name="update_cart" value="Update cart" type="submit">
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="row">
-                         <div class="col-md-5 ml-auto">
-                             <div class="cart-page-total">
-                                 <h2>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h2>
-                                 <ul>
+                                     <form action="index.php?act=order" method="post">
 
-                                 </ul>
-                                 <a href="javascript:void(0)">Đặt hàng</a>
+                                        <a href="index.php?act=order"> <input class="button" name="order" value="Đặt Hàng" type="submit"></a>
+
+                                     </form>
+                                 </div>
                              </div>
                          </div>
                      </div>

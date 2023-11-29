@@ -105,12 +105,50 @@ if (isset($_GET['act'])) {
                 $productId = array_column($cart, 'id');
 
                 $idList = implode(',', $productId);
-                
+
                 // Lấy sản phẩm trong bảng sản phẩm theo id
                 $dataDb = loadone_sanphamCart($idList);
                 //var_dump($dataDb);
             }
             include "../../views/Client/giohang.php";
+            break;
+        case "order":
+            // if (isset($_SESSION['cart'])) {
+            //     $cart = $_SESSION['cart'];
+            //     // print_r($cart);
+            //     if (isset($_POST['order_confirm'])) {
+            //         $txthoten = $_POST['txthoten'];
+            //         $txttel = $_POST['txttel'];
+            //         $txtemail = $_POST['txtemail'];
+            //         $txtaddress = $_POST['txtaddress'];
+            //         $pttt = $_POST['pttt'];
+            //         // date_default_timezone_set('Asia/Ho_Chi_Minh');
+            //         // $currentDateTime = date('Y-m-d H:i:s');
+            //         if (isset($_SESSION['user'])) {
+            //             $id_user = $_SESSION['user']['id'];
+            //         } else {
+            //             $id_user = 0;
+            //         }
+            //         $idBill = addOrder($id_user, $txthoten, $txttel, $txtemail, $txtaddress, $_SESSION['resultTotal'], $pttt);
+            //         foreach ($cart as $item) {
+            //             addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
+            //         }
+            //         unset($_SESSION['cart']);
+            //         $_SESSION['success'] = $idBill;
+            //         header("Location: index.php?act=success");
+            //     }
+                
+            // } else {
+            //     header("Location: index.php?act=listCart");
+            // }
+            include "../../views/Client/thanhtoan.php";
+            break;
+        case "success":
+            if (isset($_SESSION['success'])) {
+                include 'view/success.php';
+            } else {
+                header("Location: index.php");
+            }
             break;
         case "tintuc":
             $list_bai_viet = loadAll_bai_viet();
@@ -129,7 +167,6 @@ if (isset($_GET['act'])) {
             $listbl = loadAll_binh_lua($id_bl);
             include "../../views/Client/sanphamct.php";
             break;
-        
     }
 } else {
     $listsp = loadAll_san_pham();
