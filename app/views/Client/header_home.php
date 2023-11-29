@@ -210,8 +210,11 @@
                                     </li>
                                     <li>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <a href="?act=giohang" class="notification">
 =======
+=======
+>>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857
                                         <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white d-lg-none d-block">
                                             <i class="ion-navicon"></i>
                                         </a>
@@ -219,7 +222,10 @@
                                     
                                     <li>
                                         <a href="#miniCart" class="minicart-btn toolbar-btn">
+<<<<<<< HEAD
 >>>>>>> 564a287 (quyet)
+=======
+>>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857
                                             <i class="ion-bag"></i>
                                             <span class="badge" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         </a>
