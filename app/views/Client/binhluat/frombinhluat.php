@@ -16,6 +16,9 @@ $list_binh_lua =loadAll_binh_lua($id_sp);
     <title>Document</title>
     <link rel="stylesheet" href="../css/css.css">
 </head>
+<style>
+
+</style>
 <body>
 <div class="mb">
     <!-- list bl -->
@@ -27,7 +30,7 @@ $list_binh_lua =loadAll_binh_lua($id_sp);
                       foreach($list_binh_lua as $bl){
                           extract($bl);
                           echo '<tr><td>'.$noi_dung_bl.'</td>';
-                          echo '<td>'.$id_tk.'</td>';
+                        echo "<br/>";
                           echo '<td>'.$ngay_bl.'</td></tr>';
 
                       }
@@ -38,8 +41,8 @@ $list_binh_lua =loadAll_binh_lua($id_sp);
             <!-- thêm binh luât -->
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                 <input type="hidden" name="id_sp" value="<?php echo $id_sp?>">
-                <input type="text" name="noi_dung_bl" id="noi_dung_bl" placeholder="bình luận" name="noidung">
-                <input type="submit" value="Gửi bình luận" name="guibinhluan">
+                <input type="text"   class="btn btn-success" width="300px" height="200px" name="noi_dung_bl" id="noi_dung_bl" placeholder="bình luận" name="noidung">
+                <input type="submit"class="btn btn-success" value="Gửi bình luận" name="guibinhluan">
             </form>
         </div>
 
@@ -60,3 +63,4 @@ $list_binh_lua =loadAll_binh_lua($id_sp);
     </div>
 </body>
 </html>
+
