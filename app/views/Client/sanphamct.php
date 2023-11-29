@@ -269,54 +269,58 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="hiraola-product_slider-3">
+                            <?php
 
-                            <!-- Begin Hiraola's Slide Item Area -->
-                            <div class="slide-item">
-                                <div class="single_product">
-                                    <div class="product-img">
-                                        <a href="index.php?act=sanphamct">
-                                            <img class="primary-img" src="assets/images/product/medium-size/1-1.jpg" alt="Hiraola's Product Image">
-                                            <img class="secondary-img" src="assets/images/product/medium-size/1-2.jpg" alt="Hiraola's Product Image">
-                                        </a>
-                                        <span class="sticker">New</span>
-                                        <div class="add-actions">
-                                            <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                </li>
-                                                <li><a class="hiraola-add_compare" href="index.php?act=gioithieu" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
-                                                <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>
-                                            </ul>
+                            foreach ($listsp as $sp) {
+                                extract($sp);
+                                //include "../../controllers/admin/upload/";
+                                $linksp = "index.php?act=sanphamct&id_sp=" . $id_sp;
+                                $url = "../../controllers/admin/upload/sanpham/";
+                                $image = $url . $anh_sp;
+                            ?>
+                                <div class="slide-item">
+                                    <div class="single_product">
+                                        <div class="product-img">
+                                        <?php echo'<a href="'.$linksp .'">'?>
+                                            <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
+                                            </a>
+                                            <span class="sticker">New</span>
+                                            <div class="add-actions">
+                                                <ul>
+                                                  
+                                                    <li><a class="hiraola-add_compare" href="index.php?act=gioithieu" data-bs-toggle="tooltip" data-placement="top" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                                    <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="hiraola-product_content">
-                                        <div class="product-desc_info">
-                                            <h6><a class="product-name" href="index.php?act=sanphamct">Pendant, Made of White
-                                                    Pl...</a></h6>
-                                            <div class="price-box">
-                                                <span class="new-price">£120.80</span>
-                                            </div>
-                                            <div class="additional-add_action">
-                                                <ul>
-                                                    <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li><i class="fa fa-star-of-david"></i></li>
-                                                    <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
-                                                </ul>
+                                        <div class="hiraola-product_content">
+                                            <div class="product-desc_info">
+                                                <h6><a class="product-name" href="index.php?act=sanphamct"><?= $ten_sp ?></a></h6>
+                                                <div class="price-box">
+                                                    <span class="new-price"><?= number_format($gia_sp, 0, ',', '.') ?> VND</span>
+                                                </div>
+                                                <div class="additional-add_action">
+                                                    <ul>
+                                                        <li><a class="hiraola-add_compare" href="index.php?act=sanphamyeuthich" data-bs-toggle="tooltip" data-placement="top" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="rating-box">
+                                                    <ul>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li><i class="fa fa-star-of-david"></i></li>
+                                                        <li class="silver-color"><i class="fa fa-star-of-david"></i></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
-                            <div class="slide-item">
+                            <?php  } ?>
+
+                            <!-- <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
                                         <a href="index.php?act=sanphamct">
@@ -359,8 +363,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                           
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -404,8 +407,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                         
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -449,8 +451,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                          
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -494,8 +495,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
-                            <!-- Begin Hiraola's Slide Item Area -->
+                          
                             <div class="slide-item">
                                 <div class="single_product">
                                     <div class="product-img">
@@ -539,8 +539,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- Hiraola's Slide Item Area End Here -->
+                            </div> -->
+
 
                         </div>
                     </div>
@@ -550,6 +550,7 @@
         <!-- kết thúc -->
 
         <!-- 1 số sản phẩm ver2 -->
+<<<<<<< HEAD
         <div class="hiraola-product_area hiraola-product_area-2 section-space_add">
             <div class="container">
                 <div class="row">
@@ -866,3 +867,7 @@
                 });
             }
         </script>
+=======
+       
+        <!-- kết thúc -->
+>>>>>>> 3abad6b (quyet)

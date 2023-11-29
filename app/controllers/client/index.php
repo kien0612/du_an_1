@@ -77,11 +77,14 @@ if (isset($_GET['act'])) {
                 $id_sp = $_GET['id_sp'];
                 $onesp = loadone_sanpham($id_sp);
                 extract($onesp);
+                $listsp = loadAll_san_pham();
+                $list_danhmuc = loadAll_danhmuc();
 
                 include "../../views/Client/sanphamct.php";
             } else {
                 include "../../views/Client/home.php";
             }
+            
 
             break;
         case "sanpham":
@@ -177,6 +180,7 @@ if (isset($_GET['act'])) {
                 break;
         case "thieuthi_bl":
             $listbl = loadAll_binh_lua($id_bl);
+          
             include "../../views/Client/sanphamct.php";
             break;
     }
