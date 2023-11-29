@@ -114,7 +114,8 @@
                                      <h4>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h4>
                                  </div>
                                  <div class="coupon2">
-                                     <form action="index.php?act=order" method="post">
+                                    <a href="index.php?act=order">Đặt Hàng</a>
+                                     <form action="" method="post">
                                          <input type="submit" style="padding:10px;" name="order" value="Đặt Hàng">
                                      </form>
                                  </div>
