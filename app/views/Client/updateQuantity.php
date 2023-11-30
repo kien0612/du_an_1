@@ -19,8 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // Trả về số lượng sản phẩm của giỏ hàng
-    echo count($_SESSION['cart']);
 } else {
     echo 'yêu cầu không hợp lệ';
 }
