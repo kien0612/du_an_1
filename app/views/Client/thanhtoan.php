@@ -90,13 +90,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
-                                            <label>Email Address <span class="required">*</span></label>
+                                            <label>Email<span class="required">*</span></label>
                                             <input placeholder="" type="email">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
-                                            <label>Phone <span class="required">*</span></label>
+                                            <label>Số điện thoại <span class="required">*</span></label>
                                             <input type="text">
                                         </div>
                                     </div>
@@ -109,8 +109,8 @@
                                 </div>
                                     <div class="order-notes">
                                         <div class="checkout-form-list checkout-form-list-2">
-                                            <label>Order Notes</label>
-                                            <textarea id="checkout-mess" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                            <label>Ghi chú</label>
+                                            <textarea id="checkout-mess" cols="30" rows="10" placeholder="Ghi chú về đơn đặt hàng của bạn"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -153,7 +153,8 @@
                                     </tfoot>
                                 </table>
                             </div>
-                            <div class="payment-method">
+                            <!-- phương thức thanh toán -->
+                            <!-- <div class="payment-method">
                                 <div class="payment-accordion">
                                     <div id="accordion">
                                         <div class="card">
@@ -207,9 +208,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
+                                    <!-- nút đặt hàng -->
                                     <div class="order-button-payment">
-                                        <input value="Place order" type="submit">
+                                        <form action="" method="post">
+                                            <input value="ĐẶT HÀNG" type="submit">
+                                        </form>
                                     </div>
                                 </div>
                             </div>

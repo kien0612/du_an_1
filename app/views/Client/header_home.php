@@ -215,7 +215,7 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="#miniCart" class="minicart-btn toolbar-btn">
+                                        <a href="index.php?act=giohang" class="hiraola-add_cart">
                                             <i class="ion-bag"></i>
                                             <span class="badge" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         </a>
