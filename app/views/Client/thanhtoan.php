@@ -33,6 +33,10 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-12">
+                    <?php
+                                        if (isset($_SESSION['user'])) {
+                                            extract($_SESSION['user'])
+                                        ?>
                         <form action="javascript:void(0)">
                             <div class="checkbox-form">
                                 <h3>Billing Details</h3>
@@ -40,31 +44,31 @@
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
                                             <label>Tên tài khoản <span class="required">*</span></label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" value="<?= $ten_tk ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
                                             <label>Tên đầy đủ <span class="required">*</span></label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" value="<?= $full_name ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
                                             <label>Email Address <span class="required">*</span></label>
-                                            <input placeholder="" type="email">
+                                            <input placeholder="" type="email" value="<?= $email ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
                                             <label>Phone <span class="required">*</span></label>
-                                            <input type="text">
+                                            <input type="text" value="<?= $sdt ?>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Địa chỉ <span class="required">*</span></label>
-                                            <input placeholder="Street address" type="text">
+                                            <input placeholder="Street address" type="text" value="<?= $dia_chi ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -79,31 +83,41 @@
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
                                             <label>Tên tài khoản <span class="required">*</span></label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" value="<?= $ten_tk ?>" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
                                             <label>Tên đầy đủ <span class="required">*</span></label>
-                                            <input placeholder="" type="text">
+                                            <input placeholder="" type="text" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
+<<<<<<< HEAD
                                             <label>Email<span class="required">*</span></label>
                                             <input placeholder="" type="email">
+=======
+                                            <label>Email Address <span class="required">*</span></label>
+                                            <input placeholder="" type="email" >
+>>>>>>> 71d46b5cdf57cf662abb9469509e038abc4470e9
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="checkout-form-list">
+<<<<<<< HEAD
                                             <label>Số điện thoại <span class="required">*</span></label>
                                             <input type="text">
+=======
+                                            <label>Phone <span class="required">*</span></label>
+                                            <input type="text" >
+>>>>>>> 71d46b5cdf57cf662abb9469509e038abc4470e9
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="checkout-form-list">
                                             <label>Địa chỉ <span class="required">*</span></label>
-                                            <input placeholder="Street address" type="text">
+                                            <input placeholder="Street address" type="text" >
                                         </div>
                                     </div>
                                 </div>
@@ -116,6 +130,7 @@
                                 </div>
                             </div>
                         </form>
+                                        <?php }?>
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="your-order">
