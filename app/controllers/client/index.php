@@ -153,10 +153,7 @@ if (isset($_GET['act'])) {
             //     header("Location: index.php?act=listCart");
             // }
             include "../../views/Client/thanhtoan.php";
-<<<<<<< HEAD
-=======
             //header("Location : ../../views/Client/thanhtoan.php");
->>>>>>> 71d46b5cdf57cf662abb9469509e038abc4470e9
             break;
         case "success":
             if (isset($_SESSION['success'])) {
