@@ -14,7 +14,7 @@
      <div class="container">
          <div class="row">
              <div class="col-12">
-                 <form action="javascript:void(0)">
+              
                      <div class="table-content table-responsive">
                          <table class="table">
                              <thead>
@@ -88,7 +88,7 @@
                              </div>
                          </div>
                      </div>
-                 </form>
+                
              </div>
          </div>
      </div>
