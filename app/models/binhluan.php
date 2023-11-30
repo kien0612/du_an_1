@@ -15,7 +15,7 @@ function delete_binh_luan($id_binh_luan){
     pdo_execute($sql);
 }
 function loadAll_binh_luan(){
-    $sql = "SELECT * FROM `binhluan` WHERE 1";
+    $sql = "SELECT   binhluan.* , taikhoan.ten_tk   FROM binhluan INNER JOIN taikhoan ON binhluan.id_tk = taikhoan.id_tk ";
     $list_binh_luan = pdo_query($sql);
     return $list_binh_luan;
 }

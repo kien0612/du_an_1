@@ -51,6 +51,7 @@ function sua_san_pham($id_sp){
 }
 
 
+
 function add_san_pham($ten_sp ,  $gia_sp ,  $mo_ta_sp ,  $anh_sp ,  $so_luong ,  $ngay_nhap_sp ,  $trang_thai ,  $id_dm ){
     $sql="INSERT INTO  sanpham ( ten_sp ,  gia_sp ,  mo_ta_sp ,  anh_sp ,  so_luong ,  ngay_nhap_sp ,  trang_thai ,  id_dm )
      VALUEs ( '$ten_sp',  '$gia_sp' , '$mo_ta_sp',  '$anh_sp' , '$so_luong' ,  '$ngay_nhap_sp' ,  '$trang_thai' ,  '$id_dm' )";
@@ -70,4 +71,11 @@ function loadone_sanpham($id_sp){
     $sp=pdo_query_one($sql);
     return $sp;
 }  
+
+// sp giỏ hàng
+function loadone_sanphamCart ($idList) {
+    $sql = 'SELECT * FROM sanpham WHERE id_sp IN ('. $idList . ')';
+    $sanpham = pdo_query($sql);
+    return $sanpham;
+}
 ?>

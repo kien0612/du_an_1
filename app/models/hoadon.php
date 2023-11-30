@@ -1,4 +1,6 @@
 <?php
+
+
 function loadAll_hoa_don(){
     $sql = "SELECT hoadon.id_hoa_don, hoadon.tong_tien, hoadon.so_luong, hoadon.ngay_khoi_tao, hoadon.id_KM, thanhtoan.kieu_thanh_toan, taikhoan.ten_tk, taikhoan.dia_chi, taikhoan.sdt
     FROM `hoadon` 
