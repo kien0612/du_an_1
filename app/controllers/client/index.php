@@ -128,29 +128,32 @@ if (isset($_GET['act'])) {
                 $cart = $_SESSION['cart'];
                 // print_r($cart); die();
                 if (isset($_POST['order_confirm'])) {
-                    $txthoten = $_POST['txthoten'];
-                    $txttel = $_POST['txttel'];
-                    $txtemail = $_POST['txtemail'];
-                    $txtaddress = $_POST['txtaddress'];
+                    $ho_ten = $_POST['ho_ten'];
+                    $email = $_POST['email'];
+                    $sdt = $_POST['sdt'];
+                    $diachi = $_POST['diachi'];
+                    $mota = $_POST['mota'];
                     $pttt = $_POST['pttt'];
+
                     // date_default_timezone_set('Asia/Ho_Chi_Minh');
                     // $currentDateTime = date('Y-m-d H:i:s');
-                    // if (isset($_SESSION['user'])) {
-                    //     $id_user = $_SESSION['user']['id'];
-                    // } else {
-                    //     $id_user = 0;
-                    // }
-                    // $idBill = addOrder($id_user, $txthoten, $txttel, $txtemail, $txtaddress, $_SESSION['resultTotal'], $pttt);
-                    // foreach ($cart as $item) {
-                    //     addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
-                    // }
-                    // unset($_SESSION['cart']);
-                    // $_SESSION['success'] = $idBill;
-                    // header("Location: index.php?act=success");
+                    if (isset($_SESSION['user'])) {
+                        $id_user = $_SESSION['user']['ten_tk'];
+                    } else {
+                        $id_user = 0;
+                    }
+                    $idBill = addOrder( $ho_ten, $email, $sdt, $diachi, $mota, $pttt,  $_SESSION['resultTotal']
+                     ,$id_tk);
+                    foreach ($cart as $item) {
+                        addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
+                    }
+                    unset($_SESSION['cart']);
+                    $_SESSION['success'] = $idBill;
+                    header("Location: index.php?act=success");
                 }
-                
-            // } else {
-            //     header("Location: index.php?act=listCart");
+               
+            } else {
+                header("Location: index.php?act=listCart");
             }
 
             include "../../views/Client/thanhtoan.php";
