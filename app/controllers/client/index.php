@@ -144,9 +144,9 @@ if (isset($_GET['act'])) {
                     }
                     $idBill = addOrder( $ho_ten, $email, $sdt, $diachi, $mota, $pttt,  $_SESSION['resultTotal']
                      ,$id_tk);
-                    foreach ($cart as $item) {
-                        addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
-                    }
+                    // foreach ($cart as $item) {
+                    //     addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
+                    // }
                     unset($_SESSION['cart']);
                     $_SESSION['success'] = $idBill;
                     header("Location: index.php?act=success");
@@ -161,9 +161,9 @@ if (isset($_GET['act'])) {
             break;
         case "success":
             if (isset($_SESSION['success'])) {
-                include 'view/success.php';
+                include '../../views/Client/success.php';
             } else {
-                header("Location: index.php");
+                header("Location : ../../views/Client/home.php");
             }
             break;
         case "tintuc":

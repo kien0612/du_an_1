@@ -1,4 +1,5 @@
 <?php
+
 function loadll_san_pham($kyw="",$id_dm=0){
     $sql="SELECT * FROM sanpham where 1"; 
     if($kyw!=""){
@@ -79,15 +80,16 @@ function loadone_sanphamCart ($idList) {
     return $sanpham;
 }
 // them vào gioi hàng
+
 function addOrder( $ho_ten, $email, $sdt, $diachi, $mota,  $pttt, $id_tk){
-    $sql="INSERT INTO hoadonchitiet( $ho_ten, $email, $sdt, $diachi, $mota,  $pttt, $id_tk)
+    $sql="INSERT INTO hoadonchitiet( `ho_ten`, `email`, `sdt`, `diachi`, `mota`, `pttt`,  `id_tk`)
      VALUES ( '$ho_ten',' $email', '$sdt', '$diachi', '$mota',  '$pttt',' $id_tk')";
      $id= pdo_executeid($sql);
      return $id;
 }
 
-function addOrderDetail($id_order, $id_pro, $giamua, $soluong, $thanhtien){
-    $sql="INSERT INTO order_detail (id_order, id_pro, giamua, soluong, thanhtien) VALUES ($id_order, $id_pro, $giamua, $soluong, $thanhtien );";
-    pdo_execute($sql);
-}
+// function addOrderDetail($id_order, $id_pro, $giamua, $soluong, $thanhtien){
+//     $sql="INSERT INTO order_detail (id_order, id_pro, giamua, soluong, thanhtien) VALUES ($id_order, $id_pro, $giamua, $soluong, $thanhtien );";
+//     pdo_execute($sql);
+// }
 ?>
