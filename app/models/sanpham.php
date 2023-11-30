@@ -67,13 +67,9 @@ function update_san_pham( $id_sp,$ten_sp ,  $gia_sp ,  $mo_ta_sp ,  $anh_sp ,  $
     pdo_execute($sql);
 }
 function loadone_sanpham($id_sp){
-<<<<<<< HEAD
-    $sql="select * from sanpham  where id_sp =".$id_sp;
-=======
     $sql="SELECT sanpham.*, danhmuc.ten_dm , trangthai.ten_trang_thai FROM sanpham 
     INNER JOIN danhmuc ON sanpham.id_dm = danhmuc.id_dm 
     INNER JOIN trangthai ON trangthai.id_trang_thai= sanpham.trang_thai where id_sp =".$id_sp;
->>>>>>> 47ff3842cacfa78c469c584bb2c862107561c7c7
     $sp=pdo_query_one($sql);
     return $sp;
 }  
