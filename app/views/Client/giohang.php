@@ -10,46 +10,12 @@
          </div>
      </div>
  </div>
- <!-- phần cuối banner giỏ hàng -->
-
- <!-- Bắt dầu của sản phẩm trong giỏ hàng -->
  <div class="hiraola-cart-area">
      <div class="container">
          <div class="row">
              <div class="col-12">
                  <form action="javascript:void(0)">
                      <div class="table-content table-responsive">
-                         <!-- <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th class="hiraola-product-remove">remove</th>
-                                            <th class="hiraola-product-thumbnail">images</th>
-                                            <th class="cart-product-name">Product</th>
-                                            <th class="hiraola-product-price">Unit Price</th>
-                                            <th class="hiraola-product-quantity">Quantity</th>
-                                            <th class="hiraola-product-subtotal">Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="hiraola-product-remove"><a href="javascript:void(0)"><i class="fa fa-trash"
-                                                title="Remove"></i></a></td>
-                                            <td class="hiraola-product-thumbnail"><a href="javascript:void(0)"><img src="assets/images/product/small-size/2-1.jpg" alt="Hiraola's Cart Thumbnail"></a></td>
-                                            <td class="hiraola-product-name"><a href="javascript:void(0)">Juma rema pola</a></td>
-                                            <td class="hiraola-product-price"><span class="amount">$46.80</span></td>
-                                            <td class="quantity">
-                                                <label>Quantity</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </td>
-                                            <td class="product-subtotal"><span class="amount">$46.80</span></td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                </table> -->
                          <table class="table">
                              <thead>
                                  <tr>
@@ -85,9 +51,9 @@
                                              <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
                                              <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
                                              <td class="quantity">
-                                                 <?= $quantityInCart ?>
+                                                 <!-- <?= $quantityInCart ?> -->
                                                  <div class="cart-plus-minus">
-                                                     <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
+                                                     <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity()">
                                                      <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                                      <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                                  </div>
