@@ -60,22 +60,15 @@ if (!empty($_SESSION['cart'])) {
                     <input class="button" name="apply_coupon" value="Apply coupon" type="submit">
                 </div>
                 <div class="coupon2">
-                    <input class="button" name="update_cart" value="Update cart" type="submit">
-                </div>
+                    <form action="index.php?act=order" method="post">
+                        <input type="submit" style="padding:10px;" name="order" value="Đặt Hàng">
+                    </form>
+                    <a href="index.php?act=order">Đặt hàng</a>
+                </div>>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-5 ml-auto">
-            <div class="cart-page-total">
-                <h2>Tổng tiền</h2>
-                <ul>
-                    <?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>đ</u>
-                </ul>
-                <a href="javascript:void(0)">Đặt hàng</a>
-            </div>
-        </div>
-    </div>
+
 <?php
 }
 ?>

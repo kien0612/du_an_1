@@ -19,17 +19,23 @@ include "../../../models/binhluan.php";
 <body>
 <div class="mb">
     <!-- list bl -->
-        <div class="box_title">Bình luận</div>
+
         <div class="box_content2 product_portfolio">
-            <table>
+            <table style="width: 100%;margin-bottom: 10px;">
                 <?php  $list_binh_luan = loadAll_binh_luan();  ?>
                 <?php
                       foreach($list_binh_luan as $bl){
                           extract($bl);
-                          echo '<tr><td>'.$noi_dung_bl.'</td>';
-                          echo '<td>'.$id_tk.'</td>';
-                          echo '<td>'.$ngay_bl.'</td></tr>';
-
+                          ?>
+                          <tr>
+                            <th>Khách hàng : <?= $ten_tk?></th>
+                          </tr>
+                          <tr style="border-bottom: 1px solid #595959;">
+                            <td><?= $noi_dung_bl ?></td>
+                            <td ><?= $ngay_bl ?></td>
+                          </tr>
+                         
+                        <?php
                       }
                       ?>
             </table>
@@ -39,9 +45,7 @@ include "../../../models/binhluan.php";
             <!-- thêm binh luât -->
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                 <input type="hidden" name="id_sp" value="<?php echo $id_sp?>">
-                <input type="text" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
-                
-
+                <input type="text" style="width: 85%;" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
                 <input type="submit" value="Gửi bình luận" name="guibinhluan">
             </form>
         </div>

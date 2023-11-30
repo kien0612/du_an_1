@@ -117,6 +117,7 @@
                                      <form action="index.php?act=order" method="post">
                                          <input type="submit" style="padding:10px;" name="order" value="Đặt Hàng">
                                      </form>
+                                     <a href="index.php?act=order">Đặt hàng</a>
                                  </div>
                              </div>
                          </div>
