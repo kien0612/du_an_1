@@ -42,15 +42,16 @@
                             <h3>Thông Tin Người Nhận</h3>
                             <div class="row">
                                 <div class="col-md-6">
+                                <input placeholder="" name="id_tk" type="text" value="<?= $ten_tk ?>" hidden>
                                     <div class="checkout-form-list">
                                         <label>Tên tài khoản <span class="required">*</span></label>
-                                        <input placeholder="" name="ho_ten" type="text" value="<?= $ten_tk ?>">
+                                        <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Tên đầy đủ <span class="required">*</span></label>
-                                        <input placeholder="" name="full_name" type="text" value="<?= $full_name ?>">
+                                        <input placeholder="" name="fullname" type="text" value="<?= $full_name ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">

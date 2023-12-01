@@ -92,7 +92,7 @@ function pdo_executeid($sql){
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         
-        // Lấy ID cuối cùng được chèn
+        // Lấy ID cuối cùng được chèn 
         $lastInsertId = $conn->lastInsertId();
         
         return $lastInsertId;

@@ -12,6 +12,7 @@ include "../../models/danhmuc.php";
 include "../../models/sanpham.php";
 include "../../models/khuyenmai.php";
 include "../../models/role.php";
+include "../../models/bill.php";
 
 
 
@@ -128,7 +129,8 @@ if (isset($_GET['act'])) {
                 $cart = $_SESSION['cart'];
                 // print_r($cart); die();
                 if (isset($_POST['order_confirm'])) {
-                    $ho_ten = $_POST['ho_ten'];
+                    $id_tk= $_POST['id_tk'];
+                    $hoten = $_POST['hoten'];
                     $email = $_POST['email'];
                     $sdt = $_POST['sdt'];
                     $diachi = $_POST['diachi'];
@@ -142,11 +144,11 @@ if (isset($_GET['act'])) {
                     } else {
                         $id_user = 0;
                     }
-                    $idBill = addOrder( $ho_ten, $email, $sdt, $diachi, $mota, $pttt,  $_SESSION['resultTotal']
-                     ,$id_tk);
-                    // foreach ($cart as $item) {
-                    //     addOrderDetail($idBill, $item['id'], $item['price'], $item['quantity'], $item['price'] * $item['quantity']);
-                    // }
+                    $idBill = addOrder( $hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk);
+                    foreach ($cart as $item) {
+                        addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
+                    }
+                    var_dump(addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']));
                     unset($_SESSION['cart']);
                     $_SESSION['success'] = $idBill;
                     header("Location: index.php?act=success");
@@ -161,6 +163,7 @@ if (isset($_GET['act'])) {
             break;
         case "success":
             if (isset($_SESSION['success'])) {
+                $listbill=list_bill();
                 include '../../views/Client/success.php';
             } else {
                 header("Location : ../../views/Client/home.php");
@@ -184,8 +187,10 @@ if (isset($_GET['act'])) {
                 break;
         case "thieuthi_bl":
             $listbl = loadAll_binh_lua($id_bl);
-          
             include "../../views/Client/sanphamct.php";
+            break;
+
+           
             break;
     }
 } else {

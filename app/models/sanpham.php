@@ -81,15 +81,16 @@ function loadone_sanphamCart ($idList) {
 }
 // them vào gioi hàng
 
-function addOrder( $ho_ten, $email, $sdt, $diachi, $mota,  $pttt, $id_tk){
-    $sql="INSERT INTO hoadonchitiet( `ho_ten`, `email`, `sdt`, `diachi`, `mota`, `pttt`,  `id_tk`)
-     VALUES ( '$ho_ten',' $email', '$sdt', '$diachi', '$mota',  '$pttt',' $id_tk')";
-     $id= pdo_executeid($sql);
-     return $id;
+function addOrder( $hoten, $email, $sdt, $diachi, $mota,  $pttt, $id_tk){
+    $sql="INSERT INTO hoadon( `hoten`, `email`, `sdt`, `diachi`, `mota`, `pttt`,  `id_tk`)
+     VALUES ( '$hoten',' $email', '$sdt', '$diachi', '$mota',  '$pttt',' $id_tk')";
+     $id_hd= pdo_executeid($sql);
+     return $id_hd;
 }
 
-// function addOrderDetail($id_order, $id_pro, $giamua, $soluong, $thanhtien){
-//     $sql="INSERT INTO order_detail (id_order, id_pro, giamua, soluong, thanhtien) VALUES ($id_order, $id_pro, $giamua, $soluong, $thanhtien );";
-//     pdo_execute($sql);
-// }
+function addOrderDetail( $id_hd ,  $id_sp, $giamua, $soluong, $thanhtien){
+    $sql="INSERT INTO `hoadonchitet`(`id_hd`, `id_sp`, `giamua`, `soluong`, `thanhtien`) VALUES('$id_hd',' $id_sp',' $giamua', '$soluong', '$thanhtien');";
+    pdo_executeid($sql);
+    
+}
 ?>
