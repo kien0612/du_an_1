@@ -52,21 +52,10 @@
                         </div>
                         <div class="col-lg-7 col-md-7">
                             <div class="sp-content">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                
-                               
-=======
-=======
->>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857
                                 <div class="sp-heading">
                                     <h5><a href="#"><?= $ten_sp ?></a></h5>
                                 </div>
                                 <span class="reference"><?= $mo_ta_sp ?></span>
-<<<<<<< HEAD
->>>>>>> 564a287 (quyet)
-=======
->>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857
                                 <div class="rating-box">
                                     <ul>
                                         <li></li>
@@ -81,29 +70,18 @@
                                 </div>
                                 <div class="sp-essential_stuff">
                                     <ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
                                         <li>Giá: <a href="javascript:void(0)"><span><?= $gia_sp ?></span></a></li>
                                         <li>Mã sản phẩm: <a href="javascript:void(0)"><?= $id_sp ?></a></li>
                                         <li>Trạng thái: <a href="javascript:void(0)"><?= $ten_trang_thai ?></a></li>
                                     </ul>
                                 </div>
                                 
-=======
                                         <li>Giá: <a href="javascript:void(0)"><span><?= number_format($gia_sp, 0, ',', '.') ?> VND</span></a></li>
                                         <li>Mã sản phẩm: <a href="javascript:void(0)">#<?= $id_sp ?></a></li>
                                         <li>Trạng thái: <a href="javascript:void(0)"><?= $trang_thai ?></a></li>
                                         <li>SỐ Lượng Còn: <a href="javascript:void(0)"><?= $so_luong ?></a></li>
                                     </ul>
                                 </div>
-=======
-                                        <li>Giá: <a href="javascript:void(0)"><span><?= number_format($gia_sp, 0, ',', '.') ?> VND</span></a></li>
-                                        <li>Mã sản phẩm: <a href="javascript:void(0)">#<?= $id_sp ?></a></li>
-                                        <li>Trạng thái: <a href="javascript:void(0)"><?= $trang_thai ?></a></li>
-                                        <li>SỐ Lượng Còn: <a href="javascript:void(0)"><?= $so_luong ?></a></li>
-                                    </ul>
-                                </div>
->>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857
                                 <!-- kích cỡ sản phẩm -->
                                 <!-- <div class="product-size_box">
                                     <span>Size</span>
@@ -114,10 +92,6 @@
                                         <option value="4">XL</option>
                                     </select>
                                 </div> -->
-<<<<<<< HEAD
->>>>>>> 564a287 (quyet)
-=======
->>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857
                                 <!-- số lượng -->
                                 <div class="quantity">
                                     <label>Quantity</label>
@@ -570,6 +544,12 @@
         <!-- 1 số sản phẩm ver2 -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+       
+        <!-- kết thúc -->
+=======
+>>>>>>> quyet
         <div class="hiraola-product_area hiraola-product_area-2 section-space_add">
             <div class="container">
                 <div class="row">
@@ -886,11 +866,3 @@
                 });
             }
         </script>
-=======
-       
-        <!-- kết thúc -->
->>>>>>> 3abad6b (quyet)
-=======
-       
-        <!-- kết thúc -->
->>>>>>> ff1e5da024856b9908a01bbee43fd98dede75857

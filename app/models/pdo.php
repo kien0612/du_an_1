@@ -86,3 +86,19 @@ function pdo_query_value($sql){
         unset($conn);
     }
 }
+function pdo_executeid($sql){
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        
+        // Lấy ID cuối cùng được chèn
+        $lastInsertId = $conn->lastInsertId();
+        
+        return $lastInsertId;
+    } catch(PDOException $e) {
+        throw $e;
+    } finally {
+        unset($conn);
+    }
+}
