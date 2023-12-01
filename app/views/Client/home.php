@@ -118,10 +118,14 @@
                                 <div class="add-actions">
                                     <ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
 =======
                                     <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
 >>>>>>> 2b75acf1017e2f9f64edc5b2f03966be0701e2fe
+=======
+                                    <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+>>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
                                                 </li>
 
                                     </ul>
@@ -512,6 +516,7 @@
                     <div id="necklaces" class="tab-pane active show" role="tabpanel">
                         <div class="hiraola-product-tab_slider-2">
                             <!-- Begin Hiraola's Slide Item Area -->
+<<<<<<< HEAD
                       <?php       foreach ($listsp as $sp) {
                         extract($sp);
                         $linksp="index.php?act=sanphamct&id_sp=".$id_sp;  
@@ -532,6 +537,24 @@
 <<<<<<< HEAD
                                                 <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
 =======
+=======
+                            <?php foreach ($listsp as $sp) {
+                                extract($sp);
+                                $linksp = "index.php?act=sanphamct&id_sp=" . $id_sp;
+                                //include "../../controllers/admin/upload/";
+                                $url = "../../controllers/admin/upload/sanpham/";
+                                $image = $url . $anh_sp;
+                            ?>
+                                <div class="slide-item">
+                                    <div class="single_product">
+                                        <div class="product-img">
+                                            <?php echo '<a href="' . $linksp . '">' ?>
+                                            <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
+                                            <!-- <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image"> -->
+                                            </a>
+                                            <div class="add-actions">
+                                                <ul>
+>>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
                                                 <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
 >>>>>>> 2b75acf1017e2f9f64edc5b2f03966be0701e2fe
                                                 </li>

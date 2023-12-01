@@ -12,6 +12,7 @@ include "../../models/danhmuc.php";
 include "../../models/sanpham.php";
 include "../../models/khuyenmai.php";
 include "../../models/role.php";
+include "../../models/bill.php";
 
 
 
@@ -79,7 +80,7 @@ if (isset($_GET['act'])) {
                 extract($onesp);
                 $listsp = loadAll_san_pham();
                 $list_danhmuc = loadAll_danhmuc();
-
+                
                 include "../../views/Client/sanphamct.php";
             } else {
                 include "../../views/Client/home.php";
@@ -124,6 +125,7 @@ if (isset($_GET['act'])) {
             include "../../views/Client/giohang.php";
             break;
         case "order":
+<<<<<<< HEAD
             // if (isset($_SESSION['cart'])) {
             //     $cart = $_SESSION['cart'];
             //     // print_r($cart);
@@ -154,12 +156,50 @@ if (isset($_GET['act'])) {
             // }
             include "../../views/Client/thanhtoan.php";
             //header("Location : ../../views/Client/thanhtoan.php");
+=======
+            if (isset($_SESSION['cart'])) {
+                $cart = $_SESSION['cart'];
+                // print_r($cart); die();
+                if (isset($_POST['order_confirm'])) {
+                    $id_tk= $_POST['id_tk'];
+                    $hoten = $_POST['hoten'];
+                    $email = $_POST['email'];
+                    $sdt = $_POST['sdt'];
+                    $diachi = $_POST['diachi'];
+                    $mota = $_POST['mota'];
+                    $pttt = $_POST['pttt'];
+
+                    // date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    // $currentDateTime = date('Y-m-d H:i:s');
+                    if (isset($_SESSION['user'])) {
+                        $id_user = $_SESSION['user']['ten_tk'];
+                    } else {
+                        $id_user = 0;
+                    }
+                    $idBill = addOrder( $hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk);
+                    foreach ($cart as $item) {
+                        addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
+                    }
+                    var_dump(addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']));
+                    unset($_SESSION['cart']);
+                    $_SESSION['success'] = $idBill;
+                    header("Location: index.php?act=success");
+                }
+               
+            } else {
+                header("Location: index.php?act=listCart");
+            }
+
+            include "../../views/Client/thanhtoan.php";
+            // header("Location : ../../views/Client/thanhtoan.php");
+>>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
             break;
         case "success":
             if (isset($_SESSION['success'])) {
-                include 'view/success.php';
+                $listbill=list_bill();
+                include '../../views/Client/success.php';
             } else {
-                header("Location: index.php");
+                header("Location : ../../views/Client/home.php");
             }
             break;
         case "tintuc":
@@ -179,9 +219,24 @@ if (isset($_GET['act'])) {
                 include "../../views/Client/giohang.php";
                 break;
         case "thieuthi_bl":
-            $listbl = loadAll_binh_lua($id_bl);
+            if (isset($_POST['guibinhluan']) && isset($_SESSION['user'])) {
+                $id_sp = $_POST['id_sp'];
+                $noi_dung_bl = $_POST['noi_dung_bl'];
+                $id_tk = $_SESSION['user']['id_tk'];
+                $currentDateTime = new DateTime();
+                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
+                $ngay_bl = $currentDateTimeString;
+                insert_binhluan($noi_dung_bl, $id_tk, $id_sp, $ngay_bl);
+                header("location: ".$_SERVER['HTTP_REFERER']);
+            }
+            $id_sp = $_REQUEST['id_sp'];
+$list_binh_lua = loadAll_binh_lua($id_sp);
+
           
             include "../../views/Client/sanphamct.php";
+            break;
+
+           
             break;
     }
 } else {
