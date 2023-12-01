@@ -209,7 +209,6 @@
                                         </a>
                                     </li>
                                     <li>
-<<<<<<< HEAD
                                         <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white d-lg-none d-block">
                                             <i class="ion-navicon"></i>
                                         </a>
@@ -217,9 +216,6 @@
                                     
                                     <li>
                                         <a href="index.php?act=giohang" class="hiraola-add_cart">
-=======
-                                        <a href="?act=giohang" class="notification">
->>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
                                             <i class="ion-bag"></i>
                                             <span class="badge" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         </a>

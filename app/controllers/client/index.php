@@ -125,7 +125,6 @@ if (isset($_GET['act'])) {
             include "../../views/Client/giohang.php";
             break;
         case "order":
-<<<<<<< HEAD
             // if (isset($_SESSION['cart'])) {
             //     $cart = $_SESSION['cart'];
             //     // print_r($cart);
@@ -156,43 +155,6 @@ if (isset($_GET['act'])) {
             // }
             include "../../views/Client/thanhtoan.php";
             //header("Location : ../../views/Client/thanhtoan.php");
-=======
-            if (isset($_SESSION['cart'])) {
-                $cart = $_SESSION['cart'];
-                // print_r($cart); die();
-                if (isset($_POST['order_confirm'])) {
-                    $id_tk= $_POST['id_tk'];
-                    $hoten = $_POST['hoten'];
-                    $email = $_POST['email'];
-                    $sdt = $_POST['sdt'];
-                    $diachi = $_POST['diachi'];
-                    $mota = $_POST['mota'];
-                    $pttt = $_POST['pttt'];
-
-                    // date_default_timezone_set('Asia/Ho_Chi_Minh');
-                    // $currentDateTime = date('Y-m-d H:i:s');
-                    if (isset($_SESSION['user'])) {
-                        $id_user = $_SESSION['user']['ten_tk'];
-                    } else {
-                        $id_user = 0;
-                    }
-                    $idBill = addOrder( $hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk);
-                    foreach ($cart as $item) {
-                        addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
-                    }
-                    var_dump(addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']));
-                    unset($_SESSION['cart']);
-                    $_SESSION['success'] = $idBill;
-                    header("Location: index.php?act=success");
-                }
-               
-            } else {
-                header("Location: index.php?act=listCart");
-            }
-
-            include "../../views/Client/thanhtoan.php";
-            // header("Location : ../../views/Client/thanhtoan.php");
->>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
             break;
         case "success":
             if (isset($_SESSION['success'])) {
