@@ -117,7 +117,11 @@
                                 <!-- <span class="sticker">New</span> -->
                                 <div class="add-actions">
                                     <ul>
+<<<<<<< HEAD
                                     <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+=======
+                                    <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+>>>>>>> 2b75acf1017e2f9f64edc5b2f03966be0701e2fe
                                                 </li>
 
                                     </ul>
@@ -525,7 +529,11 @@
                                         <div class="add-actions">
 
                                             <ul>
+<<<<<<< HEAD
                                                 <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+=======
+                                                <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+>>>>>>> 2b75acf1017e2f9f64edc5b2f03966be0701e2fe
                                                 </li>
 
                                                 </ul>
@@ -1666,7 +1674,7 @@
                                         <span class="sticker">CHÁY</span>
                                         <div class="add-actions">
                                             <ul>
-                                                <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
                                                 </li>
 
                                             </ul>
