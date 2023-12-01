@@ -60,11 +60,11 @@ function sendMail($email)
 {
     $sql = "SELECT * FROM `taikhoan` WHERE email='$email'";
     $taikhoan = pdo_query_one($sql);
-    $passNew = mt_rand(0,9);
+    
 
     if ($taikhoan != false) {
         // sendMailPass($email, $taikhoan['user'], $taikhoan['pass']);
-        sendMailPass($email, $taikhoan['ten_tk'], $passNew);
+        sendMailPass($email, $taikhoan['ten_tk'], $taikhoan['password']);
         return "Gửi email thành công";
     } else {
         return "Email bạn nhập ko có trong hệ thống";
@@ -76,7 +76,7 @@ function dangxuat()
         unset($_SESSION['user']);
     }
 }
-function sendMailPass($email, $ten_tk, $passNew)
+function sendMailPass($email, $ten_tk, $password)
 {
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
@@ -98,12 +98,12 @@ function sendMailPass($email, $ten_tk, $passNew)
 
         //Recipients
         $mail->setFrom('vutrungkien612203@gmail.com', 'Hiraola');
-        $mail->addAddress($email, $ten_tk, $passNew);     //Add a recipient
+        $mail->addAddress($email, $ten_tk, $password);     //Add a recipient
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Nguoi dung ' . $ten_tk . ' quen mat khau';
-        $mail->Body    = 'Mau khau cua ban la ' . $passNew = mt_rand(0,99999);
+        $mail->Body    = 'Mau khau cua ban la ' . $password ;
 
         $mail->send();
     } catch (Exception $e) {

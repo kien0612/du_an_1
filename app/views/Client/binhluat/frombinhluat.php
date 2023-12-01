@@ -20,7 +20,7 @@ $list_binh_lua = loadAll_binh_lua($id_sp);
 <div class="mb">
     <!-- list bl -->
     <div class="box_content2 product_portfolio">
-        <table style="width: 100%;margin-bottom: 10px;">
+        <table style="width: 100%;margin-bottom: 10px;" >
             <?php foreach($list_binh_lua as $bl) { ?>
                 <tr>
                     <th>Khách hàng : <?= $bl['ten_tk']?></th>

@@ -302,7 +302,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
         case "xoabl":
             if (isset($_GET['id_bl'])) {
-                delete_bai_viet($_GET['id_bl']);
+                delete_binh_luan($_GET['id_bl']);
                 $thongBao = "Xóa thành công";
             }
             $list_binh_luan = loadAll_binh_luan();

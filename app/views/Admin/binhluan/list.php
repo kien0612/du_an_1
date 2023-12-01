@@ -33,7 +33,7 @@
             <?php
             foreach ($list_binh_luan as $binh_luan) {
                 extract($binh_luan);
-                $delete = "index.php?act=xoabl&id_bl=" .$id_bl;
+                $delete = "index.php?act=xoabl&id_bl=".$id_bl;
             ?>
                 <tr>
                     <!-- <th><input type="checkbox" name="" id=""></th> -->
