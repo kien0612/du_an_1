@@ -92,9 +92,9 @@ function sendMailPass($email, $ten_tk, $passNew)
         $mail->Host       = 'smtp.gmail.com';                      //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'vutrungkien612203@gmail.com';                     //SMTP username
-        $mail->Password   = 'Kien@132';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Password   = 'sguh phnx wkdr vikw';                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('vutrungkien612203@gmail.com', 'Hiraola');
@@ -102,8 +102,8 @@ function sendMailPass($email, $ten_tk, $passNew)
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Nguoi dung quen mat khau';
-        $mail->Body    = 'Mau khau cua ban la' . $passNew = mt_rand(0,9);
+        $mail->Subject = 'Nguoi dung ' . $ten_tk . ' quen mat khau';
+        $mail->Body    = 'Mau khau cua ban la ' . $passNew = mt_rand(0,99999);
 
         $mail->send();
     } catch (Exception $e) {
