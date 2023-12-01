@@ -35,8 +35,10 @@
                 extract($bai_viet);
                 $edit = "index.php?act=editbv&id_bai_viet=".$id_bai_viet;
                 $delete = "index.php?act=xoabv&id_bai_viet=".$id_bai_viet;
-                $url = "./upload/baiviet";
-                $image = $url .$avatar;
+                
+                $url = "../../controllers/admin/upload/baiviet/";
+                $image = $url . $avatar;
+                // $image = $url .$avatar;
                 $avatar = "<img src='".$image."' style='width: 200px;' alt=''>"
             ?>
 

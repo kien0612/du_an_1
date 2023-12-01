@@ -4,13 +4,6 @@ include "../../models/pdo.php";
 include "../../models/sanpham.php";
 include "../../models/taikhoan.php";
 include "../../models/danhmuc.php";
-
-?>
-
-<!-- Bắt đầu phần banner giỏ hàng -->
-
-
-<?php
 if (!empty($_SESSION['cart'])) {
     //echo (1);
 
@@ -24,7 +17,6 @@ if (!empty($_SESSION['cart'])) {
     // Lấy sản phẩm trong bảng sản phẩm theo id
     $dataDb = loadone_sanphamCart($idList);
     //var_dump($dataDb);
-
 
     $sum_total = 0;
     //var_dump($dataDb);
@@ -47,9 +39,9 @@ if (!empty($_SESSION['cart'])) {
                 <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
                 <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
                 <td class="quantity">
-                    <?= $quantityInCart ?>
+                    <!-- <?= $quantityInCart ?> -->
                     <div class="cart-plus-minus">
-                        <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
+                        <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity()">
                         <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                     </div>
@@ -66,9 +58,7 @@ if (!empty($_SESSION['cart'])) {
     }
     ?>
 
-
-
-
+    </div>
     <div class="row">
         <div class="col-12">
             <div class="coupon-all">
@@ -77,13 +67,11 @@ if (!empty($_SESSION['cart'])) {
                 </div>
                 <div class="coupon2">
                     <form action="index.php?act=order" method="post">
-                        <input type="submit" style="padding:10px;" name="order" value="Đặt Hàng">
+                        <input class="button" name="order" value="Đặt Hàng" type="submit">
                     </form>
-                    <a href="index.php?act=order">Đặt hàng</a>
                 </div>
             </div>
         </div>
     </div>
+    <!-- kết thúc của sản phẩm trong giỏ hàng  -->
 <?php } ?>
-
-

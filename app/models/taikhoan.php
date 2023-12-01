@@ -60,11 +60,11 @@ function sendMail($email)
 {
     $sql = "SELECT * FROM `taikhoan` WHERE email='$email'";
     $taikhoan = pdo_query_one($sql);
-    $passNew = mt_rand(0,9);
+    
 
     if ($taikhoan != false) {
         // sendMailPass($email, $taikhoan['user'], $taikhoan['pass']);
-        sendMailPass($email, $taikhoan['ten_tk'], $passNew);
+        sendMailPass($email, $taikhoan['ten_tk'], $taikhoan['password']);
         return "Gửi email thành công";
     } else {
         return "Email bạn nhập ko có trong hệ thống";
@@ -76,7 +76,7 @@ function dangxuat()
         unset($_SESSION['user']);
     }
 }
-function sendMailPass($email, $ten_tk, $passNew)
+function sendMailPass($email, $ten_tk, $password)
 {
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
@@ -92,18 +92,18 @@ function sendMailPass($email, $ten_tk, $passNew)
         $mail->Host       = 'smtp.gmail.com';                      //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'vutrungkien612203@gmail.com';                     //SMTP username
-        $mail->Password   = 'Kien@132';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Password   = 'sguh phnx wkdr vikw';                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = 587;                                       //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('vutrungkien612203@gmail.com', 'Hiraola');
-        $mail->addAddress($email, $ten_tk, $passNew);     //Add a recipient
+        $mail->addAddress($email, $ten_tk, $password);     //Add a recipient
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Nguoi dung quen mat khau';
-        $mail->Body    = 'Mau khau cua ban la' . $passNew = mt_rand(0,9);
+        $mail->Subject = 'Nguoi dung ' . $ten_tk . ' quen mat khau';
+        $mail->Body    = 'Mau khau cua ban la ' . $password ;
 
         $mail->send();
     } catch (Exception $e) {

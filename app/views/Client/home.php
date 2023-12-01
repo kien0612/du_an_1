@@ -117,7 +117,7 @@
                                 <!-- <span class="sticker">New</span> -->
                                 <div class="add-actions">
                                     <ul>
-                                    <li><a class="hiraola-add_cart" href="#" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+                                    <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
                                                 </li>
 
                                     </ul>
@@ -522,11 +522,10 @@
                                             <img class="primary-img" src="<?= $image ?>" alt="Hiraola's Product Image">
                                             <!-- <img class="secondary-img" src="assets/images/product/medium-size/1-8.jpg" alt="Hiraola's Product Image"> -->
                                             </a>
-                                            <span class="sticker">NEW</span>
                                             <div class="add-actions">
                                                 <ul>
-                                                    <li><a class="hiraola-add_cart" href="#" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
-                                                    </li>
+                                                <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                </li>
 
                                                 </ul>
                                             </div>
@@ -1217,7 +1216,6 @@
                                             <img class="primary-img" src="assets/images/product/medium-size/1-6.jpg" alt="Hiraola's Product Image">
                                             <img class="secondary-img" src="assets/images/product/medium-size/1-3.jpg" alt="Hiraola's Product Image">
                                         </a>
-                                        
                                         <div class="add-actions">
                                             <ul>
                                                 <li><a class="hiraola-add_cart" href="index.php?act=giohang" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
@@ -1667,7 +1665,7 @@
                                         <span class="sticker">CHÁY</span>
                                         <div class="add-actions">
                                             <ul>
-                                            <li><a class="hiraola-add_cart" href="#" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                <li><a class="hiraola-add_cart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="ion-bag"></i></a>
                                                 </li>
 
                                             </ul>

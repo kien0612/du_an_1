@@ -1,7 +1,7 @@
 <?php
 // hiện thị tất cả 
 function loadAll_binh_lua($id_sp){
-    $sql = "SELECT * FROM  binhluan  WHERE 1";
+    $sql = "SELECT binhluan.* , taikhoan.ten_tk   FROM binhluan INNER JOIN taikhoan ON binhluan.id_tk = taikhoan.id_tk   WHERE 1";
     if ($id_sp > 0) {
         $sql .= " AND `id_sp`='" . $id_sp . "' ";
     }
@@ -10,8 +10,8 @@ function loadAll_binh_lua($id_sp){
     return $list_binh_lua;
 }
 // xóa
-function delete_binh_luan($id_binh_luan){
-    $sql = "DELETE FROM `binhluan` WHERE id_bl=" .$id_binh_luan;
+function delete_binh_luan($id_bl){
+    $sql = "DELETE FROM `binhluan` WHERE id_bl=" .$id_bl;
     pdo_execute($sql);
 }
 function loadAll_binh_luan(){

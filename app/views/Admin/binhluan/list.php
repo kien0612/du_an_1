@@ -33,15 +33,15 @@
             <?php
             foreach ($list_binh_luan as $binh_luan) {
                 extract($binh_luan);
-                $delete = "index.php?act=xoabl&id=_bl".$id_binh_luan;
+                $delete = "index.php?act=xoabl&id_bl=".$id_bl;
             ?>
                 <tr>
                     <!-- <th><input type="checkbox" name="" id=""></th> -->
                     <td><?= $id_bl ?></td>
                     <td><?= $id_tk ?></td>
                     <th><?= $id_sp ?></th>
-                    <td><?= $noi_dung ?></td>
-                    <td><?= $noi_dung ?></td>
+                    <td><?= $noi_dung_bl ?></td>
+                    <td><?= $ngay_bl ?></td>
                     <td>
                         <a href="<?= $delete ?>"><button type="button" class="btn btn-success">Xóa</button></a>
                         
