@@ -37,12 +37,12 @@
                 if (isset($_SESSION['user'])) {
                     extract($_SESSION['user'])
                 ?>
-                    <form action="" method="post"> 
+                    <form action="" method="post">
                         <div class="checkbox-form">
                             <h3>Thông Tin Người Nhận</h3>
                             <div class="row">
                                 <div class="col-md-6">
-                                <input placeholder="" name="id_tk" type="text" value="<?= $ten_tk ?>" hidden>
+                                    <input placeholder="" name="id_tk" type="text" value="<?= $ten_tk ?>" hidden>
                                     <div class="checkout-form-list">
                                         <label>Tên tài khoản <span class="required">*</span></label>
                                         <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>">
@@ -78,24 +78,9 @@
                                         <textarea id="checkout-mess" name="mota" cols="30" rows="10" name="" placeholder=""></textarea>
                                     </div>
                                 </div>
-                                <div class="mot">
-                                <p><input  class="checkout-form-list" type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
-                                <p><input  class="checkout-form-list" type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
-                                </div>
+
                             </div>
-                           <center>
-                           <div class="order-button-payment">
-                                <input value="Đăt Hàng" type="submit" name="order_confirm">
-                            </div>
-                           </center>
-                         <style>
-                            .mot{
-                                border: 1px solid red;
-                                padding: 0 20px;
-                                margin: 0 19px;
-                                width: 500px;
-                            }
-                         </style>
+
                         </div>
                     </form>
                 <?php } ?>
@@ -106,30 +91,31 @@
                     <div class="your-order-table table-responsive">
                         <table class="table">
                             <thead>
-                                <?php
-                                // print_r($cart);
-                                foreach ($cart as $item) {
-                                    // $url = "../../../controllers/admin/upload/sanpham/";
-                                ?>
-                                    <tr>
-                                        <th class="cart-product-name">Tên Sản phẩm</th>
-                                        <!-- <th >Ảnh Sản Phẩn</th> -->
-                                        <th>Số lượng</th>
-                                        <th class="cart-product-total">Thành tiền</th>
-                                    </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="cart_item">
-                                    <td class="cart-product-name"><?php echo $item['name']; ?><strong class="product-quantity">
-                                            <!-- <td class="cart-product-total"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" ></span></td> -->
-                                    <td class="cart-product-total"><span class="amount"><?php echo $item['quantity']; ?></span></td>
-                                    <td class="cart-product-total"><span class="amount"><?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?> ₫</span></td>
+                                <tr>
+                                    <th class="cart-product-name">Tên Sản phẩm</th>
+                                    <!-- <th >Ảnh Sản Phẩn</th> -->
+                                    <th>Số lượng</th>
+                                    <th class="cart-product-total">Thành tiền</th>
                                 </tr>
+                            </thead>
+                            <?php
+                            // print_r($cart);
+                            foreach ($cart as $item) {
+                                // $url = "../../../controllers/admin/upload/sanpham/";
+                            ?>
 
-                            </tbody>
-                        <?php
-                                }
-                        ?>
+                                <tbody>
+                                    <tr class="cart_item">
+                                        <td class="cart-product-name"><?php echo $item['name']; ?><strong class="product-quantity">
+                                                <!-- <td class="cart-product-total"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" ></span></td> -->
+                                        <td class="cart-product-total"><span class="amount"><?php echo $item['quantity']; ?></span></td>
+                                        <td class="cart-product-total"><span class="amount"><?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?> ₫</span></td>
+                                    </tr>
+
+                                </tbody>
+                            <?php
+                            }
+                            ?>
 
                         </table>
                     </div>
@@ -150,42 +136,16 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="card">
-                                    <div class="card-header" id="#payment-2">
-                                        <h5 class="panel-title">
-                                            <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Cheque Payment
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment
-                                                reference. Your order won’t be shipped until the funds have cleared in
-                                                our account.</p>
-                                        </div>
-                                    </div>
+                                <div style="padding-top: 20px;">
+                                    <p><input  type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
+                                    <p><input  type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="#payment-3">
-                                        <h5 class="panel-title">
-                                            <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                PayPal
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment
-                                                reference. Your order won’t be shipped until the funds have cleared in
-                                                our account.</p>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
-                           
+                            <center>
+                                <div class="order-button-payment">
+                                    <input value="Đăt Hàng" type="submit" name="order_confirm">
+                                </div>
+                            </center>
                         </div>
                     </div>
                 </div>
