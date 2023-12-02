@@ -70,9 +70,9 @@ if (isset($_GET['act'])) {
         case "trangchu":
             include "../../views/Client/main.php";
             break;
-            case "sanphamyeuthich" :
-                include "../../views/Client/sanphamyeuthich.php";
-                break;
+        case "sanphamyeuthich":
+            include "../../views/Client/sanphamyeuthich.php";
+            break;
         case "sanphamct":
             if (isset($_GET['id_sp']) && ($_GET['id_sp'] > 0)) {
                 $id_sp = $_GET['id_sp'];
@@ -80,12 +80,12 @@ if (isset($_GET['act'])) {
                 extract($onesp);
                 $listsp = loadAll_san_pham();
                 $list_danhmuc = loadAll_danhmuc();
-                
+
                 include "../../views/Client/sanphamct.php";
             } else {
                 include "../../views/Client/home.php";
             }
-            
+
 
             break;
         case "sanpham":
@@ -111,7 +111,7 @@ if (isset($_GET['act'])) {
                 //echo (1);
 
                 $cart = $_SESSION['cart'];
-                
+
                 // Tạo mảng chứa ID các sản phẩm trong giỏ hàng
                 $productId = array_column($cart, 'id');
 
@@ -129,13 +129,14 @@ if (isset($_GET['act'])) {
                 $cart = $_SESSION['cart'];
                 // print_r($cart); die();
                 if (isset($_POST['order_confirm'])) {
-                    $id_tk= $_POST['id_tk'];
+                    $id_tk = $_POST['id_tk'];
                     $hoten = $_POST['hoten'];
                     $email = $_POST['email'];
                     $sdt = $_POST['sdt'];
                     $diachi = $_POST['diachi'];
                     $mota = $_POST['mota'];
                     $pttt = $_POST['pttt'];
+                 
 
                     // date_default_timezone_set('Asia/Ho_Chi_Minh');
                     // $currentDateTime = date('Y-m-d H:i:s');
@@ -144,16 +145,14 @@ if (isset($_GET['act'])) {
                     } else {
                         $id_user = 0;
                     }
-                    $idBill = addOrder( $hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk);
+                    $idBill = addOrder($hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk , $_SESSION['resultTotal'] );
                     foreach ($cart as $item) {
                         addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
                     }
-                    var_dump(addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']));
                     unset($_SESSION['cart']);
                     $_SESSION['success'] = $idBill;
                     header("Location: index.php?act=success");
                 }
-               
             } else {
                 header("Location: index.php?act=listCart");
             }
@@ -162,12 +161,13 @@ if (isset($_GET['act'])) {
             // header("Location : ../../views/Client/thanhtoan.php");
             break;
         case "success":
-            if (isset($_SESSION['success'])) {
-                $listbill=list_bill();
+            if (isset($_SESSION['user'])) {
+                $listbill = list_bill();
                 include '../../views/Client/success.php';
             } else {
                 header("Location : ../../views/Client/home.php");
             }
+            
             break;
         case "tintuc":
             $list_bai_viet = loadAll_bai_viet();
@@ -182,9 +182,9 @@ if (isset($_GET['act'])) {
         case "lienhe":
             include "../../views/Client/lienhe.php";
             break;
-            case "giohang":
-                include "../../views/Client/giohang.php";
-                break;
+        case "giohang":
+            include "../../views/Client/giohang.php";
+            break;
         case "thieuthi_bl":
             if (isset($_POST['guibinhluan']) && isset($_SESSION['user'])) {
                 $id_sp = $_POST['id_sp'];
@@ -194,20 +194,20 @@ if (isset($_GET['act'])) {
                 $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
                 $ngay_bl = $currentDateTimeString;
                 insert_binhluan($noi_dung_bl, $id_tk, $id_sp, $ngay_bl);
-                header("location: ".$_SERVER['HTTP_REFERER']);
+                header("location: " . $_SERVER['HTTP_REFERER']);
             }
             $id_sp = $_REQUEST['id_sp'];
-$list_binh_lua = loadAll_binh_lua($id_sp);
+            $list_binh_lua = loadAll_binh_lua($id_sp);
 
-          
+
             include "../../views/Client/sanphamct.php";
             break;
 
-           
-            break;
+
+          
     }
 } else {
-    
+
     $listsp = loadAll_san_pham();
     include "../../views/Client/home.php";
 }

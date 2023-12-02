@@ -42,34 +42,34 @@
                             <h3>Thông Tin Người Nhận</h3>
                             <div class="row">
                                 <div class="col-md-6">
-                                <input placeholder="" name="id_tk" type="text" value="<?= $ten_tk ?>" hidden>
+                                <input placeholder="" name="id_tk" type="text" value="<?= $id_tk ?>" hidden required>
                                     <div class="checkout-form-list">
                                         <label>Tên tài khoản <span class="required">*</span></label>
-                                        <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>">
+                                        <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Tên đầy đủ <span class="required">*</span></label>
-                                        <input placeholder="" name="fullname" type="text" value="<?= $full_name ?>">
+                                        <input placeholder="" name="fullname" type="text" value="<?= $full_name ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Email Address <span class="required">*</span></label>
-                                        <input placeholder="" name="email" type="email" value="<?= $email ?>">
+                                        <input placeholder="" name="email" type="email" value="<?= $email ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text" name="sdt" value="<?= $sdt ?>">
+                                        <input type="text" name="sdt" value="<?= $sdt ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <label>Địa chỉ <span class="required">*</span></label>
-                                        <input placeholder="Thành phố-Quân/Huyện/...." name="diachi" type="text" value="<?= $dia_chi ?>">
+                                        <input placeholder="Thành phố-Quân/Huyện/...." name="diachi" type="text" value="<?= $dia_chi ?>" required>
                                     </div>
                                 </div>
                                 <div class="order-notes">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
                                         <div class="card-body">
-                                            <td><b><?php echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
+                                            <td><b><?php  echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
                                         </div>
                                     </div>
                                 </div>
