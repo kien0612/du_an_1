@@ -162,7 +162,10 @@ if (isset($_GET['act'])) {
             break;
         case "success":
             if (isset($_SESSION['user'])) {
-                $listbill = list_bill();
+
+                $listbill = list_bill(($_SESSION['user']['id_tk']));
+                // echo ($_SESSION['user']['id_tk']);
+                // var_dump($_SESSION['user']) ; die();
                 include '../../views/Client/success.php';
             } else {
                 header("Location : ../../views/Client/home.php");
