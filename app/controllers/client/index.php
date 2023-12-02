@@ -183,7 +183,7 @@ if (isset($_GET['act'])) {
                 include "../../views/Client/giohang.php";
                 break;
         case "thieuthi_bl":
-            $listbl = loadAll_binh_lua($id_bl);
+            $listbl = loadAll_binh_lua($id_bl,0);
           
             include "../../views/Client/sanphamct.php";
             break;
