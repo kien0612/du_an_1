@@ -20,58 +20,50 @@ if (!empty($_SESSION['cart'])) {
 
     $sum_total = 0;
     //var_dump($dataDb);
-    if (empty($dataDb)) {
-        echo ("không có sản phẩm nào ");
-    } else {
-        foreach ($dataDb as $key => $product) {
-            $url = "../../controllers/admin/upload/sanpham/";
-            $quantityInCart = 0;
-            foreach ($_SESSION['cart'] as $sp) {
-                if ($sp['id'] == $product['id_sp']) {
-                    $quantityInCart = $sp['quantity'];
-                    break;
-                }
+    foreach ($dataDb as $key => $product) {
+        $url = "../../controllers/admin/upload/sanpham/";
+        $quantityInCart = 0;
+        foreach ($_SESSION['cart'] as $sp) {
+            if ($sp['id'] == $product['id_sp']) {
+                $quantityInCart = $sp['quantity'];
+                break;
             }
-?>
-            <tr>
-                <td><?= $key + 1 ?></td>
-                <td class="hiraola-product-thumbnail"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" alt="Hiraola's Cart Thumbnail"></td>
-                <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
-                <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
-                <td class="quantity">
-                    <!-- <?= $quantityInCart ?> -->
-                    <div class="cart-plus-minus">
-                        <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity()">
-                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                    </div>
-                </td>
-                <td class="product-subtotal"><span class="amount"><?= number_format((int)$product['gia_sp'] * (int)$quantityInCart, 0, ",", ".") ?> VND</span></td>
-                <td class="hiraola-product-remove"><i onclick="removeFormCart(<?= $product['id_sp'] ?>)" class="fa fa-trash" title="Remove"></i></td>
-            </tr>
-    <?php
-            $sum_total += ((int)$product['gia_sp'] * (int)$quantityInCart);
-
-            // Lưu tổng giá trị vào sesion
-            $_SESSION['resultTotal'] = $sum_total;
         }
+?>
+        <tr>
+            <td><?= $key + 1 ?></td>
+            <td class="hiraola-product-thumbnail"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" alt="Hiraola's Cart Thumbnail"></td>
+            <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
+            <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
+            <td class="quantity">
+                <!-- <?= $quantityInCart ?> -->
+                <div class="cart-plus-minus">
+                    <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
+                    <div class="dec qtybutton" onclick="decreaseQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)"><i class="fa fa-angle-down"></i></div>
+                    <div class="inc qtybutton" onclick="increaseQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)"><i class="fa fa-angle-up"></i></div>
+                </div>
+            </td>
+            <td class="product-subtotal"><span class="amount"><?= number_format((int)$product['gia_sp'] * (int)$quantityInCart, 0, ",", ".") ?> VND</span></td>
+            <td class="hiraola-product-remove"><i onclick="removeFormCart(<?= $product['id_sp'] ?>)" class="fa fa-trash" title="Remove"></i></td>
+        </tr>
+    <?php
+        $sum_total += ((int)$product['gia_sp'] * (int)$quantityInCart);
+
+        // Lưu tổng giá trị vào sesion
+        $_SESSION['resultTotal'] = $sum_total;
     }
     ?>
-
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="coupon-all">
-                <div class="coupon">
-                    <h4>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h4>
-                </div>
-                <div class="coupon2">
-                    <form action="index.php?act=order" method="post">
-                        <input class="button" name="order" value="Đặt Hàng" type="submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    <tr>
+        <td colspan="5" align="center">
+            <h5>Tổng tiền hàng:</h5>
+        </td>
+        <td colspan="2" align="center">
+            <h5>
+                <span style="color: red;">
+                    <?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>đ</u>
+                </span>
+            </h5>
+        </td>
+    </tr>
     <!-- kết thúc của sản phẩm trong giỏ hàng  -->
 <?php } ?>

@@ -50,9 +50,8 @@
                                          <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
                                          <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
                                          <td class="quantity">
-                                             <!-- <?= $quantityInCart ?> -->
                                              <div class="cart-plus-minus">
-                                                 <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity()">
+                                                 <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
                                                  <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                                  <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                              </div>
@@ -68,11 +67,22 @@
                                     }
                                 }
                                 ?>
-
+                             <tr>
+                                 <td colspan="5" align="center">
+                                     <h5>Tổng tiền hàng:</h5>
+                                 </td>
+                                 <td colspan="2" align="center">
+                                     <h5>
+                                         <span style="color: red;" >
+                                             <?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>đ</u>
+                                         </span>
+                                     </h5>
+                                 </td>
+                             </tr>
                          </tbody>
                      </table>
                  </div>
-                 <div class="row">
+                 <!-- <div class="row">
                      <div class="col-12">
                          <div class="coupon-all">
                              <div class="coupon">
@@ -80,12 +90,12 @@
                              </div>
                              <div class="coupon2">
                                  <form action="index.php?act=order" method="post">
-                                    <input class="button" name="order" value="Đặt Hàng" type="submit">
+                                     <input class="button" name="order" value="Đặt Hàng" type="submit">
                                  </form>
                              </div>
                          </div>
                      </div>
-                 </div>
+                 </div> -->
              </div>
          </div>
      </div>
