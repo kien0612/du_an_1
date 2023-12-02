@@ -208,7 +208,7 @@ $image = $url . $anh_sp;
                                         </div>
                                     <?php } else { ?>
                                         <div class="box_search">
-                                            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+                                            <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                                                 <input type="hidden" name="id_sp" value="<?php echo $id_sp ?>">
                                                 <input type="text" style="width: 85%;" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
                                                 <input type="submit" value="Gửi bình luận" name="guibinhluan">

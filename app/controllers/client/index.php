@@ -198,8 +198,6 @@ if (isset($_GET['act'])) {
             }
             $id_sp = $_REQUEST['id_sp'];
             $list_binh_lua = loadAll_binh_lua($id_sp);
-
-
             include "../../views/Client/sanphamct.php";
             break;
 
