@@ -180,18 +180,24 @@ $image = $url . $anh_sp;
 
                                     <!-- bình luât -->
 
-                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-                                    <script>
-                                        $(document).ready(function() {
+                                    <!-- bình luât -->
+                                    <?php
+                                            if (isset($_SESSION['user'])) {
+                                            ?>
+                                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $("#reviews").load("../../views/Client/binhluat/frombinhluat.php", {
+                                                            id_sp: <?php echo $id_sp ?>
+                                                        });
+                                                    });
+                                                </script>
+                                                <div class="mb" id="binhluan">
+                                                </div>
 
-                                            $("#comment").load("../Client/binhluat/frombinhluat.php", {
-                                                id_sp: <?= $id ?>
-                                            });
-
-                                        });
-                                    </script>
-                                    <div id="comment" class="contain-comment ">
-                                    </div>
+                                            <?php } else { ?>
+                                                <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để bình luận sản phẩm này</div>
+                                            <?php } ?>
                                 </form>
                             </div>
                         </div>
