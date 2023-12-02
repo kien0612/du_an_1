@@ -18,8 +18,17 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
     switch ($act) {
             // Tài Khoản
         case "listtk":
-          
-            $listk = loadAll_tai_khoan();
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
+                $id_tk = $_GET['id_tk'];
+            } else {
+                $id_tk = 0;
+            } 
+            $listk = loadAll_tai_khoan($kyw="",$id_tk);
             include "../../views/Admin/taikhoan/list.php";
             break;
         case "addtk":
@@ -180,9 +189,14 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Sản Phẩm
         case "listsp":
-            $listdm = loadAll_danh_muc();
-            $listsp = loadAll_san_pham();
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listdm = loadAll_danh_muc(); 
             $list_tt = loadAll_trang_thai();
+            $listsp = loadll_san_pham("$kyw", "");
             include "../../views/Admin/sanpham/list.php";
             break;
         case "addsp":

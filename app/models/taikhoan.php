@@ -1,8 +1,14 @@
 <?php
 // kiển thị tài khoản
-function loadAll_tai_khoan()
+function loadAll_tai_khoan($kyw="",$id_tk=0)
 {
     $sql = "SELECT * FROM `taikhoan` INNER JOIN role on taikhoan.id_role=role.id_role";
+    if($kyw!=""){
+        $sql.=" and ten_tk like '%".$kyw."%' ";
+    }if($id_tk>0){
+        $sql.=" and id_tk ='".$id_tk."' ";
+    }
+    $sql.=" order by id_tk desc";
     $listtk = pdo_query($sql);
     return $listtk;
 }
