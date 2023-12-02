@@ -3,7 +3,7 @@ session_start();
 include "../../../models/pdo.php";
 include "../../../models/binhluan.php";
 $id_sp = $_REQUEST['id_sp'];
-$list_binh_lua = loadAll_binh_lua($id_sp);  
+$list_binh_lua = loadAll_binh_lua($id_sp,0);  
 ?>
 
 <!DOCTYPE html>

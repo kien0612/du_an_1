@@ -186,19 +186,7 @@ if (isset($_GET['act'])) {
                 include "../../views/Client/giohang.php";
                 break;
         case "thieuthi_bl":
-            if (isset($_POST['guibinhluan']) && isset($_SESSION['user'])) {
-                $id_sp = $_POST['id_sp'];
-                $noi_dung_bl = $_POST['noi_dung_bl'];
-                $id_tk = $_SESSION['user']['id_tk'];
-                $currentDateTime = new DateTime();
-                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
-                $ngay_bl = $currentDateTimeString;
-                insert_binhluan($noi_dung_bl, $id_tk, $id_sp, $ngay_bl);
-                header("location: ".$_SERVER['HTTP_REFERER']);
-            }
-            $id_sp = $_REQUEST['id_sp'];
-$list_binh_lua = loadAll_binh_lua($id_sp);
-
+            $listbl = loadAll_binh_lua($id_bl,0);
           
             include "../../views/Client/sanphamct.php";
             break;
