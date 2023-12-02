@@ -1,10 +1,3 @@
-<?php
-// session_start();
-// include "../../models/pdo.php";
-// include "../../models/binhluan.php";
-$id_sp = $_REQUEST['id_sp'];
-$list_binh_lua = loadAll_binh_lua($id_sp);
-?>
 <!-- Begin Hiraola's Breadcrumb Area -->
 <div class="breadcrumb-area">
     <div class="container">
@@ -185,45 +178,28 @@ $image = $url . $anh_sp;
 
 
 
-
                                     <!-- bình luât -->
 
-                                    <div class="box_content2 product_portfolio">
-                                        <table style="width: 100%;margin-bottom: 10px;">
-                                            <?php foreach ($list_binh_lua as $bl) { ?>
-                                                <tr>
-                                                    <th>Khách hàng : <?= $bl['ten_tk'] ?></th>
-                                                </tr>
-                                                <tr style="border-bottom: 1px solid #595959;">
-                                                    <td><?= $bl['noi_dung_bl'] ?></td>
-                                                    <td><?= $bl['ngay_bl'] ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                        </table>
-                                    </div>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+                                    <script>
+                                        $(document).ready(function() {
 
-                                    <?php if (!isset($_SESSION['user'])) { ?>
-                                        <div class="box_search">
-                                            <div class="box_title" style="margin-bottom: 20px">Vui lòng <a href="index.php?act=log_up">đăng nhập </a>để bình luận sản phẩm này</div>
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="box_search">
-                                            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
-                                                <input type="hidden" name="id_sp" value="<?php echo $id_sp ?>">
-                                                <input type="text" style="width: 85%;" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
-                                                <input type="submit" value="Gửi bình luận" name="guibinhluan">
-                                            </form>
-                                        </div>
-                                    <?php } ?>
+                                            $("#comment").load("../Client/binhluat/frombinhluat.php", {
+                                                id_sp: <?= $id ?>
+                                            });
+
+                                        });
+                                    </script>
+                                    <div id="comment" class="contain-comment ">
+                                    </div>
+                                </form>
                             </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- kết thúc-->
 

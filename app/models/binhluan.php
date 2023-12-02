@@ -1,11 +1,9 @@
 <?php
 // hiện thị tất cả 
-function loadAll_binh_lua($id_sp,$id_bl){
+function loadAll_binh_lua($id_sp){
     $sql = "SELECT binhluan.* , taikhoan.ten_tk   FROM binhluan INNER JOIN taikhoan ON binhluan.id_tk = taikhoan.id_tk   WHERE 1";
     if ($id_sp > 0) {
         $sql .= " AND `id_sp`=" . $id_sp;
-    }else if($id_bl != 0 && $id_bl != ""){
-        $sql.=" and id like '%".$id_bl."%'";
     }
    $sql .= " ORDER BY id_bl DESC";
     $list_binh_lua = pdo_query($sql);
