@@ -161,15 +161,15 @@ if (isset($_GET['act'])) {
             // header("Location : ../../views/Client/thanhtoan.php");
             break;
         case "success":
-            // if (isset($_SESSION['user'])) {
+            if (isset($_SESSION['user'])) {
 
-            //     $listbill = list_bill(($_SESSION['user']['id_tk']));
-            //     // echo ($_SESSION['user']['id_tk']);
-            //     // var_dump($_SESSION['user']) ; die();
+                $listbill = list_bill(($_SESSION['user']['id_tk']));
+                // echo ($_SESSION['user']['id_tk']);
+                // var_dump($_SESSION['user']) ; die();
                 include '../../views/Client/success.php';
-            // } else {
-            //     header("Location : ../../views/Client/home.php");
-            // }
+            } else {
+                header("Location : ../../views/Client/home.php");
+            }
             
             break;
         case "tintuc":

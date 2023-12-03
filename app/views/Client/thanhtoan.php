@@ -132,20 +132,23 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
                                         <div class="card-body">
-                                            <td><b><?php  echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
+                                            <td><b><?php echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
                                         </div>
                                     </div>
                                 </div>
                                 <div style="padding-top: 20px;">
-                                    <p><input  type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
-                                    <p><input  type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
+                                    <p><input type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
+                                    <p><input type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
                                 </div>
                             </div>
-                            <center>
-                                <div class="order-button-payment">
-                                    <input value="Đăt Hàng" type="submit" name="order_confirm">
-                                </div>
-                            </center>
+                            <form action="" method="post">
+                                <center>
+                                    <div class="order-button-payment">
+                                        <input value="Đăt Hàng" type="submit" name="order_confirm">
+                                    </div>
+                                </center>
+                            </form>
+
                         </div>
                     </div>
                 </div>
