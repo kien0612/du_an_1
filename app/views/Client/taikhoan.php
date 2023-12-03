@@ -58,27 +58,34 @@
                                             <table class="table table-bordered table-hover">
                                                 <tbody>
                                                     <tr>
-                                                        <th>ORDER</th>
-                                                        <th>DATE</th>
-                                                        <th>STATUS</th>
-                                                        <th>TOTAL</th>
-                                                        <th></th>
+                                                        <th>#Mã Sản Phẩn</th>
+                                                        <th>Tên Sản Phẩn</th>
+                                                        <th>Ngày Tạo</th>
+                                                        <th>Người Đặt Hàng </th>
+                                                        <th>Tổng Tiền</th>
+                                                        <th>Trang Thái</th>
                                                     </tr>
+                                                    <?php
+            foreach ($listbill as $binh_luan) {
+                extract($binh_luan);
+                
+
+            ?>
                                                     <tr>
-                                                        <td><a class="account-order-id" href="javascript:void(0)">#5364</a></td>
-                                                        <td>Mar 27, 2022</td>
-                                                        <td>On Hold</td>
-                                                        <td>£162.00 for 2 items</td>
-                                                        <td><a href="javascript:void(0)" class="hiraola-btn hiraola-btn_dark hiraola-btn_sm"><span>View</span></a>
+                                                        <td><a class="account-order-id" href="javascript:void(0)">#<?= $id_sp?></a></td>
+                                                        <td><?= $ten_sp ?></td>
+                                                        <td><?= $ngaydathang ?></td>
+                                                        <td><?= $ten_tk ?></td>
+                                                        <td><?= $thanhtien ?></td>
+                                                        
+                                                        <td>
+                                                            
+                                                        </a>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td><a class="account-order-id" href="javascript:void(0)">#5356</a></td>
-                                                        <td>Mar 27, 2022</td>
-                                                        <td>On Hold</td>
-                                                        <td>£162.00 for 2 items</td>
-                                                        <td><a href="javascript:void(0)" class="hiraola-btn hiraola-btn_dark hiraola-btn_sm"><span>View</span></a>
-                                                        </td>
+                                                    <?php
+            }
+            ?>
                                                     </tr>
                                                 </tbody>
                                             </table>
