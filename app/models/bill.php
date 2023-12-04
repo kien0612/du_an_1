@@ -5,6 +5,7 @@ function list_bill($id_donhang)
             JOIN `taikhoan` ON hoadon.id_tk = taikhoan.id_tk 
             JOIN `hoadonchitet` ON hoadonchitet.id_hd = hoadon.id_hd 
             JOIN `sanpham` ON sanpham.id_sp = hoadonchitet.id_sp 
+            join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh
             WHERE taikhoan.id_tk = '$id_donhang'";
 
     $listbill = pdo_query($sql);
@@ -32,6 +33,11 @@ function list_dmhd_hd(){
     return ($listdmhd);
 }
 function update_thdh($id_hd , $trangthai) {
-    $sql = "UPDATE `hoadon` SET `trangthai`='$trangthai' WHERE id_hd =" . $id_hd ;
+    $sql = "UPDATE `hoadon` SET `trangthai`='.$trangthai.' WHERE id_hd =" . $id_hd ;
     pdo_execute($sql);
+}
+function update_thdh_hd($id_hd , $trangthai){
+    $sql="UPDATE `hoadon` SET `trangthai`='".$trangthai."' WHERE id_hd =" . $id_hd;
+    pdo_execute($sql);
+
 }

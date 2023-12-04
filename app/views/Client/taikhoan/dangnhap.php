@@ -24,7 +24,7 @@
                                 <strong>Xin chào <?php echo $ten_tk ?></strong>
                             </div>
                             <div class="row mb10">
-                            ?>
+                            
                                 <li>
                                     <a href="">Quên mật khẩu</a><br>
                                 </li>

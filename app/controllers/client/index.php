@@ -221,6 +221,10 @@ if (isset($_GET['act'])) {
             $list_binh_lua = loadAll_binh_lua($id_sp);
             include "../../views/Client/sanphamct.php";
             break;
+            case"":
+                //thêm xóa kiên lồn
+            break;
+
 
 
           

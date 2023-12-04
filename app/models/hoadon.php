@@ -2,10 +2,7 @@
 
 
 function loadAll_hoa_don(){
-    $sql = "SELECT hoadon.id_hoa_don, hoadon.tong_tien, hoadon.so_luong, hoadon.ngay_khoi_tao, hoadon.id_KM, thanhtoan.kieu_thanh_toan, taikhoan.ten_tk, taikhoan.dia_chi, taikhoan.sdt
-    FROM `hoadon` 
-    INNER JOIN `thanhtoan` ON hoadon.id_thanh_toan = thanhtoan.id_thanh_toan
-    INNER JOIN `taikhoan` ON hoadon.id_tk = taikhoan.id_tk ";
+    $sql = "SELECT * FROM `hoadon` JOIN `taikhoan` ON hoadon.id_tk = taikhoan.id_tk JOIN `hoadonchitet` ON hoadonchitet.id_hd = hoadon.id_hd JOIN `sanpham` ON sanpham.id_sp = hoadonchitet.id_sp join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh ";
     $list_hoa_don = pdo_query($sql);
     return $list_hoa_don;
 }
@@ -28,10 +25,7 @@ function list_hoadonadmin(){
     return $list_admin;
 }
 function list_hoadon(){
-    $sql="SELECT * FROM `hoadon` join taikhoan 
-    on hoadon.id_tk=taikhoan.id_tk JOIN
-    hoadonchitet on hoadonchitet.id_hd=hoadon.id_hd JOIN
-    sanpham on sanpham.id_sp=hoadonchitet.id_sp ";
+    $sql="SELECT * FROM `hoadon` JOIN `taikhoan` ON hoadon.id_tk = taikhoan.id_tk JOIN `hoadonchitet` ON hoadonchitet.id_hd = hoadon.id_hd JOIN `sanpham` ON sanpham.id_sp = hoadonchitet.id_sp join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh";
     $list_admin_hd=pdo_query($sql);
     return $list_admin_hd;
 }

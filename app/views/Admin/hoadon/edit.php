@@ -14,8 +14,8 @@ if (is_array($hoa_don)) {
 
 <body>
     <center>
-        <form action="?act=suathhd" method="post">
-            <input type="hidden" name="edit_id" id="" value="<?= $id_hd ?>">
+        <form action="?act=update" method="post">
+            <input type="hidden" name="id_hd" id="" value="<?= $id_hd ?>">
             <select name="trangthai">
                 <?php foreach ($listdmhd as $value) {
                     extract($value)

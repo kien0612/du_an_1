@@ -40,7 +40,7 @@
         <tbody>
             <?php
             foreach ($listsp as $sp) {
-            .    extract($sp);
+              extract($sp);
                 $edit = "index.php?act=editsp&id_sp=" . $id_sp;
                 $delete = "index.php?act=xoasp&id_sp=" . $id_sp;
                 $url = "./upload/sanpham/";

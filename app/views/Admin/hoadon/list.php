@@ -28,8 +28,9 @@
                 <th>Số Điện Thoại</th>
                 <th>Ghi Chú</th>
                 <th>Ngày Tạo Đơn</th>
+                <th>Trạng Thái</th>
                 <th>Action</th>
-                <th>thang Thái</th>
+               
             </tr>
         </thead>
 
@@ -51,13 +52,12 @@
                     <td><?=$sdt ?></td>
                     <td><?=$mota ?></td>
                     <td><?=$ngaydathang?></td>
+                    <td><?= $ten_dh ?></td>
                     <td>
                     <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
-                       
-                    </td>
+                    <a href="<?= $sua ?>"  class="btn btn-success" >Cập Nhập</a>
                     
-                <td>
-                  <a href="<?= $sua ?>"  class="btn btn-success" >Thạng Thái</a>
+                 
                 </td>
                 </tr>
                 <?php } ?>
