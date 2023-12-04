@@ -15,9 +15,14 @@ function delete_bill($id_sp){
     pdo_execute($sql);
 }
 
-function sua_trang_thai($id_hd){
-    $sql = "select * from hoadonchitet where id_hd =" . $id_hd;
-    $hoadon = pdo_query_one($sql);
-    return $hoadon;
+
+function sua_hoa_don($id_hd){
+    $sql = "select * from hoadon where id_hd =" . $id_hd;
+    $tk = pdo_query_one($sql);
+    return $tk;
 }
-g
+function list_dmhd_hd(){
+    $sql="SELECT * FROM `hoadon` join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh";
+    $listdmhd = pdo_query($sql);
+    return $listdmhd;
+}

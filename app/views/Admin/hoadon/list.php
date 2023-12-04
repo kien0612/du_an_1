@@ -37,8 +37,8 @@
 
             <?php foreach ($list_admin_hd as $avatar) {
                 extract($avatar);
-                $delete = "index.php?act=xoadh&id_hdct=" . $id_hdct;
-                $sua = "index.php?act=suatrangthai&id_hdct=" . $id_hd;
+                $delete = "index.php?act=xoadh&id_hdct=" .$id_hdct;
+                $sua = "index.php?act=suathhd&id_hd=" .$id_hd;
                 
             ?>
                 <tr>

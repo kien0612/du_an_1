@@ -20,7 +20,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
     switch ($act) {
             // Tài Khoản
         case "listtk":
-          
+
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/list.php";
             break;
@@ -38,10 +38,10 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
                 $ngay_tao = $currentDateTimeString;
-                add_tai_khoan(  $ten_tk  ,$password,  $sdt ,  $email,$full_name, $nam_sinh, $gioi_tinh, $dia_chi, $id_role , $ngay_tao) ;
+                add_tai_khoan($ten_tk, $password,  $sdt,  $email, $full_name, $nam_sinh, $gioi_tinh, $dia_chi, $id_role, $ngay_tao);
                 $thongBao = "Thêm thành công";
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/add.php";
             break;
@@ -49,7 +49,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
                 $tk = sua_tai_khoan($_GET['id_tk']);
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/edit.php";
 
@@ -66,7 +66,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $full_name = $_POST['full_name'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                update_tai_khoan($id_tk,  $ten_tk,$password ,$nam_sinh, $full_name,$gioi_tinh, $sdt, $email, $dia_chi,$id_role);
+                update_tai_khoan($id_tk,  $ten_tk, $password, $nam_sinh, $full_name, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
                 $thongBao = "Thêm thành công";
             }
             $listk = loadAll_tai_khoan();
@@ -82,7 +82,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
             //role
         case "listrole":
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/Admin/role/list.php";
             break;
         case "xoarole":
@@ -90,7 +90,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 delete_role($_GET['id_role']);
                 $thongBao = "Xóa thành công";
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/Admin/role/list.php";
 
             break;
@@ -102,20 +102,19 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
         case "addrole":
             if (isset($_POST['add']) && ($_POST['add'])) {
-                $name_role=$_POST['name_role'];
+                $name_role = $_POST['name_role'];
                 add_role($name_role);
             }
             include "../../views/Admin/role/add.php";
             break;
         case "suarole":
             if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
-                $id_role=$_POST['id_role'];
-                $name_role=$_POST['name_role'];
-                update_role($id_role,$name_role);
+                $id_role = $_POST['id_role'];
+                $name_role = $_POST['name_role'];
+                update_role($id_role, $name_role);
                 $thongBao = "Thêm thành công";
-
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/Admin/role/list.php";
             break;
 
@@ -124,8 +123,8 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Đơn Hàng
         case "listdh":
-            $list_admin=list_hoadonadmin();
-            $list_admin_hd=list_hoadon();
+            $list_admin = list_hoadonadmin();
+            $list_admin_hd = list_hoadon();
             include "../../views/Admin/hoadon/list.php";
             break;
         case "history_don_hang":
@@ -137,23 +136,19 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 delete_hoa_don_ct($_GET['id_hdct']);
                 $thongBao = "Xóa thành công";
             }
-            $list_admin_hd=list_hoadon();
+            $list_admin_hd = list_hoadon();
             include "../../views/Admin/hoadon/list.php";
             break;
-            case "suatrangthai":
-                if (isset($_GET['id_hd'])) {
-                    $hoadon=sua_trang_thai($id_hd);
+            case"suathhd":
+                if (isset($_GET['id_hd']) && ($_GET['id_hd'] > 0)) {
+                    $tk = sua_hoa_don($_GET['id_hd']);
                 }
-                $list_admin_hd=list_hoadon();
-                include "../../views/Admin/hoadon/trangthai.php";
-                break;
-                case "addcapnhap":
-                    if (isset($_POST['capnhap'])) {
-                        
-                    }
-                
-                    break;
-        
+                $listdmhd=list_dmhd_hd();
+                include "../../views/Admin/hoadon/edit.php";
+
+            break;
+
+
 
 
             // Danh Mục
@@ -181,7 +176,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_POST['capnhap'])) {
                 $id_dm = $_POST['id_dm'];
                 $ten_dm = $_POST['ten_dm'];
-                update_danhmuc($id_dm,$ten_dm);
+                update_danhmuc($id_dm, $ten_dm);
                 $thongBao = "Thêm thành công";
             }
             $list_danhmuc = loadAll_danhmuc();
@@ -373,11 +368,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             $listkm = loadAll_khuyen_mai();
             include "../../views/Admin/khuyenmai/list.php";
             break;
-            case "thongke":
-           
-                include "../../views/Admin/bieudo/thongke.php";
-    
-                break;
+        case "thongke":
+
+            include "../../views/Admin/bieudo/thongke.php";
+
+            break;
     }
 }
 include "../../views/Admin/footer.php";
