@@ -11,6 +11,8 @@ include "../../models/role.php";
 include "../../views/Admin/header.php";
 include "../../views/Admin/menu-left.php";
 include "../../models/thongke.php";
+include "../../models/bill.php";
+
 
 
 if (isset($_GET['act']) && $_GET['act'] !== "") {
@@ -122,7 +124,8 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Đơn Hàng
         case "listdh":
-            $list_hoa_don = loadAll_hoa_don();
+            $list_admin=list_hoadonadmin();
+            $list_admin_hd=list_hoadon();
             include "../../views/Admin/hoadon/list.php";
             break;
         case "history_don_hang":
@@ -130,13 +133,28 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             include "../../views/Admin/hoadon/history.php";
             break;
         case "xoadh":
-            if (isset($_GET['id_hoa_don'])) {
-                delete_hoa_don($_GET['id_hoa_don']);
+            if (isset($_GET['id_hdct'])) {
+                delete_hoa_don_ct($_GET['id_hdct']);
                 $thongBao = "Xóa thành công";
             }
-            $list_hoa_don = loadAll_hoa_don();
+            $list_admin_hd=list_hoadon();
             include "../../views/Admin/hoadon/list.php";
             break;
+            case "suatrangthai":
+                if (isset($_GET['id_hd'])) {
+                    $hoadon=sua_trang_thai($id_hd);
+                }
+                $list_admin_hd=list_hoadon();
+                include "../../views/Admin/hoadon/trangthai.php";
+                break;
+                case "addcapnhap":
+                    if (isset($_POST['capnhap'])) {
+                        
+                    }
+                
+                    break;
+        
+
 
             // Danh Mục
         case "listdm":

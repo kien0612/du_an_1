@@ -68,6 +68,8 @@
                                                     <?php
             foreach ($listbill as $binh_luan) {
                 extract($binh_luan);
+                $delete = "index.php?act=xoa_san_phan_ng&id_sp=".$id_sp;
+
                 
 
             ?>
@@ -76,16 +78,14 @@
                                                         <td><?= $ten_sp ?></td>
                                                         <td><?= $ngaydathang ?></td>
                                                         <td><?= $ten_tk ?></td>
-                                                        <td><?= $thanhtien ?></td>
-                                                        
+                                                        <td><?=  number_format($thanhtien, 0, ',', '.') ?> VND </td>
+                                                       
                                                         <td>
-                                                            
+                                                        <a href="<?= $delete ?>"><button type="button" class="btn btn-success">XÓA Đơn Hàng</button></a>
                                                         </a>
                                                         </td>
                                                     </tr>
-                                                    <?php
-            }
-            ?>
+                                                    <?php }?>
                                                     </tr>
                                                 </tbody>
                                             </table>

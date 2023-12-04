@@ -172,6 +172,7 @@ if (isset($_GET['act'])) {
             // }
             
             break;
+
         case "tintuc":
             $list_bai_viet = loadAll_bai_viet();
             include "../../views/Client/tintuc.php";
@@ -187,6 +188,14 @@ if (isset($_GET['act'])) {
                 header("Location : ../../views/Client/home.php");
             }
             include "../../views/Client/taikhoan.php";
+            break;
+            case "xoa_san_phan_ng":
+                if (isset($_GET['id_sp']) && isset($_SESSION['user']) ) {
+                    delete_bill($_GET['id_sp']);
+                    $thongBao = "Xóa thành công";
+                }
+                $listbill = list_bill(($_SESSION['user']['id_tk']));
+                include "../../views/Client/taikhoan.php";
             break;
         case "gioithieu":
             include "../../views/Client/gioithieu.php";

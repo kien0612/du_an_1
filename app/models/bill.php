@@ -10,3 +10,14 @@ function list_bill($id_donhang)
     $listbill = pdo_query($sql);
     return $listbill;
 }
+function delete_bill($id_sp){
+    $sql = "SELECT * FROM `hoadonchitet` WHERE id_sp=".$id_sp;
+    pdo_execute($sql);
+}
+
+function sua_trang_thai($id_hd){
+    $sql = "select * from hoadonchitet where id_hd =" . $id_hd;
+    $hoadon = pdo_query_one($sql);
+    return $hoadon;
+}
+g
