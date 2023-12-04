@@ -1,6 +1,6 @@
 <?php
-if (is_array($tk)) {
-    extract($tk);
+if (is_array($hoa_don)) {
+    extract($hoa_don);
 }
 ?>
 <!DOCTYPE html>
@@ -13,18 +13,21 @@ if (is_array($tk)) {
 </head>
 
 <body>
-    <form action="" method="post">
-
-        <select name="" id="">
-            <?php foreach ($tk as $value) {
-                extract($value)
-            ?>
-                <option value="<?= $value[]?>"></option>
-
-            <?php  } ?>
-        </select>
-    </form>
-
+    <center>
+        <form action="?act=suathhd" method="post">
+            <input type="hidden" name="edit_id" id="" value="<?= $id_hd ?>">
+            <select name="trangthai">
+                <?php foreach ($listdmhd as $value) {
+                    extract($value)
+                ?>
+                    <option value="<?= $value['id_thdh'] ?>" <?= $value['id_thdh'] == $hoa_don['trangthai'] ? 'selected' : "" ?>>
+                        <?= $value['ten_dh'] ?>
+                    </option>
+                <?php } ?>
+            </select>
+            <input type="submit" name="update" id="" value="Cập Nhật">
+        </form>
+    </center>
 </body>
 
 </html>

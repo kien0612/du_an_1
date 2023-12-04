@@ -17,12 +17,21 @@ function delete_bill($id_sp){
 
 
 function sua_hoa_don($id_hd){
-    $sql = "select * from hoadon where id_hd =" . $id_hd;
-    $tk = pdo_query_one($sql);
-    return $tk;
+    $sql = "SELECT * FROM `hoadon` WHERE id_hd =" . $id_hd;
+    $hoa_don = pdo_query_one($sql);
+    return $hoa_don;
 }
+// function list_dmhd_hd(){
+//     $sql="SELECT * FROM `hoadon` join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh";
+//     $listdmhd = pdo_query($sql);
+//     return $listdmhd;
+// }
 function list_dmhd_hd(){
-    $sql="SELECT * FROM `hoadon` join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh";
+    $sql = "SELECT * FROM `trangthaidoihang` WHERE 1";
     $listdmhd = pdo_query($sql);
-    return $listdmhd;
+    return ($listdmhd);
+}
+function update_thdh($id_hd , $trangthai) {
+    $sql = "UPDATE `hoadon` SET `trangthai`='$trangthai' WHERE id_hd =" . $id_hd ;
+    pdo_execute($sql);
 }

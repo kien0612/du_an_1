@@ -125,6 +125,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
         case "listdh":
             $list_admin = list_hoadonadmin();
             $list_admin_hd = list_hoadon();
+            $listdmhd = list_dmhd_hd();
             include "../../views/Admin/hoadon/list.php";
             break;
         case "history_don_hang":
@@ -141,13 +142,23 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
             case"suathhd":
                 if (isset($_GET['id_hd']) && ($_GET['id_hd'] > 0)) {
-                    $tk = sua_hoa_don($_GET['id_hd']);
+                    $hoa_don = sua_hoa_don($_GET['id_hd']);
                 }
                 $listdmhd=list_dmhd_hd();
                 include "../../views/Admin/hoadon/edit.php";
 
             break;
-
+            case "update" : 
+                if(isset($_POST['update'])){
+                    $edit_id = $_POST['edit_id'];
+                    $trangthai = $_POST['trangthai'];
+                    update_thdh($id_hd , $trangthai);
+                }
+                $list_admin_hd = list_hoadon();
+                $listdmhd = list_dmhd_hd();
+                $list_admin = list_hoadonadmin();
+                include "../../views/Admin/hoadon/list.php";
+            break;
 
 
 
