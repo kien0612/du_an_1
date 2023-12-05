@@ -136,7 +136,7 @@ if (isset($_GET['act'])) {
                     $diachi = $_POST['diachi'];
                     $mota = $_POST['mota'];
                     $pttt = $_POST['pttt'];
-                 
+
 
                     // date_default_timezone_set('Asia/Ho_Chi_Minh');
                     // $currentDateTime = date('Y-m-d H:i:s');
@@ -145,7 +145,7 @@ if (isset($_GET['act'])) {
                     } else {
                         $id_user = 0;
                     }
-                    $idBill = addOrder($hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk , $_SESSION['resultTotal'] );
+                    $idBill = addOrder($hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk, $_SESSION['resultTotal']);
                     foreach ($cart as $item) {
                         addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
                     }
@@ -166,11 +166,11 @@ if (isset($_GET['act'])) {
             //     $listbill = list_bill(($_SESSION['user']['id_tk']));
             //     // echo ($_SESSION['user']['id_tk']);
             //     // var_dump($_SESSION['user']) ; die();
-                include '../../views/Client/success.php';
+            include '../../views/Client/success.php';
             // } else {
             //     header("Location : ../../views/Client/home.php");
             // }
-            
+
             break;
 
         case "tintuc":
@@ -183,19 +183,19 @@ if (isset($_GET['act'])) {
                 $listbill = list_bill(($_SESSION['user']['id_tk']));
                 // echo ($_SESSION['user']['id_tk']);
                 // var_dump($_SESSION['user']) ; die();
-              
+
             } else {
                 header("Location : ../../views/Client/home.php");
             }
             include "../../views/Client/taikhoan.php";
             break;
-            case "xoa_san_phan_ng":
-                if (isset($_GET['id_sp']) && isset($_SESSION['user']) ) {
-                    delete_bill($_GET['id_sp']);
-                    $thongBao = "Xóa thành công";
-                }
-                $listbill = list_bill(($_SESSION['user']['id_tk']));
-                include "../../views/Client/taikhoan.php";
+        case "xoa_san_phan_ng":
+            if (isset($_GET['id_sp']) && isset($_SESSION['user'])) {
+                delete_bill($_GET['id_sp']);
+                $thongBao = "Xóa thành công";
+            }
+            $listbill = list_bill(($_SESSION['user']['id_tk']));
+            include "../../views/Client/taikhoan.php";
             break;
         case "gioithieu":
             include "../../views/Client/gioithieu.php";
@@ -221,13 +221,15 @@ if (isset($_GET['act'])) {
             $list_binh_lua = loadAll_binh_lua($id_sp);
             include "../../views/Client/sanphamct.php";
             break;
-            case"":
-                //thêm xóa kiên lồn
+        case "xoadh":
+            if (isset($_GET['id_hdct'])) {
+                delete_hoa_don_ct($_GET['id_hdct']);
+                $thongBao = "Xóa thành công";
+            }
+            $listbill = list_bill(($_SESSION['user']['id_tk']));
+            $list_admin_hd = list_hoadon();
+            include "../../views/Client/taikhoan.php";
             break;
-
-
-
-          
     }
 } else {
 

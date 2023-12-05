@@ -19,13 +19,12 @@
     <table border="1px" style="width: 90%; margin: 0 auto; text-align: center;">
         <thead>
             <tr>
-                <th>Id</th>
+               
                 <th>id_hd</th>
+                <th>Khách hàng</th>
                 <th>Tên Sản phẩn</th>
                 <th>số lượng</th>
                 <th>Tổng Tiền</th>
-                <th>Người Nhận</th>
-                <th>Số Điện Thoại</th>
                 <th>Ghi Chú</th>
                 <th>Ngày Tạo Đơn</th>
                 <th>Trạng Thái</th>
@@ -43,13 +42,15 @@
                 
             ?>
                 <tr>
-                    <td><?=$id_hdct  ?></td>
+                   
                     <td><?=$id_hd ?></td>
+                    <td><?=$ten_tk ?><br>
+                        <?= $diachi ?><br>
+                        <?= $sdt ?></td>
                     <td><?=$ten_sp?></td>
                     <td><?=$soluong ?></td>
                     <td><?=$thanhtien ?></td>
-                    <td><?=$ten_tk ?></td>
-                    <td><?=$sdt ?></td>
+                    
                     <td><?=$mota ?></td>
                     <td><?=$ngaydathang?></td>
                     <td><?= $ten_dh ?></td>

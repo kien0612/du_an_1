@@ -64,11 +64,12 @@
                                                             <th>Người Đặt Hàng </th>
                                                             <th>Tổng Tiền</th>
                                                             <th>Trang Thái</th>
+                                                            <!-- <th>Action</th> -->
                                                         </tr>
                                                         <?php
                                                         foreach ($listbill as $binh_luan) {
                                                             extract($binh_luan);
-                                                            $delete = "index.php?act=xoa_san_phan_ng&id_sp=" . $id_sp;
+                                                            $delete = "index.php?act=xoadh&id_hdct=" . $id_hdct;
 
 
 
@@ -82,30 +83,34 @@
 
                                                                 <td>
                                                                     <?php if ($trangthai == 1) { ?>
-                                                                        <li>
-                                                                           
+                                                                        <li style="list-style: none;">
+                                                                            <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
+
                                                                             <p class="button">Đang Xác Nhận</p>
-                                                                        
+
                                                                         </li>
                                                                     <?php } ?>
+
                                                                     <?php if ($trangthai == 2) { ?>
-                                                                        <li>
+                                                                        <li style="list-style: none;">
+                                                                            <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
+
                                                                             <p class="button">Đã Xác Nhận</p>
                                                                         </li>
                                                                     <?php } ?>
                                                                     <?php if ($trangthai == 3) { ?>
-                                                                        <li>
-                                                                        <p class="button">Đang Vận Chuyển</p>
-                                                                          
+                                                                        <li style="list-style: none;">
+                                                                            <p class="button">Đang Vận Chuyển</p>
+
                                                                         </li>
                                                                     <?php } ?>
                                                                     <?php if ($trangthai == 4) { ?>
-                                                                        <li>
-                                                                        <p class="button">Hoàn Thành</p>
-                                                                           
+                                                                        <li style="list-style: none;">
+                                                                            <p class="button">Hoàn Thành</p>
+
                                                                         </li>
                                                                     <?php } ?>
-                                                                  
+
 
                                                                 </td>
                                                             </tr>
