@@ -38,8 +38,13 @@ $list_binh_lua = loadAll_binh_lua($id_sp,0);
             <!-- Hiển thị form bình luận khi đã đăng nhập -->
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
                 <input type="hidden" name="id_sp" value="<?php echo $id_sp?>">
+<<<<<<< HEAD
+                <input type="text"   class="btn btn-success" width="300px" height="200px" name="noi_dung_bl" id="noi_dung_bl" placeholder="bình luận" name="noidung">
+                <input type="submit"class="btn btn-success" value="Gửi bình luận" name="guibinhluan">
+=======
                 <input type="text" style="width: 85%;" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
                 <input type="submit" value="Gửi bình luận" name="guibinhluan">
+>>>>>>> 71d46b5cdf57cf662abb9469509e038abc4470e9
             </form>
         <?php } ?>
     </div>
