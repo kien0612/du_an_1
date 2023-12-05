@@ -125,7 +125,7 @@ if (isset($_GET['act'])) {
             include "../../views/Client/giohang.php";
             break;
         case "order":
-<<<<<<< HEAD
+
             // if (isset($_SESSION['cart'])) {
             //     $cart = $_SESSION['cart'];
             //     // print_r($cart);
@@ -154,7 +154,7 @@ if (isset($_GET['act'])) {
             // } else {
             //     header("Location: index.php?act=listCart");
             // }
-=======
+
             if (isset($_SESSION['cart'])) {
                 $cart = $_SESSION['cart'];
                 // print_r($cart); die();
@@ -187,7 +187,7 @@ if (isset($_GET['act'])) {
                 header("Location: index.php?act=listCart");
             }
 
->>>>>>> 79f8441ff911dfcfb9861b5bd82c2c1ca5675616
+
             include "../../views/Client/thanhtoan.php";
             //header("Location : ../../views/Client/thanhtoan.php");
             break;
