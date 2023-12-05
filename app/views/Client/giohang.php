@@ -67,23 +67,31 @@
                                     }
                                 }
                                 ?>
-
-                             </tbody>
-                         </table>
-                     </div>
-                     <div class="row">
-                         <div class="col-12">
-                             <div class="coupon-all">
-                                 <div class="coupon">
-                                     <h4>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h4>
-                                 </div>
-                                 <div class="coupon2">
-                                    <a href="index.php?act=order">Đặt Hàng</a>
-                                     <form action="" method="post">
-                                         <input type="submit" style="padding:10px;" name="order" value="Đặt Hàng">
-                                     </form>
-                                     <a href="index.php?act=order">Đặt hàng</a>
-                                 </div>
+                             <tr>
+                                 <td colspan="5" align="center">
+                                     <h5>Tổng tiền hàng:</h5>
+                                 </td>
+                                 <td colspan="2" align="center">
+                                     <h5>
+                                         <span style="color: red;" >
+                                             <?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>đ</u>
+                                         </span>
+                                     </h5>
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+                 <div class="row">
+                     <div class="col-12">
+                         <div class="coupon-all">
+                             <!-- <div class="coupon">
+                                 <h4>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h4>
+                             </div> -->
+                             <div class="coupon2">
+                                 <form action="index.php?act=order" method="post">
+                                    <input class="button" name="order" value="Đặt Hàng" type="submit">
+                                 </form>
                              </div>
                          </div>
                      </div>
