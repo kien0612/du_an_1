@@ -282,11 +282,6 @@ $image = $url . $anh_sp;
 </div>
 <!-- kết thúc -->
 
-<<<<<<< HEAD
-        <!-- 1 số sản phẩm ver2 -->
-       
-        <!-- kết thúc -->
-=======
 <!-- 1 số sản phẩm ver2 -->
 
 <!-- kết thúc -->
@@ -379,4 +374,3 @@ $image = $url . $anh_sp;
         });
     }
 </script>
->>>>>>> 79f8441ff911dfcfb9861b5bd82c2c1ca5675616
