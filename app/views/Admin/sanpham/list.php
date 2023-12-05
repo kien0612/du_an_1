@@ -24,8 +24,8 @@
                             </div>
                         </div>
 
-    <table border="1px" style="width: 95%; margin: 0 auto; text-align: center;">
-        <thead>
+    <table border="1px" style="width: 95%; margin: 0 auto; text-align: center;" class = "table">
+        <thead class = "table-dark">
             <tr>
                 <!-- <th style="width: 5%;">Check</th> -->
                 <th>Id</th> 

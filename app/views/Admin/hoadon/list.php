@@ -16,8 +16,8 @@
         </div>
     </div>
 
-    <table border="1px" style="width: 90%; margin: 0 auto; text-align: center;">
-        <thead>
+    <table border="1px" style="width: 90%; margin: 0 auto; text-align: center;" class = "table">
+        <thead class = "table-dark">
             <tr>
                
                 <th>id_hd</th>
