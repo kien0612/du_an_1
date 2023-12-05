@@ -108,25 +108,29 @@
                          </tbody>
                      </table>
                  </div>
-                 <!-- <div class="row">
+                 <div class="row">
                      <div class="col-12">
                          <div class="coupon-all">
-                             <div class="coupon">
+                             <!-- <div class="coupon">
                                  <h4>Tổng tiền : <span style="color: red;"><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>VND</u></span> </h4>
-                             </div>
+                             </div> -->
                              <div class="coupon2">
                                  <form action="index.php?act=order" method="post">
-                                     <input class="button" name="order" value="Đặt Hàng" type="submit">
+                                    <input class="button" name="order" value="Đặt Hàng" type="submit">
                                  </form>
                              </div>
                          </div>
                      </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                  </div>
 >>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
 =======
                  </div> -->
 >>>>>>> 79f8441ff911dfcfb9861b5bd82c2c1ca5675616
+=======
+                 </div>
+>>>>>>> 7fcf202f6040a8d0903d2d5248601e6a7d58a3ad
              </div>
          </div>
      </div>

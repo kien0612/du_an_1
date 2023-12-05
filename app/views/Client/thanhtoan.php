@@ -62,12 +62,12 @@
                 if (isset($_SESSION['user'])) {
                     extract($_SESSION['user'])
                 ?>
-                    <form action="" method="post"> 
+                    <form action="" method="post">
                         <div class="checkbox-form">
                             <h3>Thông Tin Người Nhận</h3>
                             <div class="row">
                                 <div class="col-md-6">
-                                <input placeholder="" name="id_tk" type="text" value="<?= $id_tk ?>" hidden required>
+                                    <input placeholder="" name="id_tk" type="text" value="<?= $ten_tk ?>" hidden>
                                     <div class="checkout-form-list">
                                         <label>Tên tài khoản <span class="required">*</span></label>
                                         <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>" required>
@@ -184,6 +184,7 @@
 >>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="mot">
                                 <p><input  class="checkout-form-list" type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
                                 <p><input  class="checkout-form-list" type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
@@ -270,16 +271,11 @@
                            <center>
                            <div class="order-button-payment">
                                 <input value="Đăt Hàng" type="submit" name="order_confirm">
+=======
+
+>>>>>>> 7fcf202f6040a8d0903d2d5248601e6a7d58a3ad
                             </div>
-                           </center>
-                         <style>
-                            .mot{
-                                border: 1px solid red;
-                                padding: 0 20px;
-                                margin: 0 19px;
-                                width: 500px;
-                            }
-                         </style>
+
                         </div>
                     </form>
                 <?php } ?>
@@ -290,30 +286,31 @@
                     <div class="your-order-table table-responsive">
                         <table class="table">
                             <thead>
-                                <?php
-                                // print_r($cart);
-                                foreach ($cart as $item) {
-                                    // $url = "../../../controllers/admin/upload/sanpham/";
-                                ?>
-                                    <tr>
-                                        <th class="cart-product-name">Tên Sản phẩm</th>
-                                        <!-- <th >Ảnh Sản Phẩn</th> -->
-                                        <th>Số lượng</th>
-                                        <th class="cart-product-total">Thành tiền</th>
-                                    </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="cart_item">
-                                    <td class="cart-product-name"><?php echo $item['name']; ?><strong class="product-quantity">
-                                            <!-- <td class="cart-product-total"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" ></span></td> -->
-                                    <td class="cart-product-total"><span class="amount"><?php echo $item['quantity']; ?></span></td>
-                                    <td class="cart-product-total"><span class="amount"><?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?> ₫</span></td>
+                                <tr>
+                                    <th class="cart-product-name">Tên Sản phẩm</th>
+                                    <!-- <th >Ảnh Sản Phẩn</th> -->
+                                    <th>Số lượng</th>
+                                    <th class="cart-product-total">Thành tiền</th>
                                 </tr>
+                            </thead>
+                            <?php
+                            // print_r($cart);
+                            foreach ($cart as $item) {
+                                // $url = "../../../controllers/admin/upload/sanpham/";
+                            ?>
 
-                            </tbody>
-                        <?php
-                                }
-                        ?>
+                                <tbody>
+                                    <tr class="cart_item">
+                                        <td class="cart-product-name"><?php echo $item['name']; ?><strong class="product-quantity">
+                                                <!-- <td class="cart-product-total"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" ></span></td> -->
+                                        <td class="cart-product-total"><span class="amount"><?php echo $item['quantity']; ?></span></td>
+                                        <td class="cart-product-total"><span class="amount"><?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?> ₫</span></td>
+                                    </tr>
+
+                                </tbody>
+                            <?php
+                            }
+                            ?>
 
                         </table>
                     </div>
@@ -330,10 +327,11 @@
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
                                         <div class="card-body">
-                                            <td><b><?php  echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
+                                            <td><b><?php echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <!-- <div class="card">
                                     <div class="card-header" id="#payment-2">
                                         <h5 class="panel-title">
@@ -382,6 +380,21 @@
                             </div>
                            
 >>>>>>> 7e91113cd110b0d947dea768688a21380ae2f426
+=======
+                                <div style="padding-top: 20px;">
+                                    <p><input type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
+                                    <p><input type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
+                                </div>
+                            </div>
+                            <form action="" method="post">
+                                <center>
+                                    <div class="order-button-payment">
+                                        <input value="Đăt Hàng" type="submit" name="order_confirm">
+                                    </div>
+                                </center>
+                            </form>
+
+>>>>>>> 7fcf202f6040a8d0903d2d5248601e6a7d58a3ad
                         </div>
                     </div>
                 </div>

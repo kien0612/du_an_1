@@ -192,8 +192,9 @@ if (isset($_GET['act'])) {
             //header("Location : ../../views/Client/thanhtoan.php");
             break;
         case "success":
-            // if (isset($_SESSION['user'])) {
+            if (isset($_SESSION['user'])) {
 
+<<<<<<< HEAD
             //     $listbill = list_bill(($_SESSION['user']['id_tk']));
             //     // echo ($_SESSION['user']['id_tk']);
             //     // var_dump($_SESSION['user']) ; die();
@@ -202,6 +203,16 @@ if (isset($_GET['act'])) {
             //     header("Location : ../../views/Client/home.php");
             // }
 
+=======
+                $listbill = list_bill(($_SESSION['user']['id_tk']));
+                // echo ($_SESSION['user']['id_tk']);
+                // var_dump($_SESSION['user']) ; die();
+                include '../../views/Client/success.php';
+            } else {
+                header("Location : ../../views/Client/home.php");
+            }
+            
+>>>>>>> 7fcf202f6040a8d0903d2d5248601e6a7d58a3ad
             break;
 
         case "tintuc":
