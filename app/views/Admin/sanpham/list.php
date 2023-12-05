@@ -15,6 +15,14 @@
             </div><!-- /.row -->
         </div>
     </div>
+    <div class="col-lg-9">
+                            <div class="hm-form_area">
+                                <form action="index.php?act=listsp" class="hm-searchbox" method="post">
+                                    <input type="text" name="kyw" placeholder="Enter your search key ...">
+                                    <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
 
     <table border="1px" style="width: 95%; margin: 0 auto; text-align: center;">
         <thead>
@@ -40,7 +48,7 @@
         <tbody>
             <?php
             foreach ($listsp as $sp) {
-                extract($sp);
+              extract($sp);
                 $edit = "index.php?act=editsp&id_sp=" . $id_sp;
                 $delete = "index.php?act=xoasp&id_sp=" . $id_sp;
                 $url = "./upload/sanpham/";

@@ -99,6 +99,7 @@
                                         if (isset($_SESSION['user'])) {
                                             extract($_SESSION['user'])
                                         ?>
+                                       
                                             <li><a href="#">Xin chào <?php echo $full_name ?><i class="fa fa-chevron-down"></i></a>
                                                 <ul class="ht-dropdown ht-my_account">
                                                     <li>
