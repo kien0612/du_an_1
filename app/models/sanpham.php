@@ -1,6 +1,9 @@
 <?php
+
 function loadll_san_pham($kyw="",$id_dm=0){
-    $sql="SELECT * FROM sanpham where 1"; 
+    $sql="SELECT sanpham.*, danhmuc.ten_dm , trangthai.ten_trang_thai FROM sanpham 
+    INNER JOIN danhmuc ON sanpham.id_dm = danhmuc.id_dm 
+    INNER JOIN trangthai ON trangthai.id_trang_thai= sanpham.trang_thai"; 
     if($kyw!=""){
         $sql.=" and ten_sp like '%".$kyw."%' ";
     }
@@ -9,6 +12,7 @@ function loadll_san_pham($kyw="",$id_dm=0){
     }
     $sql.=" order by id_sp desc";
     $listsp=pdo_query($sql);
+    
     return $listsp;
 }
 function loadAll_san_pham(){
@@ -79,5 +83,19 @@ function loadone_sanphamCart ($idList) {
     $sql = 'SELECT * FROM sanpham WHERE id_sp IN ('. $idList . ')';
     $sanpham = pdo_query($sql);
     return $sanpham;
+}
+// them vào gioi hàng
+
+function addOrder( $hoten, $email, $sdt, $diachi, $mota,  $pttt, $id_tk){
+    $sql="INSERT INTO hoadon( `hoten`, `email`, `sdt`, `diachi`, `mota`, `pttt`,  `id_tk`)
+     VALUES ( '$hoten',' $email', '$sdt', '$diachi', '$mota',  '$pttt',' $id_tk')";
+     $id_hd= pdo_executeid($sql);
+     return $id_hd;
+}
+
+function addOrderDetail( $id_hd ,  $id_sp, $giamua, $soluong, $thanhtien){
+    $sql="INSERT INTO `hoadonchitet`(`id_hd`, `id_sp`, `giamua`, `soluong`, `thanhtien`) VALUES('$id_hd',' $id_sp',' $giamua', '$soluong', '$thanhtien');";
+    pdo_executeid($sql);
+    
 }
 ?>

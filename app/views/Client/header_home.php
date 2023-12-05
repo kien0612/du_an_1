@@ -99,6 +99,7 @@
                                         if (isset($_SESSION['user'])) {
                                             extract($_SESSION['user'])
                                         ?>
+                                       
                                             <li><a href="#">Xin chào <?php echo $full_name ?><i class="fa fa-chevron-down"></i></a>
                                                 <ul class="ht-dropdown ht-my_account">
                                                     <li>
@@ -209,13 +210,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white d-lg-none d-block">
-                                            <i class="ion-navicon"></i>
-                                        </a>
-                                    </li>
-                                    
-                                    <li>
-                                        <a href="index.php?act=giohang" class="hiraola-add_cart">
+                                        <a href="?act=giohang" class="notification">
                                             <i class="ion-bag"></i>
                                             <span class="badge" id="totalProduct"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span>
                                         </a>
@@ -226,57 +221,4 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="offcanvas-minicart_wrapper" id="miniCart">
-                <div class="offcanvas-menu-inner">
-                    <a href="#" class="btn-close"><i class="ion-android-close"></i></a>
-                    <div class="minicart-content">
-                        <div class="minicart-heading">
-                            <h4>Shopping Cart</h4>
-                        </div>
-                        <ul class="minicart-list">
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                                <div class="product-item_img">
-                                    <img src="assets/images/product/small-size/2-1.jpg" alt="Hiraola's Product Image">
-                                </div>
-                                <div class="product-item_content">
-                                    <a class="product-item_title" href="shop-left-sidebar.html">Magni dolorum vel</a>
-                                    <span class="product-item_quantity">1 x $120.80</span>
-                                </div>
-                            </li>
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                                <div class="product-item_img">
-                                    <img src="assets/images/product/small-size/2-2.jpg" alt="Hiraola's Product Image">
-                                </div>
-                                <div class="product-item_content">
-                                    <a class="product-item_title" href="shop-left-sidebar.html">Eius accusantium omnis</a>
-                                    <span class="product-item_quantity">1 x $120.80</span>
-                                </div>
-                            </li>
-                            <li class="minicart-product">
-                                <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                                <div class="product-item_img">
-                                    <img src="assets/images/product/small-size/2-3.jpg" alt="Hiraola's Product Image">
-                                </div>
-                                <div class="product-item_content">
-                                    <a class="product-item_title" href="shop-left-sidebar.html">Aperiam adipisci dolorem</a>
-                                    <span class="product-item_quantity">1 x $120.80</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="minicart-item_total">
-                        <span>Subtotal</span>
-                        <span class="ammount">$360.00</span>
-                    </div>
-                    <div class="minicart-btn_area">
-                        <a href="cart.html" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Minicart</a>
-                    </div>
-                    <div class="minicart-btn_area">
-                        <a href="checkout.html" class="hiraola-btn hiraola-btn_dark hiraola-btn_fullwidth">Checkout</a>
-                    </div>
-                </div>
-            </div> -->
         </header>
-        <!-- Hiraola's Header Main Area End Here kiên -->

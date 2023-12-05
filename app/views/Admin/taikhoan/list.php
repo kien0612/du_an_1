@@ -6,6 +6,14 @@
                 <div class="col-sm-6">
                     <h1 class="m-0">Danh Sách Tài Khoản</h1>
                 </div><!-- /.col -->
+                <div class="col-lg-9">
+                            <div class="hm-form_area">
+                                <form action="index.php?act=listtk" class="hm-searchbox" method="post">
+                                    <input type="text" name="kyw" placeholder="Enter your search key ...">
+                                    <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>

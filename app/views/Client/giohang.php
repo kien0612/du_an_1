@@ -50,9 +50,8 @@
                                          <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
                                          <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
                                          <td class="quantity">
-                                             <!-- <?= $quantityInCart ?> -->
                                              <div class="cart-plus-minus">
-                                                 <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity()">
+                                                 <input class="cart-plus-minus-box" value="<?= $quantityInCart ?>" type="number" min="1" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
                                                  <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                                  <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                              </div>
