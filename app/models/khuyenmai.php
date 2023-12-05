@@ -21,7 +21,8 @@ function add_khuyen_mai($ma_KM, $phan_tram_km, $ngay_bat_dau, $ngay_ket_thuc, $t
     pdo_execute($sql);
 }
 function update_khuyen_mai($id_KM,$ma_KM, $phan_tram_km, $ngay_bat_dau, $ngay_ket_thuc, $trang_thai){
-    $sql="UPDATE `khuyenmai` SET `ma_KM`='".$ma_KM."',`phan_tram_km`='".$phan_tram_km."',`ngay_bat_dau`='".$ngay_bat_dau."',`ngay_ket_thuc`='".$ngay_ket_thuc."',`trang_thai`='".$trang_thai."' WHERE id_KM=".$id_KM;
+    $sql="UPDATE `khuyenmai` SET `ma_KM`='".$ma_KM."',`phan_tram_km`='".$phan_tram_km."',`ngay_bat_dau`='".$ngay_bat_dau."'
+    ,`ngay_ket_thuc`='".$ngay_ket_thuc."',`trang_thai`='".$trang_thai."' WHERE id_KM=".$id_KM;
     pdo_execute($sql);
 
 }

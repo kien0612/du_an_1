@@ -19,41 +19,49 @@
     <table border="1px" style="width: 90%; margin: 0 auto; text-align: center;">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Khách Hàng</th>
-                <th>Số lượng</th>
-                <th>Mã KM</th>
+               
+                <th>id_hd</th>
+                <th>Khách hàng</th>
+                <th>Tên Sản phẩn</th>
+                <th>số lượng</th>
                 <th>Tổng Tiền</th>
-                <th>Kiểu thanh toán</th>
-                <th>Ngày đặt</th>
+                <th>Ghi Chú</th>
+                <th>Ngày Tạo Đơn</th>
+                <th>Trạng Thái</th>
                 <th>Action</th>
+               
             </tr>
         </thead>
 
         <tbody>
 
-            <?php foreach ($list_hoa_don as $hoa_don) {
-                extract($hoa_don);
-                $delete = "index.php?act=xoabl&id_hoa_don=".$id_hoa_don;
+            <?php foreach ($list_admin_hd as $avatar) {
+                extract($avatar);
+                $delete = "index.php?act=xoadh&id_hdct=" .$id_hdct;
+                $sua = "index.php?act=suathhd&id_hd=" .$id_hd;
+                
             ?>
                 <tr>
-                    <td><?= $id_hoa_don ?></td>
+                   
+                    <td><?=$id_hd ?></td>
+                    <td><?=$ten_tk ?><br>
+                        <?= $diachi ?><br>
+                        <?= $sdt ?></td>
+                    <td><?=$ten_sp?></td>
+                    <td><?=$soluong ?></td>
+                    <td><?=$thanhtien ?></td>
+                    
+                    <td><?=$mota ?></td>
+                    <td><?=$ngaydathang?></td>
+                    <td><?= $ten_dh ?></td>
                     <td>
-                        <?= $ten_tk ?>
-                        <?= $dia_chi ?>
-                        <?= $sdt ?>
-                    </td>
-                    <td><?= $so_luong ?></td>
-                    <td><?= $ma_KM ?></td>
-                    <td><?= $tong_tien ?></td>
-                    <td><?= $kieu_thanh_toan?></td>
-                    <td><?= $ngay_đặt ?></td>
-                    <td>
-                        <button type="button" class="btn btn-success">Success</button>
-                        <button type="button" class="btn btn-success">Success</button>
-                    </td>
+                    <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
+                    <a href="<?= $sua ?>"  class="btn btn-success" >Cập Nhập</a>
+                    
+                 
+                </td>
                 </tr>
-            <?php } ?>
+                <?php } ?>
         </tbody>
     </table>
 </div>

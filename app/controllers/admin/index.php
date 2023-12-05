@@ -11,6 +11,8 @@ include "../../models/role.php";
 include "../../views/Admin/header.php";
 include "../../views/Admin/menu-left.php";
 include "../../models/thongke.php";
+include "../../models/bill.php";
+
 
 
 if (isset($_GET['act']) && $_GET['act'] !== "") {
@@ -45,10 +47,10 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
                 $ngay_tao = $currentDateTimeString;
-                add_tai_khoan(  $ten_tk  ,$password,  $sdt ,  $email,$full_name, $nam_sinh, $gioi_tinh, $dia_chi, $id_role , $ngay_tao) ;
+                add_tai_khoan($ten_tk, $password,  $sdt,  $email, $full_name, $nam_sinh, $gioi_tinh, $dia_chi, $id_role, $ngay_tao);
                 $thongBao = "Thêm thành công";
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/add.php";
             break;
@@ -56,7 +58,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
                 $tk = sua_tai_khoan($_GET['id_tk']);
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/edit.php";
 
@@ -73,7 +75,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $full_name = $_POST['full_name'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                update_tai_khoan($id_tk,  $ten_tk,$password ,$nam_sinh, $full_name,$gioi_tinh, $sdt, $email, $dia_chi,$id_role);
+                update_tai_khoan($id_tk,  $ten_tk, $password, $nam_sinh, $full_name, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
                 $thongBao = "Thêm thành công";
             }
             $listk = loadAll_tai_khoan();
@@ -89,7 +91,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
             //role
         case "listrole":
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/Admin/role/list.php";
             break;
         case "xoarole":
@@ -97,7 +99,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 delete_role($_GET['id_role']);
                 $thongBao = "Xóa thành công";
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/Admin/role/list.php";
 
             break;
@@ -109,20 +111,19 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
         case "addrole":
             if (isset($_POST['add']) && ($_POST['add'])) {
-                $name_role=$_POST['name_role'];
+                $name_role = $_POST['name_role'];
                 add_role($name_role);
             }
             include "../../views/Admin/role/add.php";
             break;
         case "suarole":
             if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
-                $id_role=$_POST['id_role'];
-                $name_role=$_POST['name_role'];
-                update_role($id_role,$name_role);
+                $id_role = $_POST['id_role'];
+                $name_role = $_POST['name_role'];
+                update_role($id_role, $name_role);
                 $thongBao = "Thêm thành công";
-
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/Admin/role/list.php";
             break;
 
@@ -131,21 +132,44 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Đơn Hàng
         case "listdh":
-            $list_hoa_don = loadAll_hoa_don();
+            $list_admin = list_hoadonadmin();
+            $list_admin_hd = list_hoadon();
+            $listdmhd = list_dmhd_hd();
             include "../../views/Admin/hoadon/list.php";
             break;
-        case "history_don_hang":
-            $list_history = loadAll_lich_su_dh();
-            include "../../views/Admin/hoadon/history.php";
-            break;
+        // case "history_don_hang":
+        //     $list_history = loadAll_lich_su_dh();
+        //     include "../../views/Admin/hoadon/history.php";
+        //     break;
         case "xoadh":
-            if (isset($_GET['id_hoa_don'])) {
-                delete_hoa_don($_GET['id_hoa_don']);
+            if (isset($_GET['id_hdct'])) {
+                delete_hoa_don_ct($_GET['id_hdct']);
                 $thongBao = "Xóa thành công";
             }
-            $list_hoa_don = loadAll_hoa_don();
+            $list_admin_hd = list_hoadon();
             include "../../views/Admin/hoadon/list.php";
             break;
+            case"suathhd":
+                if (isset($_GET['id_hd']) && ($_GET['id_hd'] > 0)) {
+                    $hoa_don = sua_hoa_don($_GET['id_hd']);
+                }
+                $listdmhd=list_dmhd_hd();
+                include "../../views/Admin/hoadon/edit.php";
+
+            break;
+            case "update" : 
+                if(isset($_POST['update'])){
+                    $id_hd = $_POST['id_hd'];
+                    $trangthai = $_POST['trangthai'];
+                    update_thdh_hd($id_hd , $trangthai);
+                }
+                $list_admin_hd = list_hoadon();
+                $listdmhd = list_dmhd_hd();
+                $list_admin = list_hoadonadmin();
+                include "../../views/Admin/hoadon/list.php";
+            break;
+
+
 
             // Danh Mục
         case "listdm":
@@ -172,7 +196,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_POST['capnhap'])) {
                 $id_dm = $_POST['id_dm'];
                 $ten_dm = $_POST['ten_dm'];
-                update_danhmuc($id_dm,$ten_dm);
+                update_danhmuc($id_dm, $ten_dm);
                 $thongBao = "Thêm thành công";
             }
             $list_danhmuc = loadAll_danhmuc();
@@ -369,11 +393,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             $listkm = loadAll_khuyen_mai();
             include "../../views/Admin/khuyenmai/list.php";
             break;
-            case "thongke":
-           
-                include "../../views/Admin/bieudo/thongke.php";
-    
-                break;
+        case "thongke":
+
+            include "../../views/Admin/bieudo/thongke.php";
+
+            break;
     }
 }
 include "../../views/Admin/footer.php";
