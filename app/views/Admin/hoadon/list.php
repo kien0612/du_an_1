@@ -16,20 +16,19 @@
         </div>
     </div>
 
-    <table border="1px" style="width: 90%; margin: 0 auto; text-align: center;" class = "table">
-        <thead class = "table-dark">
+    <table border="1px" style="width: 90%; margin: 0 auto; text-align: center;">
+        <thead>
             <tr>
-               
+
                 <th>id_hd</th>
                 <th>Khách hàng</th>
-                <th>Tên Sản phẩn</th>
                 <th>số lượng</th>
                 <th>Tổng Tiền</th>
                 <th>Ghi Chú</th>
                 <th>Ngày Tạo Đơn</th>
                 <th>Trạng Thái</th>
                 <th>Action</th>
-               
+
             </tr>
         </thead>
 
@@ -37,31 +36,40 @@
 
             <?php foreach ($list_admin_hd as $avatar) {
                 extract($avatar);
-                $delete = "index.php?act=xoadh&id_hdct=" .$id_hdct;
-                $sua = "index.php?act=suathhd&id_hd=" .$id_hd;
-                
+                $delete = "index.php?act=xoadh&id_hd=" . $id_hd;
+                $sua = "index.php?act=suathhd&id_hd=" . $id_hd;
+
             ?>
                 <tr>
-                   
-                    <td><?=$id_hd ?></td>
-                    <td><?=$ten_tk ?><br>
+
+                    <td><?= $id_hd ?></td>
+                    <td><?= $full_name ?><br>
                         <?= $diachi ?><br>
                         <?= $sdt ?></td>
-                    <td><?=$ten_sp?></td>
-                    <td><?=$soluong ?></td>
-                    <td><?=$thanhtien ?></td>
-                    
-                    <td><?=$mota ?></td>
-                    <td><?=$ngaydathang?></td>
+
+                    <td><?= $tong_soluong ?></td>
+                    <td><?= $tongtien ?></td>
+
+                    <td><?= $mota ?></td>
+                    <td><?= $ngaydathang ?></td>
                     <td><?= $ten_dh ?></td>
                     <td>
-                    <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
-                    <a href="<?= $sua ?>"  class="btn btn-success" >Cập Nhập</a>
-                    
-                 
-                </td>
+                        <!-- <td> 
+                                   
+                                   <a class="url-edit" href="index.php?act=suatk&amp;id=8">
+                                     <i class="fa-solid fa-pen-to-square"></i>
+                                   </a><a class="url-delete" href="index.php?act=xoatk&amp;id=8" onclick="return confirm(&quot;Delete entry?&quot;)">
+                                     <i class="fa-solid fa-trash"></i>
+                                   </a> 
+                                 </td> -->
+                        <a class="btn btn-danger" href="<?= $delete ?>" onclick="return confirm('Bạn có chắc chắn muốn hủy không')">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <!-- <li style="list-style: none;" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i style="font-size:16px" class="ion-eye"></i></a></li> -->
+                        <a href="<?= $sua ?>" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> </a>
+                    </td>
                 </tr>
-                <?php } ?>
+            <?php } ?>
         </tbody>
     </table>
 </div>
