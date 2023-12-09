@@ -129,15 +129,15 @@ if (isset($_GET['act'])) {
                 $cart = $_SESSION['cart'];
                 // print_r($cart); die();
                 if (isset($_POST['order_confirm'])) {
-                    $id_tk = $_POST['id_tk'];
+                    // $id_tk = $_POST['id_tk'];
                     $hoten = $_POST['hoten'];
                     $email = $_POST['email'];
                     $sdt = $_POST['sdt'];
                     $diachi = $_POST['diachi'];
                     $mota = $_POST['mota'];
                     $pttt = $_POST['pttt'];
-
-
+                    $tongtien=$_SESSION['resultTotal'];
+                   
                     // date_default_timezone_set('Asia/Ho_Chi_Minh');
                     // $currentDateTime = date('Y-m-d H:i:s');
                     if (isset($_SESSION['user'])) {
@@ -145,9 +145,9 @@ if (isset($_GET['act'])) {
                     } else {
                         $id_user = 0;
                     }
-                    $idBill = addOrder($hoten, $email, $sdt, $diachi, $mota, $pttt,   $id_tk, $_SESSION['resultTotal']);
+                    $idBill = addOrder($hoten, $email, $sdt, $diachi, $mota, $pttt,  $id_tk, $_SESSION['resultTotal']);
                     foreach ($cart as $item) {
-                        addOrderDetail($idBill, $item['id'], $item['name'], $item['quantity'], $item['price'] * $item['quantity']);
+                        addOrderDetail($idBill, $item['id'] ,$item['price'], $item['quantity'],$item['price'] * $item['quantity']);
                     }
                     unset($_SESSION['cart']);
                     $_SESSION['success'] = $idBill;
@@ -179,7 +179,7 @@ if (isset($_GET['act'])) {
             break;
         case "taikhoan":
             if (isset($_SESSION['user'])) {
-
+                
                 $listbill = list_bill(($_SESSION['user']['id_tk']));
                 // echo ($_SESSION['user']['id_tk']);
                 // var_dump($_SESSION['user']) ; die();
@@ -187,8 +187,17 @@ if (isset($_GET['act'])) {
             } else {
                 header("Location : ../../views/Client/home.php");
             }
+            $list_hdct_view = list_hdct_view();
             include "../../views/Client/taikhoan.php";
             break;
+        case "view_hdct":
+            if(isset($_GET['id_hd'])){
+                $list_hdct($_GET['id_hd']);
+            }
+            $list_hdct = list_hdct($id_hd);
+            $list_hdct_view = list_hdct_view();
+            include "../../views/Client/taikhoan.php";
+        break;
         case "xoa_san_phan_ng":
             if (isset($_GET['id_sp']) && isset($_SESSION['user'])) {
                 delete_bill($_GET['id_sp']);
@@ -207,19 +216,30 @@ if (isset($_GET['act'])) {
             include "../../views/Client/giohang.php";
             break;
         case "thieuthi_bl":
-            $listbl = loadAll_binh_lua($id_bl);
-          
+            if (isset($_POST['guibinhluan']) && isset($_SESSION['user'])) {
+                $id_sp = $_POST['id_sp'];
+                $noi_dung_bl = $_POST['noi_dung_bl'];
+                $id_tk = $_SESSION['user']['id_tk'];
+                $currentDateTime = new DateTime();
+                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
+                $ngay_bl = $currentDateTimeString;
+                insert_binhluan($noi_dung_bl, $id_tk, $id_sp, $ngay_bl);
+                header("location: " . $_SERVER['HTTP_REFERER']);
+            }
+            $id_sp = $_REQUEST['id_sp'];
+            $list_binh_lua = loadAll_binh_lua($id_sp);
             include "../../views/Client/sanphamct.php";
             break;
         case "xoadh":
-            if (isset($_GET['id_hdct'])) {
-                delete_hoa_don_ct($_GET['id_hdct']);
+            if (isset($_GET['id_hd'])) {
+                delete_hoa_don($_GET['id_hd']);
                 $thongBao = "Xóa thành công";
             }
             $listbill = list_bill(($_SESSION['user']['id_tk']));
             $list_admin_hd = list_hoadon();
             include "../../views/Client/taikhoan.php";
             break;
+        
     }
 } else {
 
