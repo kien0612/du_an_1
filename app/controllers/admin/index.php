@@ -20,17 +20,8 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
     switch ($act) {
             // Tài Khoản
         case "listtk":
-            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
-                $kyw = $_POST['kyw'];
-            } else {
-                $kyw = "";
-            }
-            if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
-                $id_tk = $_GET['id_tk'];
-            } else {
-                $id_tk = 0;
-            } 
-            $listk = loadAll_tai_khoan($kyw="",$id_tk);
+
+            $listk = loadAll_tai_khoan();
             include "../../views/Admin/taikhoan/list.php";
             break;
         case "addtk":
@@ -132,7 +123,6 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Đơn Hàng
         case "listdh":
-            $list_admin = list_hoadonadmin();
             $list_admin_hd = list_hoadon();
             $listdmhd = list_dmhd_hd();
             include "../../views/Admin/hoadon/list.php";
@@ -142,8 +132,8 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
         //     include "../../views/Admin/hoadon/history.php";
         //     break;
         case "xoadh":
-            if (isset($_GET['id_hdct'])) {
-                delete_hoa_don_ct($_GET['id_hdct']);
+            if (isset($_GET['id_hd'])) {
+                delete_hoa_don($_GET['id_hd']);
                 $thongBao = "Xóa thành công";
             }
             $list_admin_hd = list_hoadon();
@@ -165,7 +155,6 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 }
                 $list_admin_hd = list_hoadon();
                 $listdmhd = list_dmhd_hd();
-                $list_admin = list_hoadonadmin();
                 include "../../views/Admin/hoadon/list.php";
             break;
 
@@ -213,14 +202,9 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Sản Phẩm
         case "listsp":
-            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
-                $kyw = $_POST['kyw'];
-            } else {
-                $kyw = "";
-            }
-            $listdm = loadAll_danh_muc(); 
+            $listdm = loadAll_danh_muc();
+            $listsp = loadAll_san_pham();
             $list_tt = loadAll_trang_thai();
-            $listsp = loadll_san_pham("$kyw", "");
             include "../../views/Admin/sanpham/list.php";
             break;
         case "addsp":
