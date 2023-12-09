@@ -31,18 +31,19 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6 col-12">
-                <?php
-                if (isset($_SESSION['user'])) {
-                    extract($_SESSION['user'])
-                ?>
-                    <form action="" method="post"> 
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        extract($_SESSION['user'])
+                    ?>
+
                         <div class="checkbox-form">
                             <h3>Thông Tin Người Nhận</h3>
                             <div class="row">
                                 <div class="col-md-6">
-                                <input placeholder="" name="id_tk" type="text" value="<?= $id_tk ?>" hidden required>
+                                    <input placeholder="" name="id_tk" type="text" value="<?= $id_tk ?>" hidden required>
                                     <div class="checkout-form-list">
                                         <label>Tên tài khoản <span class="required">*</span></label>
                                         <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>" required>
@@ -78,119 +79,70 @@
                                         <textarea id="checkout-mess" name="mota" cols="30" rows="10" name="" placeholder=""></textarea>
                                     </div>
                                 </div>
-                                <div class="mot">
-                                <p><input  class="checkout-form-list" type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
-                                <p><input  class="checkout-form-list" type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
-                                </div>
+
                             </div>
-                           <center>
-                           <div class="order-button-payment">
-                                <input value="Đăt Hàng" type="submit" name="order_confirm">
-                            </div>
-                           </center>
-                         <style>
-                            .mot{
-                                border: 1px solid red;
-                                padding: 0 20px;
-                                margin: 0 19px;
-                                width: 500px;
-                            }
-                         </style>
+
                         </div>
-                    </form>
-                <?php } ?>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="your-order">
-                    <h3>Đơn Hàng</h3>
-                    <div class="your-order-table table-responsive">
-                        <table class="table">
-                            <thead>
-                                <?php
-                                // print_r($cart);
-                                foreach ($cart as $item) {
-                                    // $url = "../../../controllers/admin/upload/sanpham/";
-                                ?>
+
+                    <?php } ?>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="your-order">
+                        <h3>Đơn Hàng</h3>
+                        <div class="your-order-table table-responsive">
+                            <table class="table">
+                                <thead>
+
                                     <tr>
                                         <th class="cart-product-name">Tên Sản phẩm</th>
-                                        <!-- <th >Ảnh Sản Phẩn</th> -->
                                         <th>Số lượng</th>
                                         <th class="cart-product-total">Thành tiền</th>
                                     </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="cart_item">
-                                    <td class="cart-product-name"><?php echo $item['name']; ?><strong class="product-quantity">
-                                            <!-- <td class="cart-product-total"><img src="<?= $url, $product['anh_sp'] ?>" width="120px" ></span></td> -->
-                                    <td class="cart-product-total"><span class="amount"><?php echo $item['quantity']; ?></span></td>
-                                    <td class="cart-product-total"><span class="amount"><?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?> ₫</span></td>
-                                </tr>
-
-                            </tbody>
-                        <?php
-                                }
-                        ?>
-
-                        </table>
-                    </div>
-                    <div class="payment-method">
-                        <div class="payment-accordion">
-                            <div id="accordion">
-                                <div class="card">
-                                    <div class="card-header" id="#payment-1">
-                                        <h5 class="panel-title">
-                                            <a href="javascript:void(0)" class="" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Tổng Tiền
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
-                                        <div class="card-body">
-                                            <td><b><?php  echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?> ₫</b></td>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="card">
-                                    <div class="card-header" id="#payment-2">
-                                        <h5 class="panel-title">
-                                            <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Cheque Payment
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment
-                                                reference. Your order won’t be shipped until the funds have cleared in
-                                                our account.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" id="#payment-3">
-                                        <h5 class="panel-title">
-                                            <a href="javascript:void(0)" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                PayPal
-                                            </a>
-                                        </h5>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Make your payment directly into our bank account. Please use your Order
-                                                ID as the payment
-                                                reference. Your order won’t be shipped until the funds have cleared in
-                                                our account.</p>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                </thead>
+                                <tbody style="text-align: center;">
+                                    <?php
+                                    // print_r($cart);
+                                    foreach ($cart as $item) {
+                                        // $url = "../../../controllers/admin/upload/sanpham/";
+                                    ?>
+                                        <tr class="cart_it">
+                                            <td class="cart-product-name"><?php echo $item['name']; ?><strong class="product-quantity">
+                                            <td class="cart-product-total"><span class="amount"><?php echo $item['quantity']; ?></span></td>
+                                            <td class="cart-product-total"><span class="amount"><?php echo number_format($item['quantity'] * $item['price'], 0, ",", "."); ?> ₫</span></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                            <div>
+                                <h4 class="panel-title" style="color: red;">
+                                    Tổng Tiền :
+                                    <?php echo number_format($_SESSION['resultTotal'], 0, ",", "."); ?>
+                                </h4>
                             </div>
-                           
                         </div>
+                        <div class="payment-method">
+                            <div class="payment-accordion">
+                                <div id="accordion">
+                                    <h4>Phương thức thanh toán</h4>
+                                    <div>
+                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
+                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
+                                    </div>
+                                    <div class="order-button-payment">
+                                        <input value="Đăt Hàng" type="submit" name="order_confirm">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <!-- Hiraola's Checkout Area End Here -->
