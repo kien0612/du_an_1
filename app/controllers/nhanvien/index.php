@@ -10,6 +10,9 @@ include "../../models/khuyenmai.php";
 include "../../models/role.php";
 include "../../views/nhanvien/header.php";
 include "../../views/nhanvien/menu-left.php";
+include "../../models/thongke.php";
+include "../../models/bill.php";
+
 
 
 if (isset($_GET['act']) && $_GET['act'] !== "") {
@@ -17,23 +20,28 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
     switch ($act) {
             // Tài Khoản
         case "listtk":
+
             $listk = loadAll_tai_khoan();
             include "../../views/nhanvien/taikhoan/list.php";
             break;
         case "addtk":
             if (isset($_POST['add'])) {
+                $currentDateTime = new DateTime();
+                $currentDateTimeString = $currentDateTime->format('Y-m-d H:i:s');
                 $ten_tk = $_POST['ten_tk'];
-                $password = $_POST['password'];
                 $nam_sinh = $_POST['nam_sinh'];
                 $gioi_tinh = $_POST['gioi_tinh'];
                 $sdt = $_POST['sdt'];
                 $email = $_POST['email'];
+                $password = $_POST['password'];
+                $full_name = $_POST['full_name'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                add_tai_khoan($ten_tk,  $password,  $sdt,  $email,  $nam_sinh, $gioi_tinh, $dia_chi, $id_role);
+                $ngay_tao = $currentDateTimeString;
+                add_tai_khoan($ten_tk, $password,  $sdt,  $email, $full_name, $nam_sinh, $gioi_tinh, $dia_chi, $id_role, $ngay_tao);
                 $thongBao = "Thêm thành công";
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             $listk = loadAll_tai_khoan();
             include "../../views/nhanvien/taikhoan/add.php";
             break;
@@ -41,7 +49,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_GET['id_tk']) && ($_GET['id_tk'] > 0)) {
                 $tk = sua_tai_khoan($_GET['id_tk']);
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             $listk = loadAll_tai_khoan();
             include "../../views/nhanvien/taikhoan/edit.php";
 
@@ -50,14 +58,15 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $id_tk = $_POST['id_tk'];
                 $ten_tk = $_POST['ten_tk'];
-                $password = $_POST['password'];
                 $nam_sinh = $_POST['nam_sinh'];
                 $gioi_tinh = $_POST['gioi_tinh'];
                 $sdt = $_POST['sdt'];
                 $email = $_POST['email'];
+                $password = $_POST['password'];
+                $full_name = $_POST['full_name'];
                 $dia_chi = $_POST['dia_chi'];
                 $id_role = $_POST['id_role'];
-                update_tai_khoan($id_tk,  $ten_tk,  $password, $nam_sinh, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
+                update_tai_khoan($id_tk,  $ten_tk, $password, $nam_sinh, $full_name, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
                 $thongBao = "Thêm thành công";
             }
             $listk = loadAll_tai_khoan();
@@ -73,7 +82,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
             //role
         case "listrole":
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/nhanvien/role/list.php";
             break;
         case "xoarole":
@@ -81,7 +90,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 delete_role($_GET['id_role']);
                 $thongBao = "Xóa thành công";
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/nhanvien/role/list.php";
 
             break;
@@ -93,20 +102,19 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
         case "addrole":
             if (isset($_POST['add']) && ($_POST['add'])) {
-                $name_role=$_POST['name_role'];
+                $name_role = $_POST['name_role'];
                 add_role($name_role);
             }
             include "../../views/nhanvien/role/add.php";
             break;
         case "suarole":
             if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
-                $id_role=$_POST['id_role'];
-                $name_role=$_POST['name_role'];
-                update_role($id_role,$name_role);
+                $id_role = $_POST['id_role'];
+                $name_role = $_POST['name_role'];
+                update_role($id_role, $name_role);
                 $thongBao = "Thêm thành công";
-
             }
-            $listrole= loadall_role();
+            $listrole = loadall_role();
             include "../../views/nhanvien/role/list.php";
             break;
 
@@ -115,21 +123,45 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
 
             // Đơn Hàng
         case "listdh":
-            $list_hoa_don = loadAll_hoa_don();
+            $list_nhanvien_hd = list_hoadon();
+            $listdmhd = list_dmhd_hd();
             include "../../views/nhanvien/hoadon/list.php";
             break;
-        case "history_don_hang":
-            $list_history = loadAll_lich_su_dh();
-            include "../../views/nhanvien/hoadon/history.php";
-            break;
+        // case "history_don_hang":
+        //     $list_history = loadAll_lich_su_dh();
+        //     include "../../views/nhanvien/hoadon/history.php";
+        //     break;
         case "xoadh":
-            if (isset($_GET['id_hoa_don'])) {
-                delete_hoa_don($_GET['id_hoa_don']);
+            if (isset($_GET['id_hd'])) {
+                delete_hoa_don($_GET['id_hd']);
                 $thongBao = "Xóa thành công";
             }
-            $list_hoa_don = loadAll_hoa_don();
+            $list_nhanvien_hd = list_hoadon();
             include "../../views/nhanvien/hoadon/list.php";
             break;
+            case"suathhd":
+                if (isset($_GET['id_hd']) && ($_GET['id_hd'] > 0)) {
+                    $hoa_don = sua_hoa_don($_GET['id_hd']);
+                   
+                }
+                $list_nhanvien_hd = list_hoadon();
+                $listdmhd=list_dmhd_hd();
+                $list_hdct_view= list_hdct_view();
+                include "../../views/nhanvien/hoadon/edit.php";
+
+            break;
+            case "update" : 
+                if(isset($_POST['update'])){
+                    $id_hd = $_POST['id_hd'];
+                    $trangthai = $_POST['trangthai'];
+                    update_thdh_hd($id_hd , $trangthai);
+                }
+                $list_nhanvien_hd = list_hoadon();
+                $listdmhd = list_dmhd_hd();
+                include "../../views/nhanvien/hoadon/list.php";
+            break;
+
+
 
             // Danh Mục
         case "listdm":
@@ -156,8 +188,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             if (isset($_POST['capnhap'])) {
                 $id_dm = $_POST['id_dm'];
                 $ten_dm = $_POST['ten_dm'];
-                $ngay_update = $_POST['ngay_update'];
-                update_danhmuc($id_dm,$ten_dm,$ngay_update);
+                update_danhmuc($id_dm, $ten_dm);
                 $thongBao = "Thêm thành công";
             }
             $list_danhmuc = loadAll_danhmuc();
@@ -176,6 +207,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
         case "listsp":
             $listdm = loadAll_danh_muc();
             $listsp = loadAll_san_pham();
+            $list_tt = loadAll_trang_thai();
             include "../../views/nhanvien/sanpham/list.php";
             break;
         case "addsp":
@@ -183,21 +215,19 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $ten_sp = $_POST['ten_sp'];
                 $gia_sp = $_POST['gia_sp'];
                 $mo_ta_sp = $_POST['mo_ta_sp'];
-
                 $anh_sp = $_FILES['anh_sp']['name'];
-                $target_dir = "upload/";
+                $target_dir = "upload/sanpham/";
                 $target_file = $target_dir . basename($_FILES['anh_sp']['name']);
                 move_uploaded_file($_FILES['anh_sp']['tmp_name'], $target_file);
-
                 $so_luong = $_POST['so_luong'];
                 $ngay_nhap_sp = $_POST['ngay_nhap_sp'];
                 $trang_thai = $_POST['trang_thai'];
                 $id_dm = $_POST['id_dm'];
-
                 add_san_pham($ten_sp,  $gia_sp,  $mo_ta_sp,  $anh_sp,  $so_luong,  $ngay_nhap_sp,  $trang_thai,  $id_dm);
                 $thongbao = "thêm thành công";
             }
             $listdm = loadAll_danh_muc();
+            $list_tt = loadAll_trang_thai();
             include "../../views/nhanvien/sanpham/add.php";
             break;
         case "editsp":
@@ -205,6 +235,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $sp = sua_san_pham($_GET['id_sp']);
             }
             $listdm = loadAll_danh_muc();
+            $list_tt = loadAll_trang_thai();
             include "../../views/nhanvien/sanpham/edit.php";
             break;
         case "suasp":
@@ -213,12 +244,10 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $ten_sp = $_POST['ten_sp'];
                 $gia_sp = $_POST['gia_sp'];
                 $mo_ta_sp = $_POST['mo_ta_sp'];
-
                 $anh_sp = $_FILES['anh_sp']['name'];
-                $target_dir = "upload/";
+                $target_dir = "upload/sanpham/";
                 $target_file = $target_dir . basename($_FILES['anh_sp']['name']);
                 move_uploaded_file($_FILES['anh_sp']['tmp_name'], $target_file);
-
                 $so_luong = $_POST['so_luong'];
                 $ngay_nhap_sp = $_POST['ngay_nhap_sp'];
                 $trang_thai = $_POST['trang_thai'];
@@ -229,6 +258,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             }
             $listdm = loadAll_danh_muc();
             $listsp = loadAll_san_pham();
+            $list_tt = loadAll_trang_thai();
             include "../../views/nhanvien/sanpham/list.php";
             break;
         case "xoasp":
@@ -253,7 +283,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $tieu_de = $_POST['tieuDe'];
                 $mota = $_POST['moTa'];
                 $ngay_dang = $currentDateTimeString;
-                $target_dir = "upload/";
+                $target_dir = "upload/baiviet/";
                 $target_file = $target_dir . basename($_FILES['avatar']['name']);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
                 insert_bai_viet($avatar, $tieu_de, $mota, $ngay_dang);
@@ -273,7 +303,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
                 $avatar = $_FILES['avatar']['name'];
                 $tieu_de = $_POST['tieuDe'];
                 $mota = $_POST['moTa'];
-                $target_dir = "upload/";
+                $target_dir = "upload/baiviet/";
                 $target_file = $target_dir . basename($_FILES['avatar']['name']);
                 move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file);
                 update_bai_viet($edit_id, $avatar, $tieu_de, $mota);
@@ -297,7 +327,7 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             break;
         case "xoabl":
             if (isset($_GET['id_bl'])) {
-                delete_bai_viet($_GET['id_bl']);
+                delete_binh_luan($_GET['id_bl']);
                 $thongBao = "Xóa thành công";
             }
             $list_binh_luan = loadAll_binh_luan();
@@ -349,6 +379,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             }
             $listkm = loadAll_khuyen_mai();
             include "../../views/nhanvien/khuyenmai/list.php";
+            break;
+        case "thongke":
+
+            include "../../views/nhanvien/bieudo/thongke.php";
+
             break;
     }
 }
