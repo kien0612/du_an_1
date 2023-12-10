@@ -32,7 +32,7 @@ $image = $url . $anh_sp;
                 <div class="col-lg-5 col-md-5">
                     <div class="sp-img_area">
                         <!-- zoom sản phẩm -->
-                        <div >
+                        <div>
                             <img style="width: 300px;" class="" src="<?= $image ?>" data-zoom-image="<?= $image ?>" alt="Hiraolas Product Image" />
                         </div>
                         <!-- <div id="gallery" class="sp-img_slider">
@@ -146,33 +146,31 @@ $image = $url . $anh_sp;
 
                                     <!-- bình luât -->
 
-                                    <div class="box_content2 product_portfolio">
-                                        <table style="width: 100%;margin-bottom: 10px;">
-                                            <?php foreach ($list_binh_lua as $bl) { ?>
-                                                <tr>
-                                                    <th>Khách hàng : <?= $bl['ten_tk'] ?></th>
-                                                </tr>
-                                                <tr style="border-bottom: 1px solid #595959;">
-                                                    <td><?= $bl['noi_dung_bl'] ?></td>
-                                                    <td><?= $bl['ngay_bl'] ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                        </table>
-                                    </div>
+                                    <form class="form-horizontal" id="form-review">
 
-                                    <?php if (!isset($_SESSION['user'])) { ?>
-                                        <div class="box_search">
-                                            <div class="box_title" style="margin-bottom: 20px">Vui lòng <a href="index.php?act=log_up">đăng nhập </a>để bình luận sản phẩm này</div>
-                                        </div>
-                                    <?php } else { ?>
-                                        <div class="box_search">
-                                            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
-                                                <input type="hidden" name="id_sp" value="<?php echo $id_sp ?>">
-                                                <input type="text" style="width: 85%;" name="noi_dung_bl" id="noi_dung_bl" placeholder="Từ khóa tìm kiếm" name="noidung">
-                                                <input type="submit" value="Gửi bình luận" name="guibinhluan">
-                                            </form>
-                                        </div>
-                                    <?php } ?>
+
+
+                                        <!-- bình luât -->
+
+                                        <!-- bình luât -->
+                                        <?php
+                                        if (isset($_SESSION['user'])) {
+                                        ?>
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    $("#reviews").load("../../views/Client/binhluat/frombinhluat.php", {
+                                                        id_sp: <?php echo $id_sp ?>
+                                                    });
+                                                });
+                                            </script>
+                                            <div class="mb" id="binhluan">
+                                            </div>
+
+                                        <?php } else { ?>
+                                            <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để bình luận sản phẩm này</div>
+                                        <?php } ?>
+                                    </form>
                             </div>
                             </form>
                         </div>

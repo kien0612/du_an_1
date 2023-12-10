@@ -27,6 +27,7 @@ function sua_hoa_don($id_hd)
     $hoa_don = pdo_query_one($sql);
     return $hoa_don;
 }
+
 // function list_dmhd_hd(){
 //     $sql="SELECT * FROM `hoadon` join trangthaidoihang on hoadon.trangthai=trangthaidoihang.id_thdh";
 //     $listdmhd = pdo_query($sql);

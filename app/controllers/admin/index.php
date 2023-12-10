@@ -142,8 +142,11 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             case"suathhd":
                 if (isset($_GET['id_hd']) && ($_GET['id_hd'] > 0)) {
                     $hoa_don = sua_hoa_don($_GET['id_hd']);
+                   
                 }
+                $list_admin_hd = list_hoadon();
                 $listdmhd=list_dmhd_hd();
+                $list_hdct_view= list_hdct_view();
                 include "../../views/Admin/hoadon/edit.php";
 
             break;
