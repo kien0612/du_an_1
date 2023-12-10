@@ -165,8 +165,20 @@
                                         </a>
                                         <div class="add-actions">
                                             <ul>
-                                                <li><a class="hiraola-add_cart" href="#" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i data-id=<?= $id_sp ?> class="ion-bag btnCart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)"></i></a>
+                                                <?php
+                                                if (isset($_SESSION['user'])) {
+                                                ?>
+                                                   <li><a class="hiraola-add_cart" href="#" data-bs-toggle="tooltip" data-placement="top" title="Add To Cart"><i data-id=<?= $id_sp ?> class="ion-bag btnCart" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)"></i></a>
                                                 </li>
+
+                                                    <div class="mb" id="binhluan">
+                                                    </div>
+
+                                                <?php } else { ?>
+                                                    <li><a class="hiraola-add_cart" href="#" data-bs-toggle="tooltip" data-placement="top" title="Vui lòng đăng Nhập"><i  class="ion-bag btnCart" ></i></a>
+                                                </li>
+                                                <?php } ?>
+                                               
                                                 <li class="quick-view-btn" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i class="ion-eye"></i></a></li>
                                             </ul>
                                         </div>

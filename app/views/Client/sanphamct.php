@@ -32,7 +32,7 @@ $image = $url . $anh_sp;
                 <div class="col-lg-5 col-md-5">
                     <div class="sp-img_area">
                         <!-- zoom sản phẩm -->
-                        <div>
+                        <div >
                             <img style="width: 300px;" class="" src="<?= $image ?>" data-zoom-image="<?= $image ?>" alt="Hiraolas Product Image" />
                         </div>
                         <!-- <div id="gallery" class="sp-img_slider">
@@ -105,7 +105,18 @@ $image = $url . $anh_sp;
                     <!-- mua hàng  -->
                     <div class="qty-btn_area">
                         <ul>
-                            <li><a class="btn btn-warning" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)">Thêm vào giỏ hàng</a></li>
+                        <?php
+                                    if (isset($_SESSION['user'])) {
+                                    ?>  
+                                     <li><a class="btn btn-warning" onclick="addToCart(<?= $id_sp ?>,'<?= $ten_sp ?>',<?= $gia_sp ?>)">Thêm vào giỏ hàng</a></li>
+                                     
+                                        <div class="mb" id="binhluan">
+                                        </div>
+
+                                    <?php } else { ?>
+                                        <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để bình luận sản phẩm này</div>
+                                    <?php } ?>
+                         
                         </ul>
                     </div>
                 </div>
@@ -146,31 +157,31 @@ $image = $url . $anh_sp;
 
                                     <!-- bình luât -->
 
-                                    <form class="form-horizontal" id="form-review">
+                                        <form class="form-horizontal" id="form-review">
 
 
 
-                                        <!-- bình luât -->
+                                    <!-- bình luât -->
 
-                                        <!-- bình luât -->
-                                        <?php
-                                        if (isset($_SESSION['user'])) {
-                                        ?>
-                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-                                            <script>
-                                                $(document).ready(function() {
-                                                    $("#reviews").load("../../views/Client/binhluat/frombinhluat.php", {
-                                                        id_sp: <?php echo $id_sp ?>
-                                                    });
+                                    <!-- bình luât -->
+                                    <?php
+                                    if (isset($_SESSION['user'])) {
+                                    ?>
+                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $("#reviews").load("../../views/Client/binhluat/frombinhluat.php", {
+                                                    id_sp: <?php echo $id_sp ?>
                                                 });
-                                            </script>
-                                            <div class="mb" id="binhluan">
-                                            </div>
+                                            });
+                                        </script>
+                                        <div class="mb" id="binhluan">
+                                        </div>
 
-                                        <?php } else { ?>
-                                            <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để bình luận sản phẩm này</div>
-                                        <?php } ?>
-                                    </form>
+                                    <?php } else { ?>
+                                        <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để bình luận sản phẩm này</div>
+                                    <?php } ?>
+                                </form>
                             </div>
                             </form>
                         </div>
