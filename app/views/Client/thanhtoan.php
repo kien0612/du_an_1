@@ -64,7 +64,7 @@
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Phone <span class="required">*</span></label>
-                                        <input type="text" name="sdt" value="<?= $sdt ?>" required>
+                                        <input placeholder="Mật khẩu (*)" pattern=".{8,}" title="Mật khảu phải có ít nhất 8 ký tự" required type="number" name="sdt" value="<?= $sdt ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">

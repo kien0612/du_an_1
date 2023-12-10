@@ -24,14 +24,14 @@ function list_hoadonadmin(){
     return $list_admin;
 }
 function list_hoadon(){
-    $sql="SELECT hoadon.id_hd, hoadon.tongtien, taikhoan.full_name, hoadon.sdt, hoadon.email, hoadon.ngaydathang ,hoadon.diachi, hoadon.pttt, trangthaidoihang.ten_dh, hoadon.mota, hoadon.id_tk, 
+    $sql="SELECT hoadon.id_hd, hoadon.tongtien, taikhoan.full_name, hoadon.sdt, hoadon.email, hoadon.ngaydathang ,hoadon.diachi, hoadon.pttt, trangthaidoihang.ten_dh, hoadon.mota, hoadon.id_tk ,hoadon.tongtien, 
     SUM(hoadonchitet.soluong) AS tong_soluong
 FROM hoadon
 JOIN taikhoan ON hoadon.id_tk = taikhoan.id_tk 
 JOIN hoadonchitet ON hoadonchitet.id_hd = hoadon.id_hd 
 JOIN sanpham ON sanpham.id_sp = hoadonchitet.id_sp 
 JOIN trangthaidoihang ON hoadon.trangthai = trangthaidoihang.id_thdh
-GROUP BY hoadon.id_hd, hoadon.tongtien, hoadon.hoten, hoadon.sdt, hoadon.email, hoadon.ngaydathang, hoadon.diachi, hoadon.pttt, hoadon.trangthai, hoadon.mota, hoadon.id_tk;";
+GROUP BY hoadon.id_hd, hoadon.tongtien, hoadon.hoten, hoadon.sdt, hoadon.email, hoadon.ngaydathang, hoadon.diachi, hoadon.pttt, hoadon.trangthai, hoadon.mota,hoadon.tongtien, hoadon.id_tk;";
     $list_admin_hd=pdo_query($sql);
     return $list_admin_hd;
 }

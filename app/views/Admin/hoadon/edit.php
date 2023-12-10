@@ -23,7 +23,7 @@ if (is_array($hoa_don)) {
                 Địa Chỉ: <label for=""><?php echo $diachi?></label> <br>
                 Ngày Đạt Hàng:  <label for=""><?php echo $ngaydathang?></label> <br>
                 Mô Tả: <label for=""><?php echo $mota?></label> <br>
-                Tổng Tiền: <label for=""><?php echo $id_tk?></label> <br>
+                Tổng Tiền: <label for=""><?php echo $tongtien?></label> <br>
 
                <h2>Thông Tin Đơn Hàng</h2>
                Tên sản phẩn: <label for=""><?php echo $ten_sp?></label> <br>
