@@ -127,7 +127,7 @@
                                 <div id="accordion">
                                     <h4>Phương thức thanh toán</h4>
                                     <div>
-                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="1" > Thanh toán khi giao hàng</p>
+                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="1" required > Thanh toán khi giao hàng</p>
                                     </div>
                                 </div>
                                     <div class="order-button-payment">
