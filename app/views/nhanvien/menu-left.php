@@ -50,37 +50,11 @@
                                     <p>Danh Sách Tài Khoản</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="?act=addtk" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm Tài Khoản</p>
-                                </a>
-                            </li>
+                           
                         </ul>
                     </li>
                     <!-- Đơn Hàng -->
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link ">
-                            <p>
-                                Quản lý Đơn Hàng
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="?act=listdh" class="nav-link ">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Danh Sách Đơn Hàng</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="?act=history_don_hang" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Lịch Sử Đơn Hàng</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                 
 
                     <!-- Danh Mục -->
                     <li class="nav-item ">
@@ -152,7 +126,7 @@
                         </ul>
                     </li>
                     <!-- Bình Luận -->
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <a href="#" class="nav-link ">
                             <p>
                                 Quản Lý Bình Luận
@@ -167,9 +141,9 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- Khuyến Mãi -->
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <a href="#" class="nav-link ">
                             <p>
                                 Quản Lý Khuyến Mãi
@@ -190,7 +164,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- role -->
                     <!-- <li class="nav-item ">
                         <a href="#" class="nav-link ">

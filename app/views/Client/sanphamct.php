@@ -114,7 +114,8 @@ $image = $url . $anh_sp;
                                         </div>
 
                                     <?php } else { ?>
-                                        <div class="box_title" style="margin-bottom: 20px">Vui lòng đăng nhập để mua sản phẩm này</div>
+                                        <li><a class="btn btn-warning" >Vui Lòng Đăng Nhập</a></li>
+                                     
                                     <?php } ?>
                          
                         </ul>

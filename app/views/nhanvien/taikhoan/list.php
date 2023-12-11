@@ -9,8 +9,8 @@
                 <div class="col-lg-9">
                             <div class="hm-form_area">
                                 <form action="index.php?act=listtk" class="hm-searchbox" method="post">
-                                    <input type="text" name="kyw" placeholder="Enter your search key ...">
-                                    <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
+                                    
+                                   
                                 </form>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                 <th>Năm Sinh</th>
                 <th>Giới Tính</th>
                 <th>Ngày Tạo</th>
-                <th>Hành động</th>
+               
             </tr>
         </thead>
 
@@ -64,11 +64,7 @@
                     <td><?= $gioi_tinh == 1 ? 'Nữ' : 'Nam'?></td>
                     <td><?= $ngay_tao?></td>
                     
-                    <td>
-                        <a href="<?= $xoatk ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">xóa</button></a>
-                        <a href="<?= $suatk ?>"><button type="button" class="btn btn-success">sửa</button></a>
-                
-                    </td>    
+                      
                  </tr>
 
           <?php } ?>
