@@ -63,8 +63,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
-                                        <label>Phone <span class="required">*</span></label>
-                                        <input placeholder="Mật khẩu (*)" pattern=".{8,}" title="Mật khảu phải có ít nhất 8 ký tự" required type="number" name="sdt" value="<?= $sdt ?>" required>
+                                        <label>Phone <span class="required">*</span></label><br>
+                                        <input  placeholder="Mật khẩu (*)" pattern=".{8,}" title="Mật khảu phải có ít nhất 8 ký tự"  type="number" name="sdt" value="<?= $sdt ?>" required>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -128,7 +129,7 @@
                                     <h4>Phương thức thanh toán</h4>
                                     <div>
                                         <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
-                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
+                                      
                                     </div>
                                     <div class="order-button-payment">
                                         <input value="Đăt Hàng" type="submit" name="order_confirm">
@@ -146,3 +147,4 @@
     </div>
 </div>
 <!-- Hiraola's Checkout Area End Here -->
+git
