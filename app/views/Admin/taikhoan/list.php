@@ -7,19 +7,13 @@
                     <h1 class="m-0">Danh Sách Tài Khoản</h1>
                 </div><!-- /.col -->
                 <div class="col-lg-9">
-                            <div class="hm-form_area">
+                            <!-- <div class="hm-form_area">
                                 <form action="index.php?act=listtk" class="hm-searchbox" method="post">
                                     <input type="text" name="kyw" placeholder="Enter your search key ...">
                                     <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
-                    </ol>
-                </div><!-- /.col -->
             </div><!-- /.row -->
         </div>
     </div>
@@ -65,9 +59,12 @@
                     <td><?= $ngay_tao?></td>
                     
                     <td>
-                        <a href="<?= $xoatk ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">xóa</button></a>
-                        <a href="<?= $suatk ?>"><button type="button" class="btn btn-success">sửa</button></a>
-                
+                    <a class="btn btn-danger" href="<?= $xoatk ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không')">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <!-- <li style="list-style: none;" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i style="font-size:16px" class="ion-eye"></i></a></li> -->
+                        <a href="<?= $suatk ?>" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> </a>
+
                     </td>    
                  </tr>
 

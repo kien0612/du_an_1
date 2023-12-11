@@ -2,10 +2,10 @@
         <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Other</h2>
+                    <h2>Đăng ký & Đăng nhập</h2>
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">Login & Register</li>
+                        <li><a href="index.php">Trang chủ</a></li>
+                        <li class="active">Đăng ký & Đăng nhập</li>
                     </ul>
                 </div>
             </div>

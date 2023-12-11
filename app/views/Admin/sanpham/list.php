@@ -17,10 +17,10 @@
     </div>
     <div class="col-lg-9">
                             <div class="hm-form_area">
-                                <form action="index.php?act=listsp" class="hm-searchbox" method="post">
+                                <!-- <form action="index.php?act=listsp" class="hm-searchbox" method="post">
                                     <input type="text" name="kyw" placeholder="Enter your search key ...">
                                     <button class="li-btn" name="timkiem" type="submit"><i class="fa fa-search"></i></button>
-                                </form>
+                                </form> -->
                             </div>
                         </div>
 
@@ -68,8 +68,11 @@
                     <td><?= $ngay_nhap_sp ?></td>
                     </td>
                     <td>
-                        <a href="<?= $edit ?>"><button type="button" class="btn btn-success">Edit</button></a>
-                        <a href="<?= $delete ?>"><button type="button" class="btn btn-success" onclick="return confirm('bạn chắc không')">Xóa</button></a>
+                    <a class="btn btn-danger" href="<?= $delete ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không')">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <!-- <li style="list-style: none;" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i style="font-size:16px" class="ion-eye"></i></a></li> -->
+                        <a href="<?= $edit ?>" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> </a>
 
                     </td>
                 </tr>

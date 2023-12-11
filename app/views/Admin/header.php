@@ -28,9 +28,9 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body >
     <header>
-        <div class="wrapper">
+        <div >
 
             <!-- Preloader -->
             <!-- <div class="preloader flex-column justify-content-center align-items-center">

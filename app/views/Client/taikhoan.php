@@ -78,7 +78,7 @@
                                                                     <li style="list-style: none;">
                                                                         <p class="button">Đơn hàng mới</p>
                                                                     </li>
-                                                                <?php } ?>
+                                                                 <?php } ?>
                                                                 <?php if ($trangthai == 2) { ?>
                                                                     <li style="list-style: none;">
                                                                         <p class="button">Đã xác nhận</p>
@@ -127,25 +127,26 @@
                                             <div class="hiraola-form-inner">
                                                 <div class="single-input single-input-half">
                                                     <label for="account-details-firstname">Tên tài khoản*</label>
-                                                    <input type="text" id="account-details-firstname" value="<?= $ten_tk ?>">
+                                                    <input type="text" id="account-details-firstname" name="ten_tk" value="<?= $ten_tk ?>">
                                                 </div>
                                                 <div class="single-input single-input-half">
                                                     <label for="account-details-lastname">Họ tên đầy đủ*</label>
-                                                    <input type="text" id="account-details-lastname" value="<?= $full_name ?>">
+                                                    <input type="text" id="account-details-lastname" name="full_name" value="<?= $full_name ?>">
                                                 </div>
+                                                
                                                 <div class="single-input single-input-half">
                                                     <label for="account-details-firstname">Email*</label>
-                                                    <input type="text" id="account-details-firstname" value="<?= $email ?>">
+                                                    <input type="text" id="account-details-firstname" name="email" value="<?= $email ?>">
                                                 </div>
                                                 <div class="single-input single-input-half">
                                                     <label for="account-details-lastname">Số điện thoại*</label>
-                                                    <input type="text" id="account-details-lastname" value="<?= $sdt ?>">
+                                                    <input type="text" id="account-details-lastname" name="sdt" value="<?= $sdt ?>">
                                                 </div>
                                                 <div class="single-input">
                                                     <label for="account-details-email">Địa chỉ*</label>
-                                                    <input type="email" id="account-details-email" value="<?= $dia_chi ?>">
+                                                    <input type="text" name="dia_chi"  value="<?= $dia_chi ?>">
                                                 </div>
-                                                <div class="single-input">
+                                                <!-- <div class="single-input">
                                                     <label for="account-details-oldpass">Current Password(leave blank to leave
                                                         unchanged)</label>
                                                     <input type="password" id="account-details-oldpass">
@@ -158,9 +159,9 @@
                                                 <div class="single-input">
                                                     <label for="account-details-confpass">Confirm New Password</label>
                                                     <input type="password" id="account-details-confpass">
-                                                </div>
+                                                </div> -->
                                                 <div class="single-input">
-                                                    <button class="hiraola-btn hiraola-btn_dark" type="submit"><span>SAVE
+                                                    <button class="hiraola-btn hiraola-btn_dark" type="submit" name="capnhattk"><span>SAVE
                                                             CHANGES</span></button>
                                                 </div>
                                             </div>

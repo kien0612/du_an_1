@@ -19,7 +19,7 @@
             <div class="col-lg-3 order-2 order-lg-1">
                 <div class="hiraola-sidebar-catagories_area">
                     <!-- tim kiem theo gia -->
-                    <div class="hiraola-sidebar_categories">
+                    <!-- <div class="hiraola-sidebar_categories">
                         <div class="hiraola-categories_title">
                             <h5>Price</h5>
                         </div>
@@ -33,7 +33,7 @@
                                 <button type="button" class="">Tìm kiếm</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- tim kiem theo gia -->
                     <!-- <div class="hiraola-sidebar_categories">
                         <div class="hiraola-categories_title">

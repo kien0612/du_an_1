@@ -380,11 +380,14 @@ if (isset($_GET['act']) && $_GET['act'] !== "") {
             $listkm = loadAll_khuyen_mai();
             include "../../views/Admin/khuyenmai/list.php";
             break;
-        case "thongke":
+        // case "thongke":
 
-            include "../../views/Admin/bieudo/thongke.php";
+        //     include "../../views/Admin/bieudo/thongke.php";
 
-            break;
+        //     break;
     }
+}else{
+    include "../../views/Admin/bieudo/thongke.php";
+
 }
 include "../../views/Admin/footer.php";

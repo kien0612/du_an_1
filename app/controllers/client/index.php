@@ -190,6 +190,25 @@ if (isset($_GET['act'])) {
             $list_hdct_view = list_hdct_view();
             include "../../views/Client/taikhoan.php";
             break;
+           
+            case "updatetk":
+                if (isset($_POST['capnhattk']) && ($_POST['capnhattk'])) {
+                    $id_tk = $_POST['id_tk'];
+                    $ten_tk = $_POST['ten_tk'];
+                    $nam_sinh = $_POST['nam_sinh'];
+                    $gioi_tinh = $_POST['gioi_tinh'];
+                    $sdt = $_POST['sdt'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $full_name = $_POST['full_name'];
+                    $dia_chi = $_POST['dia_chi'];
+                    $id_role = $_POST['id_role'];
+                    update_tai_khoan($id_tk,  $ten_tk, $password, $nam_sinh, $full_name, $gioi_tinh, $sdt, $email, $dia_chi, $id_role);
+                    $thongBao = "Thêm thành công";
+                }
+                $listk = loadAll_tai_khoan();
+                include "../../views/Admin/taikhoan/list.php";
+                break;
         case "view_hdct":
             if(isset($_GET['id_hd'])){
                 $list_hdct($_GET['id_hd']);

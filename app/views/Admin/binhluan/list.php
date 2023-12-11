@@ -43,8 +43,9 @@
                     <td><?= $noi_dung_bl ?></td>
                     <td><?= $ngay_bl ?></td>
                     <td>
-                        <a href="<?= $delete ?>"><button type="button" class="btn btn-success">Xóa</button></a>
-                        
+                    <a class="btn btn-danger" href="<?= $delete ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không')">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             <?php

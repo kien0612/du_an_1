@@ -1,10 +1,10 @@
 <div class="breadcrumb-area">
             <div class="container">
                 <div class="breadcrumb-content">
-                    <h2>Other</h2>
+                    <h2>Liên hệ</h2>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Contact</li>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li class="active">Liên hệ</li>
                     </ul>
                 </div>
             </div>
@@ -23,13 +23,11 @@
                 <div class="row">
                     <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                         <div class="contact-page-side-content">
-                            <h3 class="contact-page-title">Contact Us</h3>
-                            <p class="contact-page-message">Claritas est etiam processus dynamicus, qui sequitur
-                                mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum
-                                claram anteposuerit litterarum formas human.</p>
+                            <h3 class="contact-page-title">Liên hệ với chúng tôi</h3>
+                            <p class="contact-page-message">Sự rõ ràng cũng là một quá trình năng động tuân theo những thói quen luôn thay đổi của người đọc. Thật đáng ngạc nhiên khi lưu ý rằng văn học Gothic, thứ mà ngày nay chúng ta cho là ít rõ ràng, đã có trước các hình thức văn học của con người như thế nào.</p>
                             <div class="single-contact-block">
-                                <h4><i class="fa fa-fax"></i> Address</h4>
-                                <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                                <h4><i class="fa fa-fax"></i> Địa  chỉ</h4>
+                                <p>Trường cao đẳng FPT Polytechnic , Trịnh Văn Bô , Nam Từ Liêm , Hà Nội</p>
                             </div>
                             <div class="single-contact-block">
                                 <h4><i class="fa fa-phone"></i> Phone</h4>
@@ -38,14 +36,14 @@
                             </div>
                             <div class="single-contact-block last-child">
                                 <h4><i class="fa fa-envelope-o"></i> Email</h4>
-                                <p>yourmail@domain.com</p>
-                                <p>support@hastech.company</p>
+                                <p> nhom8@gmail.com</p>
+                                <!-- <p>support@hastech.company</p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                         <div class="contact-form-content">
-                            <h3 class="contact-page-title">Tell Us Your Message</h3>
+                            <h3 class="contact-page-title">Liên hệ</h3>
                             <div class="contact-form">
                             <?php
                                         if (isset($_SESSION['user'])) {

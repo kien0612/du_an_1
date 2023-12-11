@@ -41,15 +41,15 @@
 
                         <div class="checkbox-form">
                             <h3>Thông Tin Người Nhận</h3>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input placeholder="" name="id_tk" type="text" value="<?= $id_tk ?>" hidden required>
+                            <div class="row">                                    <input placeholder="" name="id_tk" type="text" value="<?= $id_tk ?>" hidden required>
+
+                                <!-- <div class="col-md-6">
                                     <div class="checkout-form-list">
                                         <label>Tên tài khoản <span class="required">*</span></label>
                                         <input placeholder="" name="hoten" type="text" value="<?= $ten_tk ?>" required>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
+                                </div> -->
+                                <div class="col-md-12">
                                     <div class="checkout-form-list">
                                         <label>Tên đầy đủ <span class="required">*</span></label>
                                         <input placeholder="" name="fullname" type="text" value="<?= $full_name ?>" required>
@@ -57,14 +57,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
-                                        <label>Email Address <span class="required">*</span></label>
+                                        <label>Email <span class="required">*</span></label>
                                         <input placeholder="" name="email" type="email" value="<?= $email ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="checkout-form-list">
-                                        <label>Phone <span class="required">*</span></label>
-                                        <input placeholder="Mật khẩu (*)" pattern=".{8,}" title="Mật khảu phải có ít nhất 8 ký tự" required type="number" name="sdt" value="<?= $sdt ?>" required>
+                                        <label>Số điện thoại <span class="required">*</span></label>
+                                        <input placeholder="" name="number" type="number" value="<?= $sdt ?>" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -127,11 +127,11 @@
                                 <div id="accordion">
                                     <h4>Phương thức thanh toán</h4>
                                     <div>
-                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="1" required> Thanh toán khi giao hàng</p>
-                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="2" required> Chuyển khoản ngân hàng</p>
+                                        <p><input class="checkout-form-list" type="radio" name="pttt" id="" value="1" > Thanh toán khi giao hàng</p>
                                     </div>
+                                </div>
                                     <div class="order-button-payment">
-                                        <input value="Đăt Hàng" type="submit" name="order_confirm">
+                                        <input value="Đăt Hàng"  type="submit" name="order_confirm">
                                     </div>
 
                                 </div>

@@ -17,14 +17,10 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7 d-flex align-items-center">
                         <div class="overview-content">
-                            <h2>Welcome To <span>Hiraola's</span> Store!</h2>
-                            <p class="short_desc">We Provide Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Repudiandae nisi fuga facilis, consequuntur, maiores eveniet voluptatum, omnis possimus
-                                temporibus aspernatur nobis animi in exercitationem vitae nulla! Adipisci ullam illum quisquam.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, nulla veniam? Magni aliquid
-                                asperiores magnam. Veniam ex tenetur.</p>
+                            <h2>Chào mừng đến với <span>Hiraola's</span>!</h2>
+                            <p class="short_desc">Chúng tôi cung cấp dịch vụ khách hàng, khách hàng sẽ có thể đạt được sự ưu tú về adipisicing. Bị từ chối trừ khi đó là một chuyến bay dễ dàng, chúng sẽ mang lại những niềm vui lớn hơn, và trong mọi lúc có thể, tâm trí của chúng ta sẽ được rảnh rỗi khi thực hiện cuộc sống! Có ai có thể có được bất cứ điều gì trong số đó? Điều rất quan trọng là khách hàng phải chú ý đến quá trình hấp thụ. Đau đớn, không có sự tha thứ? Những cái lớn thì thô hơn một chút so với những cái lớn. Tôi sẽ thoát khỏi sự giam giữ.</p>
                             <div class="hiraola-about-us_btn-area">
-                                <a class="about-us_btn" href="index.php?act=sanpham">Shop Now</a>
+                                <a class="about-us_btn" href="index.php?act=sanpham">Mua ngay</a>
                             </div>
                         </div>
                     </div>

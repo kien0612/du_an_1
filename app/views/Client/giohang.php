@@ -3,10 +3,10 @@
  <div class="breadcrumb-area">
      <div class="container">
          <div class="breadcrumb-content">
-             <h2>Other</h2>
+             <h2>Giỏ hàng</h2>
              <ul>
-                 <li><a href="index.php">Home</a></li>
-                 <li class="active">Cart</li>
+                 <li><a href="index.php">Trang chủ</a></li>
+                 <li class="active">Trang chủ</li>
              </ul>
          </div>
      </div>
@@ -51,10 +51,8 @@
                                          <td class="hiraola-product-name"><?= $product['ten_sp'] ?></a></td>
                                          <td class="hiraola-product-price"><span class="amount"><?= number_format((int)$product['gia_sp'], 0, ',', '.') ?> VND</span></td>
                                          <td class="quantity">
-                                             <div class="cart-plus-minus">
-                                                 <input class="cart-plus-minus-box" value="<?= (int)$quantityInCart ?>" type="number" min="1" max="5" id="quantity_<?= $product['id_sp'] ?>" oninput="updateQuantity(<?= $product['id_sp'] ?>, <?= $key ?>)">
-                                                 <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                 <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                             <div >
+                                             <?= (int)$quantityInCart ?>
                                              </div>
                                          </td>
                                          <td class="product-subtotal"><span class="amount"><?= number_format((int)$product['gia_sp'] * (int)$quantityInCart, 0, ",", ".") ?> VND</span></td>

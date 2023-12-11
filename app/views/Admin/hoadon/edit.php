@@ -14,39 +14,55 @@ if (is_array($hoa_don)) {
 <center>
 
     <body>
-        <h1>Thông Tin Nguời Nhận</h1>
-
-
-
-        Tên Người Nhận: <label for=""><?php echo $hoten ?></label> <br>
-        SỐ Điện Thoại:<label for=""><?php echo $sdt ?></label><br>
-        Email: <label for=""><?php echo $email ?></label> <br>
-        Địa Chỉ: <label for=""><?php echo $diachi ?></label> <br>
-        Ngày Đạt Hàng: <label for=""><?php echo $ngaydathang ?></label> <br>
-        Mô Tả: <label for=""><?php echo $mota ?></label> <br>
-      
-
-
-        <h1>thông tin đơn hàng</h1>
-
-        <tbody style="text-align: center;">
+        <table border="1px" style="text-align: center;">
+            <h3>Thông Tin Nguời Nhận</h3>
+            <thead>
+                <tr>
+                <th>Tên Người Nhận</th>
+                <th>Số điện thoại</th>
+                <th>Email</th>
+                <th>Địa chỉ</th>
+                <th>Ngày đặt hàng</th>
+                <th>Mô tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><?php echo $hoten ?></td>
+                <td><?php echo $sdt ?></td>
+                <td><?php echo $email ?></td>
+                <td><?php echo $diachi ?></td>
+                <td><?php echo $ngaydathang ?></td>
+                <td><?php echo $mota ?></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table border="1px" style="text-align: center;">
+            <h3>Thông Tin Đơn Hàng</h3>
+            <thead>
+                <tr>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá mua</th>
+                </tr>
+            </thead>
+            <tbody>
             <?php foreach ($list_hdct_view as $hdct) {
                 extract($hdct)    ?>
                 <tr>
-                    <label for="">tên sản phẩn</label> ::<?php echo $ten_sp; ?><br>
-                    <label for="">Số Lượng</label> ::<?php echo $soluong; ?><br>
-                    <label for="">Giá Mua</label> ::<?php echo number_format($giamua, 0, ",", "."); ?> đ <br>
-
+                    <td><?php echo $ten_sp; ?></td>
+                    <td><?php echo $soluong; ?></td>
+                    <td><?php echo number_format($giamua, 0, ",", "."); ?> VND</td>
                 </tr>
-            <?php  } ?>
-        </tbody>
+                <?php  } ?>
+            </tbody>
+            <tfoot style="color: red;">
+                <th>Tổng tiền</th>
+                <td colspan="2"><?php echo number_format($tongtien, 0, ",", "."); ?></td>
+            </tfoot>
         </table>
-        <div>
-            <h4 class="panel-title" style="color: red;">
-                Tổng Tiền :
-                <?php echo number_format($tongtien, 0, ",", "."); ?>
-            </h4>
-        </div>
+        <h3>Trạng Thái Đơn Hàng</h3>
         <form action="?act=update" method="post">
             <input type="hidden" name="id_hd" id="" value="<?= $id_hd ?>">
             <select name="trangthai">

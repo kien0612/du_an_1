@@ -37,8 +37,11 @@
                 <td><?= $ten_dm ?></td>
                 <td><?= $ngay_update ?></td>
                 <td>
-                    <a href="<?= $edit ?>"><button type="button" class="btn btn-success">Edit</button></a>
-                    <a href="<?= $delete ?>"><button type="button" class="btn btn-success">Xóa</button></a>
+                <a class="btn btn-danger" href="<?= $delete ?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không')">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                        <!-- <li style="list-style: none;" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="Quick View"><i style="font-size:16px" class="ion-eye"></i></a></li> -->
+                        <a href="<?= $edit ?>" class="btn btn-success"><i class="fa-solid fa-pen-to-square"></i> </a>
                 </td>
             </tr>
             <?php } ?>
